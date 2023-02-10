@@ -1,4 +1,3 @@
-
 #[derive(Debug)]
 pub struct UTType<'a> {
     pub identifier: &'a str,
@@ -7,8 +6,8 @@ pub struct UTType<'a> {
     pub comments: &'a str,
 }
 
-impl UTType<'_> {
-    pub fn new<'a>(
+impl<'a> UTType<'a> {
+    pub fn new(
         identifier: &'a str,
         conforms_to: Vec<&'a str>,
         tags: Vec<&'a str>,
