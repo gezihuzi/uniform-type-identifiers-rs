@@ -1,4 +1,4 @@
-use crate::UTInternalType;
+use crate::{MIMETypeAndExtension, UTInternalType};
 
 pub const PUBLIC_ITEM: UTInternalType = UTInternalType {
     identifier: "public.item",
@@ -5342,7 +5342,1675 @@ pub const COM_APPLE_ACTIVE_WEBPAGE: UTInternalType = UTInternalType {
     mime_type: "",
     description: "Active Web Page",
 };
-pub const ALL_TYPES: [UTInternalType; 667] = [
+pub const COM_ADOBE_PDF: UTInternalType = UTInternalType {
+    identifier: "com.adobe.pdf",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "PDF document",
+};
+pub const COM_ADOBE_EDN: UTInternalType = UTInternalType {
+    identifier: "com.adobe.edn",
+    conforms_to: "public.data",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Adobe DRM Activation Key (EDN)",
+};
+pub const COM_ADOBE_ETD: UTInternalType = UTInternalType {
+    identifier: "com.adobe.etd",
+    conforms_to: "public.data",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Adobe Digital Editions (ETD)",
+};
+pub const COM_ADOBE_XFDF: UTInternalType = UTInternalType {
+    identifier: "com.adobe.xfdf",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Adobe Acrobat Forms Document (XFDF)",
+};
+pub const COM_ADOBE_FDF: UTInternalType = UTInternalType {
+    identifier: "com.adobe.fdf",
+    conforms_to: "public.data",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Adobe Acrobat Forms Document (FDF)",
+};
+pub const COM_ADOBE_POSTSCRIPT: UTInternalType = UTInternalType {
+    identifier: "com.adobe.postscript",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "PostScript",
+};
+pub const COM_ADOBE_ENCAPSULATED_POSTSCRIPT: UTInternalType = UTInternalType {
+    identifier: "com.adobe.encapsulated-postscript",
+    conforms_to: "com.adobe.postscript",
+    tags: "",
+    filename_extension: "eps",
+    mime_type: "eps",
+    description: "Encapsulated PostScript",
+};
+pub const COM_COMPUSERVE_GIF: UTInternalType = UTInternalType {
+    identifier: "com.compuserve.gif",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "GIF image",
+};
+pub const COM_MICROSOFT_BMP: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.bmp",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows BMP image",
+};
+pub const COM_MICROSOFT_ICO: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.ico",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows icon image",
+};
+pub const ORG_WEBMPROJECT_WEBP: UTInternalType = UTInternalType {
+    identifier: "org.webmproject.webp",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "WebP Image",
+};
+pub const ORG_WEBMPROJECT_WEBM: UTInternalType = UTInternalType {
+    identifier: "org.webmproject.webm",
+    conforms_to: "public.movie",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "WebM Media",
+};
+pub const PUBLIC_OFD: UTInternalType = UTInternalType {
+    identifier: "public.ofd",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Open Fixed-layout Document",
+};
+pub const ORG_OPENOFFICE_TEXT: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.text",
+    conforms_to: "public.data|public.content",
+    tags: "",
+    filename_extension: "sxw|sdw",
+    mime_type: "sxw|sdw",
+    description: "OpenOffice.org 1.0 Text",
+};
+pub const ORG_OPENOFFICE_TEXT_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.text-template",
+    conforms_to: "public.data|public.content",
+    tags: "",
+    filename_extension: "stw",
+    mime_type: "stw",
+    description: "OpenOffice.org 1.0 Text Template",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.text",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "odt",
+    mime_type: "odt",
+    description: "Open Document text",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.text-template",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "ott",
+    mime_type: "ott",
+    description: "Open Document text template",
+};
+pub const ORG_OPENOFFICE_GRAPHICS: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.graphics",
+    conforms_to: "public.data|public.content",
+    tags: "",
+    filename_extension: "sxd|sda",
+    mime_type: "sxd|sda",
+    description: "OpenOffice.org 1.0 Drawing",
+};
+pub const ORG_OPENOFFICE_GRAPHICS_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.graphics-template",
+    conforms_to: "public.data|public.content",
+    tags: "",
+    filename_extension: "std",
+    mime_type: "std",
+    description: "OpenOffice.org 1.0 Drawing Template",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.graphics",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "odg",
+    mime_type: "odg",
+    description: "Open Document graphics",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.graphics-template",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "otg",
+    mime_type: "otg",
+    description: "Open Document graphics template",
+};
+pub const ORG_OPENOFFICE_PRESENTATION: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.presentation",
+    conforms_to: "public.data|public.content|public.presentation",
+    tags: "",
+    filename_extension: "sxi|sdd|sdp",
+    mime_type: "sxi|sdd|sdp",
+    description: "OpenOffice.org 1.0 Presentation",
+};
+pub const ORG_OPENOFFICE_PRESENTATION_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.presentation-template",
+    conforms_to: "public.data|public.content|public.presentation",
+    tags: "",
+    filename_extension: "sti",
+    mime_type: "sti",
+    description: "OpenOffice.org 1.0 Presentation Template",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.presentation",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content|public.presentation",
+    tags: "",
+    filename_extension: "odp",
+    mime_type: "odp",
+    description: "Open Document presentation",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.presentation-template",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content|public.presentation",
+    tags: "",
+    filename_extension: "otp",
+    mime_type: "otp",
+    description: "Open Document presentation template",
+};
+pub const ORG_OPENOFFICE_SPREADSHEET: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.spreadsheet",
+    conforms_to: "public.data|public.spreadsheet",
+    tags: "",
+    filename_extension: "sxc|sdc",
+    mime_type: "sxc|sdc",
+    description: "OpenOffice.org 1.0 Spreadsheet",
+};
+pub const ORG_OPENOFFICE_SPREADSHEET_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.spreadsheet-template",
+    conforms_to: "public.data|public.spreadsheet",
+    tags: "",
+    filename_extension: "stc",
+    mime_type: "stc",
+    description: "OpenOffice.org 1.0 Spreadsheet Template",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.spreadsheet",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "ods",
+    mime_type: "ods",
+    description: "Open Document spreadsheet",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.spreadsheet-template",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "ots",
+    mime_type: "ots",
+    description: "Open Document spreadsheet template",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_CHART: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.chart",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "odc",
+    mime_type: "odc",
+    description: "Open Document chart",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_CHART_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.chart-template",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "otc",
+    mime_type: "otc",
+    description: "Open Document chart template",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.image",
+    conforms_to: "org.oasis-open.opendocument|public.image",
+    tags: "",
+    filename_extension: "odi",
+    mime_type: "odi",
+    description: "Open Document image",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.image-template",
+    conforms_to: "org.oasis-open.opendocument|public.image",
+    tags: "",
+    filename_extension: "oti",
+    mime_type: "oti",
+    description: "Open Document image template",
+};
+pub const ORG_OPENOFFICE_FORMULA: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.formula",
+    conforms_to: "public.data|public.content",
+    tags: "",
+    filename_extension: "sxm|smf",
+    mime_type: "sxm|smf",
+    description: "OpenOffice.org 1.0 Formula",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.formula",
+    conforms_to: "org.oasis-open.opendocument|public.content",
+    tags: "",
+    filename_extension: "odf",
+    mime_type: "odf",
+    description: "Open Document formula",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.formula-template",
+    conforms_to: "org.oasis-open.opendocument|public.content",
+    tags: "",
+    filename_extension: "otf",
+    mime_type: "otf",
+    description: "Open Document formula template",
+};
+pub const ORG_OPENOFFICE_TEXT_MASTER: UTInternalType = UTInternalType {
+    identifier: "org.openoffice.text-master",
+    conforms_to: "public.data|public.content",
+    tags: "",
+    filename_extension: "sxg",
+    mime_type: "sxg",
+    description: "OpenOffice.org 1.0 Master",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_MASTER: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.text-master",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "odm",
+    mime_type: "odm",
+    description: "Open Document text master",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_WEB: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.text-web",
+    conforms_to: "org.oasis-open.opendocument|public.composite-content",
+    tags: "",
+    filename_extension: "oth",
+    mime_type: "oth",
+    description: "Open Document HTML template",
+};
+pub const ORG_OASIS_OPEN_OPENDOCUMENT_DATABASE: UTInternalType = UTInternalType {
+    identifier: "org.oasis-open.opendocument.database",
+    conforms_to: "public.data|public.content|public.database",
+    tags: "",
+    filename_extension: "odb",
+    mime_type: "odb",
+    description: "Open Document database",
+};
+pub const COM_MICROSOFT_WORD_WORDML: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.word.wordml",
+    conforms_to: "public.xml|public.composite-content",
+    tags: "",
+    filename_extension: "xml",
+    mime_type: "xml",
+    description: "Microsoft Word 2003 XML document",
+};
+pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.wordprocessingml.document",
+    conforms_to: "org.openxmlformats.openxml|public.composite-content",
+    tags: "",
+    filename_extension: "docx",
+    mime_type: "docx",
+    description: "Office Open XML word processing document",
+};
+pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT_MACROENABLED: UTInternalType =
+    UTInternalType {
+        identifier: "org.openxmlformats.wordprocessingml.document.macroenabled",
+        conforms_to: "org.openxmlformats.openxml|public.composite-content|public.executable",
+        tags: "",
+        filename_extension: "docm",
+        mime_type: "docm",
+        description: "Office Open XML word processing document (macros enabled)",
+    };
+pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.wordprocessingml.template",
+    conforms_to: "org.openxmlformats.openxml|public.composite-content",
+    tags: "",
+    filename_extension: "dotx",
+    mime_type: "dotx",
+    description: "Office Open XML word processing template",
+};
+pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE_MACROENABLED: UTInternalType =
+    UTInternalType {
+        identifier: "org.openxmlformats.wordprocessingml.template.macroenabled",
+        conforms_to: "org.openxmlformats.openxml|public.composite-content|public.executable",
+        tags: "",
+        filename_extension: "dotm",
+        mime_type: "dotm",
+        description: "Office Open XML word processing template (macros enabled)",
+    };
+pub const ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.spreadsheetml.sheet",
+    conforms_to: "org.openxmlformats.openxml|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "xlsx",
+    mime_type: "xlsx",
+    description: "Office Open XML spreadsheet",
+};
+pub const ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET_MACROENABLED: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.spreadsheetml.sheet.macroenabled",
+    conforms_to:
+        "org.openxmlformats.openxml|public.composite-content|public.spreadsheet|public.executable",
+    tags: "",
+    filename_extension: "xlsm",
+    mime_type: "xlsm",
+    description: "Office Open XML spreadsheet (macros enabled)",
+};
+pub const COM_MICROSOFT_EXCEL_SHEET_BINARY_MACROENABLED: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.excel.sheet.binary.macroenabled",
+    conforms_to: "public.zip-archive|public.composite-content|public.spreadsheet|public.executable",
+    tags: "",
+    filename_extension: "xlsb",
+    mime_type: "xlsb",
+    description: "Microsoft Excel 2007 spreadsheet (macros enabled)",
+};
+pub const ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.spreadsheetml.template",
+    conforms_to: "org.openxmlformats.openxml|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "xltx",
+    mime_type: "xltx",
+    description: "Office Open XML spreadsheet template",
+};
+pub const ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE_MACROENABLED: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.spreadsheetml.template.macroenabled",
+    conforms_to:
+        "org.openxmlformats.openxml|public.composite-content|public.spreadsheet|public.executable",
+    tags: "",
+    filename_extension: "xltm",
+    mime_type: "xltm",
+    description: "Office Open XML spreadsheet template (macros enabled)",
+};
+pub const ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.presentationml.presentation",
+    conforms_to: "org.openxmlformats.openxml|public.presentation",
+    tags: "",
+    filename_extension: "pptx",
+    mime_type: "pptx",
+    description: "Office Open XML presentation",
+};
+pub const ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION_MACROENABLED: UTInternalType =
+    UTInternalType {
+        identifier: "org.openxmlformats.presentationml.presentation.macroenabled",
+        conforms_to: "org.openxmlformats.openxml|public.presentation|public.executable",
+        tags: "",
+        filename_extension: "pptm",
+        mime_type: "pptm",
+        description: "Office Open XML presentation (macros enabled)",
+    };
+pub const ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.presentationml.slideshow",
+    conforms_to: "org.openxmlformats.openxml|public.presentation",
+    tags: "",
+    filename_extension: "ppsx",
+    mime_type: "ppsx",
+    description: "Office Open XML slide show",
+};
+pub const ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW_MACROENABLED: UTInternalType =
+    UTInternalType {
+        identifier: "org.openxmlformats.presentationml.slideshow.macroenabled",
+        conforms_to: "org.openxmlformats.openxml|public.presentation|public.executable",
+        tags: "",
+        filename_extension: "ppsm",
+        mime_type: "ppsm",
+        description: "Office Open XML slide show (macros enabled)",
+    };
+pub const ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "org.openxmlformats.presentationml.template",
+    conforms_to: "org.openxmlformats.openxml|public.presentation",
+    tags: "",
+    filename_extension: "potx",
+    mime_type: "potx",
+    description: "Office Open XML presentation template",
+};
+pub const ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE_MACROENABLED: UTInternalType =
+    UTInternalType {
+        identifier: "org.openxmlformats.presentationml.template.macroenabled",
+        conforms_to: "org.openxmlformats.openxml|public.presentation|public.executable",
+        tags: "",
+        filename_extension: "potm",
+        mime_type: "potm",
+        description: "Office Open XML presentation template (macros enabled)",
+    };
+pub const COM_MICROSOFT_WORD_DOC: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.word.doc",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft Word 97-2004 document",
+};
+pub const COM_MICROSOFT_WORD_DOT: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.word.dot",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft Word 97-2004 template",
+};
+pub const COM_MICROSOFT_EXCEL_XLS: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.excel.xls",
+    conforms_to: "public.data|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft Excel 97-2004 worksheet",
+};
+pub const COM_MICROSOFT_EXCEL_XLT: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.excel.xlt",
+    conforms_to: "public.data|public.spreadsheet",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft Excel 97-2004 template",
+};
+pub const COM_MICROSOFT_EXCEL_XLW: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.excel.xlw",
+    conforms_to: "public.data|public.spreadsheet",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft Excel 97-2004 workspace",
+};
+pub const COM_MICROSOFT_EXCEL_XLA: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.excel.xla",
+    conforms_to: "public.data",
+    tags: "",
+    filename_extension: "xla",
+    mime_type: "xla",
+    description: "Microsoft Excel add-in",
+};
+pub const COM_MICROSOFT_POWERPOINT_PPT: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.powerpoint.ppt",
+    conforms_to: "public.data|public.presentation",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft PowerPoint 97-2004 presentation",
+};
+pub const COM_MICROSOFT_POWERPOINT_POT: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.powerpoint.pot",
+    conforms_to: "public.data|public.presentation",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft PowerPoint 97-2004 template",
+};
+pub const COM_MICROSOFT_POWERPOINT_PPS: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.powerpoint.pps",
+    conforms_to: "public.data|public.presentation",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft PowerPoint 97-2004 slide show",
+};
+pub const COM_APPLE_KEYNOTE_KEY: UTInternalType = UTInternalType {
+    identifier: "com.apple.keynote.key",
+    conforms_to: "com.apple.package|public.presentation",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Keynote document",
+};
+pub const COM_APPLE_KEYNOTE_KTH: UTInternalType = UTInternalType {
+    identifier: "com.apple.keynote.kth",
+    conforms_to: "com.apple.package|public.presentation",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Keynote theme",
+};
+pub const COM_APPLE_IWORK_KEYNOTE_KEY: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Keynote.key",
+    conforms_to: "com.apple.package|public.presentation|com.apple.keynote.key",
+    tags: "",
+    filename_extension: "key",
+    mime_type: "key",
+    description: "Keynote document",
+};
+pub const COM_APPLE_IWORK_KEYNOTE_KEY_TEF: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Keynote.key-tef",
+    conforms_to: "com.apple.package|public.presentation|com.apple.keynote.key",
+    tags: "",
+    filename_extension: "key-tef",
+    mime_type: "key-tef",
+    description: "Keynote document",
+};
+pub const COM_APPLE_IWORK_KEYNOTE_SFFKEY: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Keynote.sffkey",
+    conforms_to: "public.data|public.presentation",
+    tags: "",
+    filename_extension: "key",
+    mime_type: "key",
+    description: "Keynote document",
+};
+pub const COM_APPLE_IWORK_KEYNOTE_KTH: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Keynote.kth",
+    conforms_to: "com.apple.package|public.presentation|com.apple.keynote.kth",
+    tags: "",
+    filename_extension: "kth",
+    mime_type: "kth",
+    description: "Keynote theme",
+};
+pub const COM_APPLE_IWORK_KEYNOTE_SFFKTH: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Keynote.sffkth",
+    conforms_to: "public.data|public.presentation",
+    tags: "",
+    filename_extension: "kth",
+    mime_type: "kth",
+    description: "Keynote theme",
+};
+pub const COM_APPLE_IWORK_PAGES_PAGES: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Pages.pages",
+    conforms_to: "com.apple.package|public.composite-content",
+    tags: "",
+    filename_extension: "pages",
+    mime_type: "pages",
+    description: "Pages document",
+};
+pub const COM_APPLE_IWORK_PAGES_PAGES_TEF: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Pages.pages-tef",
+    conforms_to: "com.apple.package|public.composite-content",
+    tags: "",
+    filename_extension: "pages-tef",
+    mime_type: "pages-tef",
+    description: "Pages document",
+};
+pub const COM_APPLE_IWORK_PAGES_SFFPAGES: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Pages.sffpages",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "pages",
+    mime_type: "pages",
+    description: "Pages document",
+};
+pub const COM_APPLE_IWORK_PAGES_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Pages.template",
+    conforms_to: "com.apple.package|public.composite-content",
+    tags: "",
+    filename_extension: "template",
+    mime_type: "template",
+    description: "Pages template",
+};
+pub const COM_APPLE_IWORK_PAGES_SFFTEMPLATE: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Pages.sfftemplate",
+    conforms_to: "public.data|public.composite-content",
+    tags: "",
+    filename_extension: "template",
+    mime_type: "template",
+    description: "Pages template",
+};
+pub const COM_APPLE_IWORK_NUMBERS_NUMBERS: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Numbers.numbers",
+    conforms_to: "com.apple.package|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "numbers",
+    mime_type: "numbers",
+    description: "Numbers document",
+};
+pub const COM_APPLE_IWORK_NUMBERS_NUMBERS_TEF: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Numbers.numbers-tef",
+    conforms_to: "com.apple.package|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "numbers-tef",
+    mime_type: "numbers-tef",
+    description: "Numbers document",
+};
+pub const COM_APPLE_IWORK_NUMBERS_SFFNUMBERS: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Numbers.sffnumbers",
+    conforms_to: "public.data|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "numbers",
+    mime_type: "numbers",
+    description: "Numbers document",
+};
+pub const COM_APPLE_IWORK_NUMBERS_TEMPLATE: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Numbers.template",
+    conforms_to: "com.apple.package|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "nmbtemplate",
+    mime_type: "nmbtemplate",
+    description: "Numbers template",
+};
+pub const COM_APPLE_IWORK_NUMBERS_SFFTEMPLATE: UTInternalType = UTInternalType {
+    identifier: "com.apple.iWork.Numbers.sfftemplate",
+    conforms_to: "public.data|public.composite-content|public.spreadsheet",
+    tags: "",
+    filename_extension: "nmbtemplate",
+    mime_type: "nmbtemplate",
+    description: "Numbers template",
+};
+pub const COM_APPLE_GARAGEBAND_PROJECT: UTInternalType = UTInternalType {
+    identifier: "com.apple.garageband.project",
+    conforms_to: "com.apple.package|public.audiovisual-content",
+    tags: "",
+    filename_extension: "band|gbProj",
+    mime_type: "band|gbProj",
+    description: "GarageBand Project",
+};
+pub const COM_ADOBE_PHOTOSHOP_IMAGE: UTInternalType = UTInternalType {
+    identifier: "com.adobe.photoshop-image",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Adobe Photoshop document",
+};
+pub const COM_ADOBE_PHOTOSHOP_LARGE_IMAGE: UTInternalType = UTInternalType {
+    identifier: "com.adobe.photoshop-large-image",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Adobe Photoshop large document",
+};
+pub const COM_ADOBE_ILLUSTRATOR_AI_IMAGE: UTInternalType = UTInternalType {
+    identifier: "com.adobe.illustrator.ai-image",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Adobe Illustrator document",
+};
+pub const COM_TRUEVISION_TGA_IMAGE: UTInternalType = UTInternalType {
+    identifier: "com.truevision.tga-image",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "TGA image",
+};
+pub const COM_SGI_SGI_IMAGE: UTInternalType = UTInternalType {
+    identifier: "com.sgi.sgi-image",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "sgi",
+    mime_type: "sgi",
+    description: "Silicon Graphics image",
+};
+pub const COM_ILM_OPENEXR_IMAGE: UTInternalType = UTInternalType {
+    identifier: "com.ilm.openexr-image",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "exr",
+    mime_type: "exr",
+    description: "OpenEXR image",
+};
+pub const COM_KODAK_FLASHPIX_IMAGE: UTInternalType = UTInternalType {
+    identifier: "com.kodak.flashpix-image",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "fpx",
+    mime_type: "fpx",
+    description: "FlashPix image",
+};
+pub const PUBLIC_HEIF_STANDARD: UTInternalType = UTInternalType {
+    identifier: "public.heif-standard",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "HEIF Image",
+};
+pub const PUBLIC_HEIF: UTInternalType = UTInternalType {
+    identifier: "public.heif",
+    conforms_to: "public.heif-standard",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "",
+};
+pub const PUBLIC_HEIC: UTInternalType = UTInternalType {
+    identifier: "public.heic",
+    conforms_to: "public.heif-standard",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "",
+};
+pub const PUBLIC_AVCI: UTInternalType = UTInternalType {
+    identifier: "public.avci",
+    conforms_to: "public.heif-standard",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "",
+};
+pub const PUBLIC_HEIFS: UTInternalType = UTInternalType {
+    identifier: "public.heifs",
+    conforms_to: "public.heif-standard",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "HEIF Image Sequence",
+};
+pub const PUBLIC_HEICS: UTInternalType = UTInternalType {
+    identifier: "public.heics",
+    conforms_to: "public.heif-standard",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "HEIF Image Sequence",
+};
+pub const PUBLIC_AVCS: UTInternalType = UTInternalType {
+    identifier: "public.avcs",
+    conforms_to: "public.heif-standard",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "HEIF Image Sequence",
+};
+pub const COM_APPLE_DRAWING: UTInternalType = UTInternalType {
+    identifier: "com.apple.drawing",
+    conforms_to: "public.image",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Apple Drawing Format",
+};
+pub const COM_J2_JFX_FAX: UTInternalType = UTInternalType {
+    identifier: "com.j2.jfx-fax",
+    conforms_to: "public.fax",
+    tags: "",
+    filename_extension: "jfx",
+    mime_type: "jfx",
+    description: "J2 fax",
+};
+pub const COM_J2_EFX_FAX: UTInternalType = UTInternalType {
+    identifier: "com.j2.efx-fax",
+    conforms_to: "public.fax",
+    tags: "",
+    filename_extension: "efx",
+    mime_type: "efx",
+    description: "eFax fax",
+};
+pub const COM_DIGIDESIGN_SD2_AUDIO: UTInternalType = UTInternalType {
+    identifier: "com.digidesign.sd2-audio",
+    conforms_to: "public.audio",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Sound Designer II audio",
+};
+pub const COM_MICROSOFT_WAVEFORM_AUDIO: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.waveform-audio",
+    conforms_to: "public.audio",
+    tags: "",
+    filename_extension: "wav|wave|bwf",
+    mime_type: "wav|wave|bwf",
+    description: "Waveform audio",
+};
+pub const COM_MICROSOFT_ADVANCED_SYSTEMS_FORMAT: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.advanced-systems-format",
+    conforms_to: "public.audiovisual-content",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft Advanced Systems Format",
+};
+pub const COM_MICROSOFT_WINDOWS_MEDIA_WM: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.windows-media-wm",
+    conforms_to: "public.movie|com.microsoft.advanced-systems-format",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows media",
+};
+pub const COM_MICROSOFT_WINDOWS_MEDIA_WMV: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.windows-media-wmv",
+    conforms_to: "public.movie|com.microsoft.advanced-systems-format",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows media",
+};
+pub const COM_MICROSOFT_WINDOWS_MEDIA_WMP: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.windows-media-wmp",
+    conforms_to: "public.movie|com.microsoft.advanced-systems-format",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows media",
+};
+pub const COM_MICROSOFT_WINDOWS_MEDIA_WMA: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.windows-media-wma",
+    conforms_to: "public.audio|com.microsoft.advanced-systems-format",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows media audio",
+};
+pub const COM_MICROSOFT_ADVANCED_STREAM_REDIRECTOR: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.advanced-stream-redirector",
+    conforms_to: "public.audiovisual-content|public.xml",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Advanced Stream Redirector",
+};
+pub const COM_MICROSOFT_WINDOWS_MEDIA_WMX: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.windows-media-wmx",
+    conforms_to: "public.movie|com.microsoft.advanced-stream-redirector",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows media",
+};
+pub const COM_MICROSOFT_WINDOWS_MEDIA_WVX: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.windows-media-wvx",
+    conforms_to: "public.movie|com.microsoft.advanced-stream-redirector",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows media",
+};
+pub const COM_MICROSOFT_WINDOWS_MEDIA_WAX: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.windows-media-wax",
+    conforms_to: "public.audio|com.microsoft.advanced-stream-redirector",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Windows media audio",
+};
+pub const COM_REAL_REALMEDIA: UTInternalType = UTInternalType {
+    identifier: "com.real.realmedia",
+    conforms_to: "public.movie",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "RealMedia",
+};
+pub const COM_REAL_REALMEDIA_VBR: UTInternalType = UTInternalType {
+    identifier: "com.real.realmedia-vbr",
+    conforms_to: "public.movie",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "RealMedia Variable Bitrate",
+};
+pub const ORG_SMPTE_MXF: UTInternalType = UTInternalType {
+    identifier: "org.smpte.mxf",
+    conforms_to: "public.movie",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Material eXchange Format",
+};
+pub const COM_REAL_REALAUDIO: UTInternalType = UTInternalType {
+    identifier: "com.real.realaudio",
+    conforms_to: "public.audio",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "RealMedia Audio",
+};
+pub const COM_SOUNDBLASTER_SOUNDFONT: UTInternalType = UTInternalType {
+    identifier: "com.soundblaster.soundfont",
+    conforms_to: "public.audio",
+    tags: "",
+    filename_extension: "sf2",
+    mime_type: "sf2",
+    description: "SoundFont audio",
+};
+pub const ORG_XIPH_FLAC: UTInternalType = UTInternalType {
+    identifier: "org.xiph.flac",
+    conforms_to: "public.audio",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "FLAC audio",
+};
+pub const COM_AVID_OPEN_MEDIA_FRAMEWORK: UTInternalType = UTInternalType {
+    identifier: "com.avid.open-media-framework",
+    conforms_to: "public.audiovisual-content",
+    tags: "",
+    filename_extension: "omf",
+    mime_type: "omf",
+    description: "Open Media Framework interchange format",
+};
+pub const PUBLIC_MP4A_LOAS: UTInternalType = UTInternalType {
+    identifier: "public.mp4a-loas",
+    conforms_to: "public.audio",
+    tags: "",
+    filename_extension: "loas|latm",
+    mime_type: "loas|latm",
+    description: "Low Overhead MPEG-4 Audio Stream",
+};
+pub const PUBLIC_MP4A_LATM: UTInternalType = UTInternalType {
+    identifier: "public.mp4a-latm",
+    conforms_to: "public.audio",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Low-overhead MPEG-4 Audio Transport Multiplex",
+};
+pub const COM_ALLUME_STUFFIT_ARCHIVE: UTInternalType = UTInternalType {
+    identifier: "com.allume.stuffit-archive",
+    conforms_to: "public.data|public.archive",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "StuffIt archive family",
+};
+pub const COM_STUFFIT_ARCHIVE_SITX: UTInternalType = UTInternalType {
+    identifier: "com.stuffit.archive.sitx",
+    conforms_to: "com.allume.stuffit-archive",
+    tags: "",
+    filename_extension: "sitx",
+    mime_type: "sitx",
+    description: "StuffIt X archive",
+};
+pub const COM_STUFFIT_ARCHIVE_SIDX: UTInternalType = UTInternalType {
+    identifier: "com.stuffit.archive.sidx",
+    conforms_to: "com.allume.stuffit-archive",
+    tags: "",
+    filename_extension: "sidx",
+    mime_type: "sidx",
+    description: "StuffIt X index",
+};
+pub const COM_STUFFIT_ARCHIVE_SIT: UTInternalType = UTInternalType {
+    identifier: "com.stuffit.archive.sit",
+    conforms_to: "com.allume.stuffit-archive",
+    tags: "",
+    filename_extension: "sit|sea",
+    mime_type: "sit|sea",
+    description: "StuffIt archive",
+};
+pub const COM_ADOBE_FLASH_VIDEO: UTInternalType = UTInternalType {
+    identifier: "com.adobe.flash.video",
+    conforms_to: "public.movie",
+    tags: "",
+    filename_extension: "flv|f4v|f4p|f4a|f4b",
+    mime_type: "flv|f4v|f4p|f4a|f4b",
+    description: "Flash video",
+};
+pub const ORG_KHRONOS_COLLADA_DIGITAL_ASSET_EXCHANGE: UTInternalType = UTInternalType {
+    identifier: "org.khronos.collada.digital-asset-exchange",
+    conforms_to: "public.xml|public.audiovisual-content|public.3d-content",
+    tags: "",
+    filename_extension: "dae",
+    mime_type: "dae",
+    description: "Digital Asset Exchange (DAE)",
+};
+pub const COM_APPLE_IMOVIELIBRARY: UTInternalType = UTInternalType {
+    identifier: "com.apple.iMovieLibrary",
+    conforms_to: "com.apple.package",
+    tags: "",
+    filename_extension: "imovielibrary",
+    mime_type: "imovielibrary",
+    description: "iMovie Library",
+};
+pub const COM_APPLE_IMOVIETHEATER: UTInternalType = UTInternalType {
+    identifier: "com.apple.iMovieTheater",
+    conforms_to: "com.apple.package",
+    tags: "",
+    filename_extension: "theater",
+    mime_type: "theater",
+    description: "iMovie Theater",
+};
+pub const ORG_7_ZIP_7_ZIP_ARCHIVE: UTInternalType = UTInternalType {
+    identifier: "org.7-zip.7-zip-archive",
+    conforms_to: "public.data|public.archive",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "7-Zip archive",
+};
+pub const ORG_TUKAANI_XZ_ARCHIVE: UTInternalType = UTInternalType {
+    identifier: "org.tukaani.xz-archive",
+    conforms_to: "public.data|public.archive",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "xz compressed archive",
+};
+pub const ORG_TUKAANI_TAR_XZ_ARCHIVE: UTInternalType = UTInternalType {
+    identifier: "org.tukaani.tar-xz-archive",
+    conforms_to: "public.data|public.archive",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "xz compressed tar archive",
+};
+pub const COM_MICROSOFT_CAB: UTInternalType = UTInternalType {
+    identifier: "com.microsoft.cab",
+    conforms_to: "public.data|public.archive",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Microsoft Cabinet archive",
+};
+pub const PUBLIC_HAPTICS_CONTENT: UTInternalType = UTInternalType {
+    identifier: "public.haptics-content",
+    conforms_to: "",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Haptics content",
+};
+pub const COM_APPLE_HAPTICS_AHAP: UTInternalType = UTInternalType {
+    identifier: "com.apple.haptics.ahap",
+    conforms_to: "public.haptics-content|public.json",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Apple Haptics Audio Pattern",
+};
+pub const COM_APPLE_COREML_MODEL: UTInternalType = UTInternalType {
+    identifier: "com.apple.coreml.model",
+    conforms_to: "public.data",
+    tags: "",
+    filename_extension: "mlmodel|mlkitmodel",
+    mime_type: "mlmodel|mlkitmodel",
+    description: "Core ML Machine Learning Model",
+};
+pub const COM_APPLE_COREML_MLPACKAGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.coreml.mlpackage",
+    conforms_to: "com.apple.package",
+    tags: "",
+    filename_extension: "mlpackage",
+    mime_type: "mlpackage",
+    description: "Core ML Machine Learning Model Package",
+};
+pub const COM_APPLE_GROUPACTIVITIES_ACTIVITY: UTInternalType = UTInternalType {
+    identifier: "com.apple.groupactivities.activity",
+    conforms_to: "public.data",
+    tags: "",
+    filename_extension: "groupactivity",
+    mime_type: "groupactivity",
+    description: "Group Activity",
+};
+pub const COM_APPLE_ICON_DECORATION: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration",
+    conforms_to: "",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration",
+};
+pub const COM_APPLE_ICON_DECORATION_POSITION: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration-position",
+    conforms_to: "",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Position",
+};
+pub const COM_APPLE_ICON_DECORATION_POSITION_CENTER: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration-position.center",
+    conforms_to: "com.apple.icon-decoration-position",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Position Center",
+};
+pub const COM_APPLE_ICON_DECORATION_POSITION_LEADING_BOTTOM: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration-position.leading-bottom",
+    conforms_to: "com.apple.icon-decoration-position",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Position Leading Bottom",
+};
+pub const COM_APPLE_ICON_DECORATION_POSITION_TRAILING_BOTTOM: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration-position.trailing-bottom",
+    conforms_to: "com.apple.icon-decoration-position",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Position Trailing Bottom",
+};
+pub const COM_APPLE_ICON_DECORATION_POSITION_OVERLAY: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration-position.overlay",
+    conforms_to: "com.apple.icon-decoration-position",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Position Overlay",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge",
+    conforms_to: "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_EMBOSS: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.emboss",
+    conforms_to: "com.apple.icon-decoration-position.center|com.apple.icon-decoration",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Emboss",
+};
+pub const COM_APPLE_ICON_DECORATION_SYSTEM: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.system",
+    conforms_to: "com.apple.icon-decoration",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration System",
+};
+pub const COM_APPLE_ICON_DECORATION_SYSTEM_UNSUPPORTED: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.system.unsupported",
+    conforms_to: "com.apple.icon-decoration.system",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Unsupported",
+};
+pub const COM_APPLE_ICON_DECORATION_SYSTEM_CAUTION_ALERT: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.system.caution-alert",
+    conforms_to: "com.apple.icon-decoration.system",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Alert Caution",
+};
+pub const COM_APPLE_ICON_DECORATION_SYSTEM_ALIAS: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.system.alias",
+    conforms_to: "com.apple.icon-decoration.system",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Alias",
+};
+pub const COM_APPLE_ICON_DECORATION_SYSTEM_NEW_FOLDER: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.system.new-folder",
+    conforms_to: "com.apple.icon-decoration.system",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration New Folder",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_LOCKED: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.locked",
+    conforms_to:
+        "com.apple.icon-decoration-position.leading-bottom|com.apple.icon-decoration.system",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Locked Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_CHECKMARK: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.checkmark",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Checkmark Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_COMMENTS: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.comments",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Comments Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_DROP_FOLDER: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.drop-folder",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Drop Folder Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_HEART: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.heart",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Heart Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_IN_REVIEW: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.in-review",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration In Review Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_COLLABORATOR: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.locked-by-collaborator",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Locked By Collaborator Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_USER: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.locked-by-user",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Locked By User Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_PINNED: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.pinned",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Pinned Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_PRIVATE_FOLDER: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.private-folder",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Private Folder Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_SYNCING: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.syncing",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Syncing Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_TRENDING: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.trending",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Trending Badge",
+};
+pub const COM_APPLE_ICON_DECORATION_BADGE_WARNING: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-decoration.badge.warning",
+    conforms_to:
+        "com.apple.icon-decoration-position.trailing-bottom|com.apple.icon-decoration.badge",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Icon Decoration Warning Badge",
+};
+pub const COM_APPLE_DOCUMENT_TYPE: UTInternalType = UTInternalType {
+    identifier: "com.apple.document-type",
+    conforms_to: "public.item",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Document Type",
+};
+pub const COM_APPLE_DOCUMENT_TYPE_DICTIONARY: UTInternalType = UTInternalType {
+    identifier: "com.apple.document-type.dictionary",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Dictionary",
+};
+pub const COM_APPLE_ACCOUNTS_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.accounts-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Accounts Icon",
+};
+pub const COM_APPLE_LEGACY_ACTIONS_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.actions-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Actions Icon",
+};
+pub const COM_APPLE_EVERYONE_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.everyone-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Everyone Icon",
+};
+pub const COM_APPLE_LEGACY_GENERAL_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.general-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "General Icon",
+};
+pub const COM_APPLE_LEGACY_SIDEBAR_PREFS_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.sidebar-prefs-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Sidebar Prefs Icon",
+};
+pub const COM_APPLE_LEGACY_TOOLBAR_ADVANCED_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.toolbar-advanced-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Toolbar Advanced Icon",
+};
+pub const COM_APPLE_LEGACY_TOOLBAR_INFO_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.toolbar-info-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Toolbar Info Icon",
+};
+pub const COM_APPLE_LEGACY_TOOLBAR_LABELS_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.toolbar-labels-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Toolbar Labels Icon",
+};
+pub const COM_APPLE_LEGACY_CLOCK_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.clock-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Clock Icon",
+};
+pub const COM_APPLE_LEGACY_SYNCHRONIZE: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.synchronize",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Synchronize",
+};
+pub const COM_APPLE_ICON_OVERLAY_NEW_FOLDER_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.new-folder-badge",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "New Folder Badge",
+};
+pub const COM_APPLE_LEGACY_FINDER_ICON: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.finder-icon",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Finder",
+};
+pub const COM_APPLE_UNKNOWN_OBJECT: UTInternalType = UTInternalType {
+    identifier: "com.apple.unknown-object",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Unknown Object",
+};
+pub const COM_APPLE_NOT_LOADED: UTInternalType = UTInternalType {
+    identifier: "com.apple.not-loaded",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Not Loaded",
+};
+pub const COM_APPLE_LEGACY_WINDOW: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.window",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Window",
+};
+pub const COM_APPLE_LEGACY_QUESTION_MARK: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.question-mark",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Question Mark",
+};
+pub const COM_APPLE_LEGACY_EJECT_MEDIA: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.eject-media",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Eject Media",
+};
+pub const COM_APPLE_LEGACY_BURN: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.burn",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Burn",
+};
+pub const COM_APPLE_LEGACY_CUSTOMIZE_TOOLBAR: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.customize-toolbar",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Customize Toolbar",
+};
+pub const COM_APPLE_LEGACY_DELETE_TOOLBAR: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.delete-toolbar",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Delete Toolbar",
+};
+pub const COM_APPLE_LEGACY_RIGHT_CONTAINER_ARROW: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.right-container-arrow",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Right Container Arrow",
+};
+pub const COM_APPLE_ICON_OVERLAY_DROP_FOLDER_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.drop-folder-badge",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Drop Folder Badge",
+};
+pub const COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.private-folder-badge",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Private Folder Badge",
+};
+pub const COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.private-folder",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Private Folder",
+};
+pub const COM_APPLE_LEGACY_OPEN_FOLDER: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.open-folder",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Open Folder",
+};
+pub const COM_APPLE_LEGACY_FAVORITE_ITEMS: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.favorite-items",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Favorite Items",
+};
+pub const COM_APPLE_LEGACY_LOCKED: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.locked",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Locked",
+};
+pub const COM_APPLE_LEGACY_UNLOCKED: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.unlocked",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Unlocked",
+};
+pub const COM_APPLE_LEGACY_NO_WRITE: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.no-write",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "No Write",
+};
+pub const COM_APPLE_LEGACY_KEEP_ARRANGED: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.keep-arranged",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Keep Arranged",
+};
+pub const COM_APPLE_LEGACY_GRID: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.grid",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Grid",
+};
+pub const COM_APPLE_LEGACY_CONNECT_TO: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.connect-to",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Connect To",
+};
+pub const COM_APPLE_LEGACY_BACKWARD_ARROW: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.backward-arrow",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Backward Arrow",
+};
+pub const COM_APPLE_LEGACY_FORWARD_ARROW: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.forward-arrow",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Forward Arrow",
+};
+pub const COM_APPLE_ICON_OVERLAY_LOCKED_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.locked-badge",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Locked Badge",
+};
+pub const COM_APPLE_ICON_OVERLAY_ALIAS_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.alias-badge",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Alias Badge",
+};
+pub const COM_APPLE_ICON_OVERLAY_ALERT_CAUTION_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.alert-caution-badge",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Alert Caution Badge",
+};
+pub const COM_APPLE_ICON_OVERLAY_UNSUPPORTED_BADGE: UTInternalType = UTInternalType {
+    identifier: "com.apple.icon-overlay.unsupported-badge",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Unsupported Badge",
+};
+pub const COM_APPLE_LEGACY_MAGNIFYING_GLASS: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.magnifying-glass",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Magnifying Glass",
+};
+pub const COM_APPLE_LEGACY_ERASING: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.erasing",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Erasing",
+};
+pub const COM_APPLE_LEGACY_MULTIPLE_ITEMS: UTInternalType = UTInternalType {
+    identifier: "com.apple.legacy.multiple-items",
+    conforms_to: "com.apple.document-type",
+    tags: "",
+    filename_extension: "",
+    mime_type: "",
+    description: "Multiple Items",
+};
+pub const ALL_TYPES: [UTInternalType; 873] = [
     PUBLIC_ITEM,
     PUBLIC_DATA,
     PUBLIC_DIRECTORY,
@@ -6010,4 +7678,568 @@ pub const ALL_TYPES: [UTInternalType; 667] = [
     COM_APPLE_STRUCTURED_TEXT_TELEPHONE_NUMBER,
     COM_APPLE_STRUCTURED_TEXT_TRANSIT_INFORMATION,
     COM_APPLE_ACTIVE_WEBPAGE,
+    COM_ADOBE_PDF,
+    COM_ADOBE_EDN,
+    COM_ADOBE_ETD,
+    COM_ADOBE_XFDF,
+    COM_ADOBE_FDF,
+    COM_ADOBE_POSTSCRIPT,
+    COM_ADOBE_ENCAPSULATED_POSTSCRIPT,
+    COM_COMPUSERVE_GIF,
+    COM_MICROSOFT_BMP,
+    COM_MICROSOFT_ICO,
+    ORG_WEBMPROJECT_WEBP,
+    ORG_WEBMPROJECT_WEBM,
+    PUBLIC_OFD,
+    ORG_OPENOFFICE_TEXT,
+    ORG_OPENOFFICE_TEXT_TEMPLATE,
+    ORG_OASIS_OPEN_OPENDOCUMENT_TEXT,
+    ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_TEMPLATE,
+    ORG_OPENOFFICE_GRAPHICS,
+    ORG_OPENOFFICE_GRAPHICS_TEMPLATE,
+    ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS,
+    ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS_TEMPLATE,
+    ORG_OPENOFFICE_PRESENTATION,
+    ORG_OPENOFFICE_PRESENTATION_TEMPLATE,
+    ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION,
+    ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION_TEMPLATE,
+    ORG_OPENOFFICE_SPREADSHEET,
+    ORG_OPENOFFICE_SPREADSHEET_TEMPLATE,
+    ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET,
+    ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET_TEMPLATE,
+    ORG_OASIS_OPEN_OPENDOCUMENT_CHART,
+    ORG_OASIS_OPEN_OPENDOCUMENT_CHART_TEMPLATE,
+    ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE,
+    ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE_TEMPLATE,
+    ORG_OPENOFFICE_FORMULA,
+    ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA,
+    ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA_TEMPLATE,
+    ORG_OPENOFFICE_TEXT_MASTER,
+    ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_MASTER,
+    ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_WEB,
+    ORG_OASIS_OPEN_OPENDOCUMENT_DATABASE,
+    COM_MICROSOFT_WORD_WORDML,
+    ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT,
+    ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT_MACROENABLED,
+    ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE,
+    ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE_MACROENABLED,
+    ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET,
+    ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET_MACROENABLED,
+    COM_MICROSOFT_EXCEL_SHEET_BINARY_MACROENABLED,
+    ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE,
+    ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE_MACROENABLED,
+    ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION,
+    ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION_MACROENABLED,
+    ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW,
+    ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW_MACROENABLED,
+    ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE,
+    ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE_MACROENABLED,
+    COM_MICROSOFT_WORD_DOC,
+    COM_MICROSOFT_WORD_DOT,
+    COM_MICROSOFT_EXCEL_XLS,
+    COM_MICROSOFT_EXCEL_XLT,
+    COM_MICROSOFT_EXCEL_XLW,
+    COM_MICROSOFT_EXCEL_XLA,
+    COM_MICROSOFT_POWERPOINT_PPT,
+    COM_MICROSOFT_POWERPOINT_POT,
+    COM_MICROSOFT_POWERPOINT_PPS,
+    COM_APPLE_KEYNOTE_KEY,
+    COM_APPLE_KEYNOTE_KTH,
+    COM_APPLE_IWORK_KEYNOTE_KEY,
+    COM_APPLE_IWORK_KEYNOTE_KEY_TEF,
+    COM_APPLE_IWORK_KEYNOTE_SFFKEY,
+    COM_APPLE_IWORK_KEYNOTE_KTH,
+    COM_APPLE_IWORK_KEYNOTE_SFFKTH,
+    COM_APPLE_IWORK_PAGES_PAGES,
+    COM_APPLE_IWORK_PAGES_PAGES_TEF,
+    COM_APPLE_IWORK_PAGES_SFFPAGES,
+    COM_APPLE_IWORK_PAGES_TEMPLATE,
+    COM_APPLE_IWORK_PAGES_SFFTEMPLATE,
+    COM_APPLE_IWORK_NUMBERS_NUMBERS,
+    COM_APPLE_IWORK_NUMBERS_NUMBERS_TEF,
+    COM_APPLE_IWORK_NUMBERS_SFFNUMBERS,
+    COM_APPLE_IWORK_NUMBERS_TEMPLATE,
+    COM_APPLE_IWORK_NUMBERS_SFFTEMPLATE,
+    COM_APPLE_GARAGEBAND_PROJECT,
+    COM_ADOBE_PHOTOSHOP_IMAGE,
+    COM_ADOBE_PHOTOSHOP_LARGE_IMAGE,
+    COM_ADOBE_ILLUSTRATOR_AI_IMAGE,
+    COM_TRUEVISION_TGA_IMAGE,
+    COM_SGI_SGI_IMAGE,
+    COM_ILM_OPENEXR_IMAGE,
+    COM_KODAK_FLASHPIX_IMAGE,
+    PUBLIC_HEIF_STANDARD,
+    PUBLIC_HEIF,
+    PUBLIC_HEIC,
+    PUBLIC_AVCI,
+    PUBLIC_HEIFS,
+    PUBLIC_HEICS,
+    PUBLIC_AVCS,
+    COM_APPLE_DRAWING,
+    COM_J2_JFX_FAX,
+    COM_J2_EFX_FAX,
+    COM_DIGIDESIGN_SD2_AUDIO,
+    COM_MICROSOFT_WAVEFORM_AUDIO,
+    COM_MICROSOFT_ADVANCED_SYSTEMS_FORMAT,
+    COM_MICROSOFT_WINDOWS_MEDIA_WM,
+    COM_MICROSOFT_WINDOWS_MEDIA_WMV,
+    COM_MICROSOFT_WINDOWS_MEDIA_WMP,
+    COM_MICROSOFT_WINDOWS_MEDIA_WMA,
+    COM_MICROSOFT_ADVANCED_STREAM_REDIRECTOR,
+    COM_MICROSOFT_WINDOWS_MEDIA_WMX,
+    COM_MICROSOFT_WINDOWS_MEDIA_WVX,
+    COM_MICROSOFT_WINDOWS_MEDIA_WAX,
+    COM_REAL_REALMEDIA,
+    COM_REAL_REALMEDIA_VBR,
+    ORG_SMPTE_MXF,
+    COM_REAL_REALAUDIO,
+    COM_SOUNDBLASTER_SOUNDFONT,
+    ORG_XIPH_FLAC,
+    COM_AVID_OPEN_MEDIA_FRAMEWORK,
+    PUBLIC_MP4A_LOAS,
+    PUBLIC_MP4A_LATM,
+    COM_ALLUME_STUFFIT_ARCHIVE,
+    COM_STUFFIT_ARCHIVE_SITX,
+    COM_STUFFIT_ARCHIVE_SIDX,
+    COM_STUFFIT_ARCHIVE_SIT,
+    COM_ADOBE_FLASH_VIDEO,
+    ORG_KHRONOS_COLLADA_DIGITAL_ASSET_EXCHANGE,
+    COM_APPLE_IMOVIELIBRARY,
+    COM_APPLE_IMOVIETHEATER,
+    ORG_7_ZIP_7_ZIP_ARCHIVE,
+    ORG_TUKAANI_XZ_ARCHIVE,
+    ORG_TUKAANI_TAR_XZ_ARCHIVE,
+    COM_MICROSOFT_CAB,
+    PUBLIC_HAPTICS_CONTENT,
+    COM_APPLE_HAPTICS_AHAP,
+    COM_APPLE_COREML_MODEL,
+    COM_APPLE_COREML_MLPACKAGE,
+    COM_APPLE_GROUPACTIVITIES_ACTIVITY,
+    COM_APPLE_ICON_DECORATION,
+    COM_APPLE_ICON_DECORATION_POSITION,
+    COM_APPLE_ICON_DECORATION_POSITION_CENTER,
+    COM_APPLE_ICON_DECORATION_POSITION_LEADING_BOTTOM,
+    COM_APPLE_ICON_DECORATION_POSITION_TRAILING_BOTTOM,
+    COM_APPLE_ICON_DECORATION_POSITION_OVERLAY,
+    COM_APPLE_ICON_DECORATION_BADGE,
+    COM_APPLE_ICON_DECORATION_EMBOSS,
+    COM_APPLE_ICON_DECORATION_SYSTEM,
+    COM_APPLE_ICON_DECORATION_SYSTEM_UNSUPPORTED,
+    COM_APPLE_ICON_DECORATION_SYSTEM_CAUTION_ALERT,
+    COM_APPLE_ICON_DECORATION_SYSTEM_ALIAS,
+    COM_APPLE_ICON_DECORATION_SYSTEM_NEW_FOLDER,
+    COM_APPLE_ICON_DECORATION_BADGE_LOCKED,
+    COM_APPLE_ICON_DECORATION_BADGE_CHECKMARK,
+    COM_APPLE_ICON_DECORATION_BADGE_COMMENTS,
+    COM_APPLE_ICON_DECORATION_BADGE_DROP_FOLDER,
+    COM_APPLE_ICON_DECORATION_BADGE_HEART,
+    COM_APPLE_ICON_DECORATION_BADGE_IN_REVIEW,
+    COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_COLLABORATOR,
+    COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_USER,
+    COM_APPLE_ICON_DECORATION_BADGE_PINNED,
+    COM_APPLE_ICON_DECORATION_BADGE_PRIVATE_FOLDER,
+    COM_APPLE_ICON_DECORATION_BADGE_SYNCING,
+    COM_APPLE_ICON_DECORATION_BADGE_TRENDING,
+    COM_APPLE_ICON_DECORATION_BADGE_WARNING,
+    COM_APPLE_DOCUMENT_TYPE,
+    COM_APPLE_DOCUMENT_TYPE_DICTIONARY,
+    COM_APPLE_ACCOUNTS_ICON,
+    COM_APPLE_LEGACY_ACTIONS_ICON,
+    COM_APPLE_EVERYONE_ICON,
+    COM_APPLE_LEGACY_GENERAL_ICON,
+    COM_APPLE_LEGACY_SIDEBAR_PREFS_ICON,
+    COM_APPLE_LEGACY_TOOLBAR_ADVANCED_ICON,
+    COM_APPLE_LEGACY_TOOLBAR_INFO_ICON,
+    COM_APPLE_LEGACY_TOOLBAR_LABELS_ICON,
+    COM_APPLE_LEGACY_CLOCK_ICON,
+    COM_APPLE_LEGACY_SYNCHRONIZE,
+    COM_APPLE_ICON_OVERLAY_NEW_FOLDER_BADGE,
+    COM_APPLE_LEGACY_FINDER_ICON,
+    COM_APPLE_UNKNOWN_OBJECT,
+    COM_APPLE_NOT_LOADED,
+    COM_APPLE_LEGACY_WINDOW,
+    COM_APPLE_LEGACY_QUESTION_MARK,
+    COM_APPLE_LEGACY_EJECT_MEDIA,
+    COM_APPLE_LEGACY_BURN,
+    COM_APPLE_LEGACY_CUSTOMIZE_TOOLBAR,
+    COM_APPLE_LEGACY_DELETE_TOOLBAR,
+    COM_APPLE_LEGACY_RIGHT_CONTAINER_ARROW,
+    COM_APPLE_ICON_OVERLAY_DROP_FOLDER_BADGE,
+    COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER_BADGE,
+    COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER,
+    COM_APPLE_LEGACY_OPEN_FOLDER,
+    COM_APPLE_LEGACY_FAVORITE_ITEMS,
+    COM_APPLE_LEGACY_LOCKED,
+    COM_APPLE_LEGACY_UNLOCKED,
+    COM_APPLE_LEGACY_NO_WRITE,
+    COM_APPLE_LEGACY_KEEP_ARRANGED,
+    COM_APPLE_LEGACY_GRID,
+    COM_APPLE_LEGACY_CONNECT_TO,
+    COM_APPLE_LEGACY_BACKWARD_ARROW,
+    COM_APPLE_LEGACY_FORWARD_ARROW,
+    COM_APPLE_ICON_OVERLAY_LOCKED_BADGE,
+    COM_APPLE_ICON_OVERLAY_ALIAS_BADGE,
+    COM_APPLE_ICON_OVERLAY_ALERT_CAUTION_BADGE,
+    COM_APPLE_ICON_OVERLAY_UNSUPPORTED_BADGE,
+    COM_APPLE_LEGACY_MAGNIFYING_GLASS,
+    COM_APPLE_LEGACY_ERASING,
+    COM_APPLE_LEGACY_MULTIPLE_ITEMS,
+];
+pub const MIME_TYPE_TO_EXTENSION_VEC: [MIMETypeAndExtension; 89] = [
+    MIMETypeAndExtension {
+        mime_type: "application/x-filemaker",
+        extensions: "fp6|fp5|fp4|fp3|fp2|fp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "chemical/x-xyz",
+        extensions: "xyz",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-cpio",
+        extensions: "cpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/aiff",
+        extensions: "aiff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/msexcel",
+        extensions: "xls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/postscript",
+        extensions: "ps|eps|ai",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/sgml",
+        extensions: "sgml|sgm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/richtext",
+        extensions: "rtx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/x-sgi-movie",
+        extensions: "movie",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/vnd.wap.wbmp",
+        extensions: "wbmp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff-me",
+        extensions: "me",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wbxml",
+        extensions: "wbxml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-sv4crc",
+        extensions: "sv4crc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xfdf",
+        extensions: "xfdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-bitmap",
+        extensions: "pbm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-shockwave-flash",
+        extensions: "swf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-pcx",
+        extensions: "pcx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-chess-pgn",
+        extensions: "pgn",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-rgb",
+        extensions: "rgb",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/mac-compactpro",
+        extensions: "cpt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/qif",
+        extensions: "qif",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-aiff",
+        extensions: "aiff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-sv4cpio",
+        extensions: "sv4cpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.ms-powerpoint",
+        extensions: "ppt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-xwindowdump",
+        extensions: "xwd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/ief",
+        extensions: "ief",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/mpeg",
+        extensions: "mp3|mpga|mp2",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-latex",
+        extensions: "latex",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-ustar",
+        extensions: "ustar",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.mif",
+        extensions: "mif",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-olympus-or",
+        extensions: "orf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/plain",
+        extensions: "txt|asc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/html",
+        extensions: "html|jhtml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/iges",
+        extensions: "igs|iges",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/x-setext",
+        extensions: "etx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/octet-stream",
+        extensions: "dms|lha|lzh|class|so|iso|fla",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-shar",
+        extensions: "shar",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-msdownload",
+        extensions: "dll",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-futuresplash",
+        extensions: "spl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff",
+        extensions: "t|tr|roff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-tex",
+        extensions: "tex",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff-man",
+        extensions: "man",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-pn-realaudio-plugin",
+        extensions: "rpm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/css",
+        extensions: "css",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.ms-excel",
+        extensions: "xls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/oda",
+        extensions: "oda",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-macpaint",
+        extensions: "pnt|pntg|mac",
+    },
+    MIMETypeAndExtension {
+        mime_type: "x-conference/x-cooltalk",
+        extensions: "ice",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/vnd.mpegurl",
+        extensions: "mxu",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-gzip",
+        extensions: "gz|tgz|cpgz",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-koan",
+        extensions: "skp|skd|skt|skm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "chemical/x-pdb",
+        extensions: "pdb",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-bcpio",
+        extensions: "bcpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff-ms",
+        extensions: "ms",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-m4p",
+        extensions: "m4p",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-texinfo",
+        extensions: "texinfo|texi",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-diskcopy",
+        extensions: "dmg",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wmlc",
+        extensions: "wmlc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-cmu-raster",
+        extensions: "ras",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-csh",
+        extensions: "csh",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wml",
+        extensions: "wml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-hdf",
+        extensions: "hdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/mesh",
+        extensions: "msh|mesh|silo",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-tcl",
+        extensions: "tcl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/mp4",
+        extensions: "mp4|mpg4",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-targa",
+        extensions: "targa",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-pixmap",
+        extensions: "ppm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-graymap",
+        extensions: "pgm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/msword",
+        extensions: "doc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-sh",
+        extensions: "sh",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-anymap",
+        extensions: "pnm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-wais-source",
+        extensions: "src",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xdp+xml",
+        extensions: "xdp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/vrml",
+        extensions: "wrl|vrml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-xpixmap",
+        extensions: "xpm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-director",
+        extensions: "dcr|dir|dxr",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/mspowerpoint",
+        extensions: "ppt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-bittorrent",
+        extensions: "torrent",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-dvi",
+        extensions: "dvi",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wmlscriptc",
+        extensions: "wmlsc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wmlscript",
+        extensions: "wmls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-netcdf",
+        extensions: "nc|cdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-cdlink",
+        extensions: "vcd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/xml",
+        extensions: "xml|xsl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-ms-wmd",
+        extensions: "wmd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.fdf",
+        extensions: "fdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/xml",
+        extensions: "xml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/andrew-inset",
+        extensions: "ez",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xfd+xml",
+        extensions: "xfd",
+    },
 ];

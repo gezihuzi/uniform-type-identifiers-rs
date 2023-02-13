@@ -32,6 +32,11 @@ impl<'a> UTInternalType<'a> {
     }
 }
 
+pub struct MIMETypeAndExtension<'a> {
+    pub mime_type: &'a str,
+    pub extensions: &'a str,
+}
+
 #[derive(Debug)]
 pub struct Tag();
 
