@@ -1,17 +1,20 @@
 pub mod system_defined;
 
-use std::collections::HashSet;
-
+use serde::{Deserialize, Serialize};
 use system_defined::SYSTEM_TYPES;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 pub struct UTType<'a> {
     pub identifier: &'a str,
     pub conforms_to: &'a str,
     pub tags: &'a str,
-    pub filename_extension: &'a str,
-    pub mime_type: &'a str,
     pub description: &'a str,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Tags {
+    //     pub filename_extensions: Vec<&'a str>,
+    //     pub mime_types: Vec<&'a str>,
 }
 
 impl<'a> UTType<'a> {
@@ -19,52 +22,63 @@ impl<'a> UTType<'a> {
         identifier: &'a str,
         conforms_to: &'a str,
         tags: &'a str,
-        filename_extension: &'a str,
-        mime_type: &'a str,
         comments: &'a str,
     ) -> UTType<'a> {
         UTType {
             identifier,
             conforms_to,
             tags,
-            filename_extension,
-            mime_type,
             description: comments,
         }
     }
 
+    /// The string that represents the type.
+    pub fn identifier(&self) -> &str {
+        self.identifier
+    }
+
+    /// The preferred filename extension for the type.
     pub fn preferred_filename_extension(&self) -> Option<&str> {
-        let items: Vec<&str> = self
-            .filename_extension
-            .split("|")
-            .filter(|s| !s.is_empty())
-            .collect();
-        let first = items.first()?;
-        Some(*first)
+        // let tags = self.tags();
+        // let items = tags?.filename_extensions;
+        let first = "";
+        Some(first)
     }
 
+    /// The preferred MIME type for the type.
     pub fn preferred_mime_type(&self) -> Option<&str> {
-        let items: Vec<&str> = self
-            .mime_type
-            .split("|")
-            .filter(|s| !s.is_empty())
-            .collect();
-        let first = items.first()?;
-        Some(*first)
+        // let tags = self.tags();
+        // let items = tags?.mime_types;
+        let first = "";
+        Some(first)
     }
 
-    pub fn is_dynamic() -> bool {
-        false
+    /// The tag specification dictionary of the type.
+    pub fn tags(&self) -> Option<Tags> {
+        let result: Result<Option<Tags>, serde_json::Error> = serde_json::from_str(self.tags);
+        if let Ok(Some(it)) = result {
+            Some(it)
+        } else {
+            None
+        }
     }
 
+    /// A Boolean value that indicates whether the system declares the type.
     pub fn is_declared() -> bool {
         false
     }
 
+    /// A Boolean value that indicates whether the system generates the type.
+    pub fn is_dynamic() -> bool {
+        false
+    }
+
+    /// A Boolean value that indicates whether the type is in the public domain.
     pub fn is_public(&self) -> bool {
         self.identifier.starts_with("public.")
     }
 
+    /// The set of types the type directly or indirectly conforms to.
     pub fn super_types(&self) -> Vec<UTType> {
         self.conforms_to
             .split("|")
@@ -73,7 +87,7 @@ impl<'a> UTType<'a> {
             .collect()
     }
 
-    /// Returns a Boolean value that indicates whether a type conforms to the type. 
+    /// Returns a Boolean value that indicates whether a type conforms to the type.
     /// true if the type directly or indirectly conforms to type, or if it’s equal to type.
     pub fn conforms(&self, x: UTType) -> bool {
         let items: Vec<&str> = x.conforms_to.split("|").filter(|s| !s.is_empty()).collect();
@@ -95,8 +109,6 @@ impl<'a> From<&'a str> for UTType<'a> {
                 identifier: value,
                 conforms_to: "",
                 tags: "",
-                filename_extension: "",
-                mime_type: "",
                 description: "",
             },
         }
