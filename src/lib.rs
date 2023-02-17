@@ -1,7 +1,7 @@
 pub mod system_defined;
 
 use serde::{Deserialize, Serialize};
-use system_defined::SYSTEM_TYPES;
+use system_defined::{OTHER_TYPES, SYSTEM_TYPES};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 pub struct UTType<'a> {
@@ -102,15 +102,19 @@ pub struct MIMETypeAndExtension<'a> {
 
 impl<'a> From<&'a str> for UTType<'a> {
     fn from(value: &'a str) -> Self {
-        let option = SYSTEM_TYPES.iter().find(|it| it.identifier == value);
-        match option {
-            Some(it) => it.clone(),
-            None => UTType {
-                identifier: value,
-                conforms_to: "",
-                tags: "",
-                description: "",
-            },
+        if let Some(it) = SYSTEM_TYPES.iter().find(|it| it.identifier == value) {
+            return it.clone();
+        } else {
+            if let Some(it) = OTHER_TYPES.iter().find(|it| it.identifier == value) {
+                return it.clone();
+            } else {
+                return UTType {
+                    identifier: value,
+                    conforms_to: "",
+                    tags: "",
+                    description: "",
+                };
+            }
         }
     }
 }
