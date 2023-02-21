@@ -1,5 +1,7 @@
 pub mod system_defined;
 
+use std::vec;
+
 use serde::{Deserialize, Serialize};
 use system_defined::{OTHER_TYPES, SYSTEM_TYPES};
 
@@ -13,8 +15,10 @@ pub struct UTType<'a> {
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Tags {
-    //     pub filename_extensions: Vec<&'a str>,
-    //     pub mime_types: Vec<&'a str>,
+    #[serde(default, alias = "public.filename-extension")]
+    pub filename_extensions: Vec<String>,
+    #[serde(default, alias = "public.mime-type")]
+    pub mime_types: Vec<String>,
 }
 
 impl<'a> UTType<'a> {
@@ -38,19 +42,17 @@ impl<'a> UTType<'a> {
     }
 
     /// The preferred filename extension for the type.
-    pub fn preferred_filename_extension(&self) -> Option<&str> {
-        // let tags = self.tags();
-        // let items = tags?.filename_extensions;
-        let first = "";
-        Some(first)
+    pub fn preferred_filename_extension(&self) -> Option<String> {
+        let tags = self.tags()?;
+        let first = tags.filename_extensions.first()?;
+        Some(first.clone())
     }
 
     /// The preferred MIME type for the type.
-    pub fn preferred_mime_type(&self) -> Option<&str> {
-        // let tags = self.tags();
-        // let items = tags?.mime_types;
-        let first = "";
-        Some(first)
+    pub fn preferred_mime_type(&self) -> Option<String> {
+        let tags = self.tags()?;
+        let first = tags.mime_types.first()?;
+        Some(first.clone())
     }
 
     /// The tag specification dictionary of the type.
@@ -63,14 +65,25 @@ impl<'a> UTType<'a> {
         }
     }
 
+    pub fn conforms_to(&self) -> Vec<String> {
+        let result: Result<Option<Vec<String>>, serde_json::Error> =
+            serde_json::from_str(self.conforms_to);
+        if let Ok(Some(it)) = result {
+            it
+        } else {
+            vec![]
+        }
+    }
+
     /// A Boolean value that indicates whether the system declares the type.
-    pub fn is_declared() -> bool {
-        false
+    pub fn is_declared(&self) -> bool {
+        let items: Vec<&str> = SYSTEM_TYPES.iter().map(|f| f.identifier).collect();
+        items.contains(&self.identifier)
     }
 
     /// A Boolean value that indicates whether the system generates the type.
-    pub fn is_dynamic() -> bool {
-        false
+    pub fn is_dynamic(&self) -> bool {
+        !self.is_declared()
     }
 
     /// A Boolean value that indicates whether the type is in the public domain.
@@ -89,9 +102,19 @@ impl<'a> UTType<'a> {
 
     /// Returns a Boolean value that indicates whether a type conforms to the type.
     /// true if the type directly or indirectly conforms to type, or if it’s equal to type.
-    pub fn conforms(&self, x: UTType) -> bool {
+    pub fn conforms(&self, x: Self) -> bool {
         let items: Vec<&str> = x.conforms_to.split("|").filter(|s| !s.is_empty()).collect();
         items.contains(&self.identifier)
+    }
+
+    /// Returns a Boolean value that indicates whether a type is higher in a hierarchy than the type.
+    pub fn is_subtype(&self) -> bool {
+        todo!()
+    }
+
+    /// Returns a Boolean value that indicates whether a type is lower in a hierarchy than the type.
+    pub fn is_supertype(&self) -> bool {
+        todo!()
     }
 }
 
