@@ -3,7 +3,10 @@ pub mod system_defined;
 use std::vec;
 
 use serde::{Deserialize, Serialize};
-use system_defined::{OTHER_TYPES, SYSTEM_TYPES};
+use system_defined::{
+    OTHER_FILENAME_EXTENSION_MAP, OTHER_MIME_MAP, OTHER_TYPES_MAP, SYSTEM_FILENAME_EXTENSION_MAP,
+    SYSTEM_MIME_MAP, SYSTEM_TYPES_MAP,
+};
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
 pub struct UTType<'a> {
@@ -34,6 +37,57 @@ impl<'a> UTType<'a> {
             tags,
             description: comments,
         }
+    }
+}
+
+pub struct MIMETypeAndExtension<'a> {
+    pub mime_type: &'a str,
+    pub extensions: &'a str,
+}
+
+impl UTType<'_> {
+    pub fn from_identifier(value: &str) -> Option<Self> {
+        let item = SYSTEM_TYPES_MAP.get(value);
+        if let Some(it) = item {
+            Some(it.clone())
+        } else {
+            let item = OTHER_TYPES_MAP.get(value);
+            if let Some(it) = item {
+                Some(it.clone())
+            } else {
+                None
+            }
+        }
+    }
+
+    pub fn from_mime_type(value: &str) -> Option<Self> {
+        let item = SYSTEM_MIME_MAP.get(value);
+        let key = if let Some(it) = item {
+            it
+        } else {
+            let item = OTHER_MIME_MAP.get(value);
+            if let Some(it) = item {
+                it
+            } else {
+                return None;
+            }
+        };
+        Self::from_identifier(key)
+    }
+
+    pub fn from_filename_extension(value: &str) -> Option<Self> {
+        let item: Option<&&str> = SYSTEM_FILENAME_EXTENSION_MAP.get(value);
+        let key = if let Some(it) = item {
+            it
+        } else {
+            let item = OTHER_FILENAME_EXTENSION_MAP.get(value);
+            if let Some(it) = item {
+                it
+            } else {
+                return None;
+            }
+        };
+        Self::from_identifier(key)
     }
 
     /// The string that represents the type.
@@ -77,8 +131,8 @@ impl<'a> UTType<'a> {
 
     /// A Boolean value that indicates whether the system declares the type.
     pub fn is_declared(&self) -> bool {
-        let items: Vec<&str> = SYSTEM_TYPES.iter().map(|f| f.identifier).collect();
-        items.contains(&self.identifier)
+        let key = self.identifier;
+        SYSTEM_TYPES_MAP.contains_key(key)
     }
 
     /// A Boolean value that indicates whether the system generates the type.
@@ -93,51 +147,44 @@ impl<'a> UTType<'a> {
 
     /// The set of types the type directly or indirectly conforms to.
     pub fn super_types(&self) -> Vec<UTType> {
-        self.conforms_to
-            .split("|")
-            .filter(|s| !s.is_empty())
-            .map(|f| UTType::from(f.clone()))
-            .collect()
+        let item = self.clone();
+        super_types(item)
     }
 
     /// Returns a Boolean value that indicates whether a type conforms to the type.
     /// true if the type directly or indirectly conforms to type, or if it’s equal to type.
-    pub fn conforms(&self, x: Self) -> bool {
-        let items: Vec<&str> = x.conforms_to.split("|").filter(|s| !s.is_empty()).collect();
-        items.contains(&self.identifier)
+    pub fn is_conforms(&self, x: &Self) -> bool {
+        let super_types = self.super_types();
+        super_types.contains(x)
     }
 
     /// Returns a Boolean value that indicates whether a type is higher in a hierarchy than the type.
-    pub fn is_subtype(&self) -> bool {
-        todo!()
+    pub fn is_subtype(&self, x: &Self) -> bool {
+        let super_types = self.super_types();
+        super_types.contains(x)
     }
 
     /// Returns a Boolean value that indicates whether a type is lower in a hierarchy than the type.
-    pub fn is_supertype(&self) -> bool {
-        todo!()
+    pub fn is_supertype(&self, x: &Self) -> bool {
+        let super_types = x.super_types();
+        super_types.contains(self)
     }
 }
 
-pub struct MIMETypeAndExtension<'a> {
-    pub mime_type: &'a str,
-    pub extensions: &'a str,
-}
-
-impl<'a> From<&'a str> for UTType<'a> {
-    fn from(value: &'a str) -> Self {
-        if let Some(it) = SYSTEM_TYPES.iter().find(|it| it.identifier == value) {
-            return it.clone();
-        } else {
-            if let Some(it) = OTHER_TYPES.iter().find(|it| it.identifier == value) {
-                return it.clone();
-            } else {
-                return UTType {
-                    identifier: value,
-                    conforms_to: "",
-                    tags: "",
-                    description: "",
-                };
-            }
-        }
+fn super_types<'a>(x: UTType<'a>) -> Vec<UTType<'a>> {
+    let types = serde_json::from_str::<Vec<&str>>(x.conforms_to)
+        .unwrap_or_default()
+        .iter()
+        .filter(|it| !it.is_empty())
+        .filter_map(|it| UTType::from_identifier(it))
+        .collect::<Vec<_>>();
+    let mut values: Vec<UTType> = types.clone();
+    let mut i = 0;
+    while i < types.len() {
+        let item = types[i].clone();
+        let super_types = super_types(item);
+        values.extend(super_types);
+        i += 1;
     }
+    values
 }
