@@ -1,5 +1,6 @@
-use uniform_type_identifiers::system_defined::{
-    PUBLIC_DATA, PUBLIC_ITEM, PUBLIC_JSON, PUBLIC_TEXT, PUBLIC_XML,
+use uniform_type_identifiers::{
+    system_defined::{PUBLIC_DATA, PUBLIC_ITEM, PUBLIC_JSON, PUBLIC_TEXT, PUBLIC_XML},
+    UTType,
 };
 
 fn main() {
@@ -68,5 +69,18 @@ fn main() {
     println!(
         "Item is text subtype: {:}",
         PUBLIC_ITEM.is_subtype(&PUBLIC_TEXT)
+    );
+    println!("-----");
+    println!(
+        "Get type from identifier: {:?}",
+        UTType::from_identifier("public.json")
+    );
+    println!(
+        "Get type from extension: {:?}",
+        UTType::from_filename_extension("json")
+    );
+    println!(
+        "Get type from mime type: {:?}",
+        UTType::from_mime_type("application/json")
     );
 }
