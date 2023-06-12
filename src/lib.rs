@@ -1,6 +1,6 @@
 pub mod system_defined;
 
-use std::vec;
+use std::{fmt::Display, vec};
 
 use serde::{Deserialize, Serialize};
 use system_defined::{
@@ -14,6 +14,12 @@ pub struct UTType<'a> {
     pub conforms_to: &'a str,
     pub tags: &'a str,
     pub description: &'a str,
+}
+
+impl Display for UTType<'_> {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.identifier)
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
