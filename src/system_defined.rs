@@ -132,7 +132,7 @@ pub const PUBLIC_ALEMBIC: UTType = UTType {
 pub const PUBLIC_GEOMETRY_DEFINITION_FORMAT: UTType = UTType {
     identifier: "public.geometry-definition-format",
     conforms_to: r#"["public.3d-content", "public.text"]"#,
-    tags: r#"{"public.filename-extension": ["obj"]}"#,
+    tags: r#"{}"#,
     description: "Geometry Definition File Format",
 };
 pub const PUBLIC_STANDARD_TESSELATED_GEOMETRY_FORMAT: UTType = UTType {
@@ -150,7 +150,13 @@ pub const PUBLIC_POLYGON_FILE_FORMAT: UTType = UTType {
 pub const COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION: UTType = UTType {
     identifier: "com.pixar.universal-scene-description",
     conforms_to: r#"["public.3d-content", "public.data"]"#,
-    tags: r#"{"public.filename-extension": ["usd", "usda", "usdc"]}"#,
+    tags: r#"{"public.filename-extension": ["usd", "usdc"]}"#,
+    description: "Universal Scene Description",
+};
+pub const COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION_UTF8: UTType = UTType {
+    identifier: "com.pixar.universal-scene-description-utf8",
+    conforms_to: r#"["com.pixar.universal-scene-description", "public.utf8-plain-text"]"#,
+    tags: r#"{"public.filename-extension": ["usda"]}"#,
     description: "Universal Scene Description",
 };
 pub const COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION_MOBILE: UTType = UTType {
@@ -327,9 +333,15 @@ pub const COM_APPLE_PANICREPORT: UTType = UTType {
     tags: r#"{"public.filename-extension": ["panic"]}"#,
     description: "Panic Report",
 };
+pub const COM_APPLE_TRACE: UTType = UTType {
+    identifier: "com.apple.trace",
+    conforms_to: r#"["public.data"]"#,
+    tags: r#"{"public.filename-extension": ["atrc"]}"#,
+    description: "Apple Trace File",
+};
 pub const COM_APPLE_KTRACE: UTType = UTType {
     identifier: "com.apple.ktrace",
-    conforms_to: r#"["public.data", "public.log"]"#,
+    conforms_to: r#"["com.apple.trace"]"#,
     tags: r#"{"public.filename-extension": ["ktrace"]}"#,
     description: "Darwin kernel trace file",
 };
@@ -362,6 +374,12 @@ pub const COM_APPLE_DEVICE_MODEL_CODE: UTType = UTType {
     conforms_to: r#"["public.text"]"#,
     tags: r#"{}"#,
     description: "device model code",
+};
+pub const PUBLIC_BLUETOOTH_VENDOR_PRODUCT_ID: UTType = UTType {
+    identifier: "public.bluetooth-vendor-product-id",
+    conforms_to: r#"["public.text"]"#,
+    tags: r#"{}"#,
+    description: "Bluetooth Product ID",
 };
 pub const COM_APPLE_PASTEBOARD_PROMISED_FILE_URL: UTType = UTType {
     identifier: "com.apple.pasteboard.promised-file-url",
@@ -601,7 +619,7 @@ pub const COM_APPLE_QUARTZ_COMPOSER_COMPOSITION: UTType = UTType {
     identifier: "com.apple.quartz-composer-composition",
     conforms_to: r#"["public.data", "public.executable"]"#,
     tags: r#"{}"#,
-    description: "Quartz Composer compostion",
+    description: "Quartz Composer composition",
 };
 pub const COM_APPLE_BOM_ARCHIVE: UTType = UTType {
     identifier: "com.apple.bom-archive",
@@ -903,6 +921,12 @@ pub const PUBLIC_JSON: UTType = UTType {
     tags: r#"{"public.filename-extension": ["json"], "public.mime-type": ["application/json"]}"#,
     description: "JSON",
 };
+pub const PUBLIC_GEOJSON: UTType = UTType {
+    identifier: "public.geojson",
+    conforms_to: r#"["public.json"]"#,
+    tags: r#"{"public.filename-extension": ["geojson"], "public.mime-type": ["application/geo+json"]}"#,
+    description: "GeoJSON",
+};
 pub const PUBLIC_NDJSON: UTType = UTType {
     identifier: "public.ndjson",
     conforms_to: r#"["public.text"]"#,
@@ -955,7 +979,7 @@ pub const COM_APPLE_ASCII_PROPERTY_LIST: UTType = UTType {
     identifier: "com.apple.ascii-property-list",
     conforms_to: r#"["public.text", "com.apple.property-list"]"#,
     tags: r#"{"public.filename-extension": ["plist"]}"#,
-    description: "ascii property list",
+    description: "ASCII property list",
 };
 pub const PUBLIC_SOURCE_CODE: UTType = UTType {
     identifier: "public.source-code",
@@ -2203,7 +2227,7 @@ pub const COM_APPLE_MOBILECONFIG: UTType = UTType {
     identifier: "com.apple.mobileconfig",
     conforms_to: r#"["public.xml"]"#,
     tags: r#"{"public.filename-extension": ["mobileconfig", "mobile"], "public.mime-type": ["application/x-apple-aspen-config"]}"#,
-    description: "mobile configuration",
+    description: "Mobile configuration",
 };
 pub const COM_APPLE_PROVISIONPROFILE: UTType = UTType {
     identifier: "com.apple.provisionprofile",
@@ -2289,11 +2313,23 @@ pub const COM_APPLE_PKPASSES_DATA: UTType = UTType {
     tags: r#"{"public.filename-extension": ["pkpasses"], "public.mime-type": ["application/vnd.apple.pkpasses"]}"#,
     description: "Passes",
 };
+pub const COM_APPLE_FINANCE_ORDER: UTType = UTType {
+    identifier: "com.apple.finance.order",
+    conforms_to: r#"["com.apple.bundle", "com.apple.package"]"#,
+    tags: r#"{"public.filename-extension": ["order"], "public.mime-type": ["application/vnd.apple.finance.order"]}"#,
+    description: "Order",
+};
 pub const COM_APPLE_WATCHFACE: UTType = UTType {
     identifier: "com.apple.watchface",
     conforms_to: r#"["public.data", "public.content"]"#,
     tags: r#"{"public.filename-extension": ["watchface"]}"#,
     description: "Watchface",
+};
+pub const PUBLIC_MEDIA_STREAMING_PROTOCOL: UTType = UTType {
+    identifier: "public.media-streaming-protocol",
+    conforms_to: r#"[]"#,
+    tags: r#"{}"#,
+    description: "Media Streaming Protocol",
 };
 pub const PUBLIC_DEVICE: UTType = UTType {
     identifier: "public.device",
@@ -2315,9 +2351,15 @@ pub const PUBLIC_DISPLAY: UTType = UTType {
 };
 pub const PUBLIC_SPEAKER: UTType = UTType {
     identifier: "public.speaker",
-    conforms_to: r#"[]"#,
+    conforms_to: r#"["public.device"]"#,
     tags: r#"{}"#,
     description: "Speaker",
+};
+pub const PUBLIC_HEADPHONES: UTType = UTType {
+    identifier: "public.headphones",
+    conforms_to: r#"["public.speaker"]"#,
+    tags: r#"{}"#,
+    description: "Headphones",
 };
 pub const PUBLIC_COMPUTER: UTType = UTType {
     identifier: "public.computer",
@@ -2330,6 +2372,12 @@ pub const PUBLIC_GENERIC_PC: UTType = UTType {
     conforms_to: r#"["public.computer"]"#,
     tags: r#"{}"#,
     description: "PC",
+};
+pub const PUBLIC_VIDEO_CAMERA: UTType = UTType {
+    identifier: "public.video-camera",
+    conforms_to: r#"["public.device"]"#,
+    tags: r#"{}"#,
+    description: "Video Camera",
 };
 pub const COM_APPLE_DEVICE: UTType = UTType {
     identifier: "com.apple.device",
@@ -2348,6 +2396,18 @@ pub const COM_APPLE_MAC_LAPTOP: UTType = UTType {
     conforms_to: r#"["com.apple.mac"]"#,
     tags: r#"{}"#,
     description: "Laptop",
+};
+pub const COM_APPLE_MAC_NOTCHLESS_LAPTOP: UTType = UTType {
+    identifier: "com.apple.mac.notchless-laptop",
+    conforms_to: r#"["com.apple.mac.laptop"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MAC_NOTCHED_LAPTOP: UTType = UTType {
+    identifier: "com.apple.mac.notched-laptop",
+    conforms_to: r#"["com.apple.mac.laptop"]"#,
+    tags: r#"{}"#,
+    description: "",
 };
 pub const COM_APPLE_MACBOOKPRO_13_RETINA_USBC: UTType = UTType {
     identifier: "com.apple.macbookpro-13-retina-usbc",
@@ -2543,7 +2603,7 @@ pub const COM_APPLE_MAC_RACKMOUNT: UTType = UTType {
 };
 pub const COM_APPLE_POWERBOOK: UTType = UTType {
     identifier: "com.apple.powerbook",
-    conforms_to: r#"["com.apple.mac.laptop"]"#,
+    conforms_to: r#"["com.apple.mac.notchless-laptop"]"#,
     tags: r#"{}"#,
     description: "PowerBook",
 };
@@ -2573,7 +2633,7 @@ pub const COM_APPLE_POWERBOOK_G4_17: UTType = UTType {
 };
 pub const COM_APPLE_IBOOK_G4: UTType = UTType {
     identifier: "com.apple.ibook-g4",
-    conforms_to: r#"["com.apple.mac.laptop"]"#,
+    conforms_to: r#"["com.apple.mac.notchless-laptop"]"#,
     tags: r#"{}"#,
     description: "iBook G4",
 };
@@ -2813,7 +2873,7 @@ pub const COM_APPLE_IMACPRO_2017: UTType = UTType {
 };
 pub const COM_APPLE_MACBOOK: UTType = UTType {
     identifier: "com.apple.macbook",
-    conforms_to: r#"["com.apple.mac.laptop"]"#,
+    conforms_to: r#"["com.apple.mac.notchless-laptop"]"#,
     tags: r#"{}"#,
     description: "MacBook",
 };
@@ -2915,7 +2975,7 @@ pub const COM_APPLE_MACBOOKPRO_13_RETINA_DISPLAY: UTType = UTType {
 };
 pub const COM_APPLE_MACBOOKPRO: UTType = UTType {
     identifier: "com.apple.macbookpro",
-    conforms_to: r#"["com.apple.mac.laptop"]"#,
+    conforms_to: r#"["com.apple.mac.notchless-laptop"]"#,
     tags: r#"{}"#,
     description: "MacBook Pro",
 };
@@ -3023,7 +3083,7 @@ pub const COM_APPLE_MACBOOKPRO_16_SPACE_GRAY_MID_2020: UTType = UTType {
 };
 pub const COM_APPLE_MACBOOKAIR: UTType = UTType {
     identifier: "com.apple.macbookair",
-    conforms_to: r#"["com.apple.mac.laptop"]"#,
+    conforms_to: r#"["com.apple.mac.notchless-laptop"]"#,
     tags: r#"{}"#,
     description: "MacBook Air",
 };
@@ -3237,6 +3297,240 @@ pub const COM_APPLE_IMAC_2021_ORANGE: UTType = UTType {
     tags: r#"{}"#,
     description: "",
 };
+pub const COM_APPLE_MACBOOKPRO_14: UTType = UTType {
+    identifier: "com.apple.macbookpro-14",
+    conforms_to: r#"["com.apple.macbookpro"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_14_SILVER: UTType = UTType {
+    identifier: "com.apple.macbookpro-14-silver",
+    conforms_to: r#"["com.apple.macbookpro-14"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_14_SPACE_GRAY: UTType = UTType {
+    identifier: "com.apple.macbookpro-14-space-gray",
+    conforms_to: r#"["com.apple.macbookpro-14"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_2021: UTType = UTType {
+    identifier: "com.apple.macbookpro-2021",
+    conforms_to: r#"["com.apple.mac.notched-laptop", "com.apple.macbookpro"]"#,
+    tags: r#"{}"#,
+    description: "MacBook Pro",
+};
+pub const COM_APPLE_MACBOOKPRO_14_2021: UTType = UTType {
+    identifier: "com.apple.macbookpro-14-2021",
+    conforms_to: r#"["com.apple.macbookpro-2021", "com.apple.macbookpro-14"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_14_2021_SILVER: UTType = UTType {
+    identifier: "com.apple.macbookpro-14-2021-silver",
+    conforms_to: r#"["com.apple.macbookpro-14-2021", "com.apple.macbookpro-14-silver"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_14_2021_SPACE_GRAY: UTType = UTType {
+    identifier: "com.apple.macbookpro-14-2021-space-gray",
+    conforms_to: r#"["com.apple.macbookpro-14-2021", "com.apple.macbookpro-14-space-gray"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_16_2021: UTType = UTType {
+    identifier: "com.apple.macbookpro-16-2021",
+    conforms_to: r#"["com.apple.macbookpro-2021", "com.apple.macbookpro-16"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_16_2021_SILVER: UTType = UTType {
+    identifier: "com.apple.macbookpro-16-2021-silver",
+    conforms_to: r#"["com.apple.macbookpro-16-2021", "com.apple.macbookpro-16-silver"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_MACBOOKPRO_16_2021_SPACE_GRAY: UTType = UTType {
+    identifier: "com.apple.macbookpro-16-2021-space-gray",
+    conforms_to: r#"["com.apple.macbookpro-16-2021", "com.apple.macbookpro-16-space-gray"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_ACCESSORY_DEVICE: UTType = UTType {
+    identifier: "com.apple.accessory-device",
+    conforms_to: r#"["com.apple.device"]"#,
+    tags: r#"{}"#,
+    description: "Apple Accessory",
+};
+pub const COM_APPLE_AIRTAG: UTType = UTType {
+    identifier: "com.apple.airtag",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "AirTag",
+};
+pub const COM_APPLE_MAGIC_MOUSE: UTType = UTType {
+    identifier: "com.apple.magic-mouse",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Magic Mouse",
+};
+pub const COM_APPLE_PENCIL: UTType = UTType {
+    identifier: "com.apple.pencil",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Apple Pencil",
+};
+pub const COM_APPLE_APPLE_TV_REMOTE_GEN1: UTType = UTType {
+    identifier: "com.apple.apple-tv-remote-gen1",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Apple TV Remote (1st Generation)",
+};
+pub const COM_APPLE_APPLE_TV_REMOTE_GEN2: UTType = UTType {
+    identifier: "com.apple.apple-tv-remote-gen2",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Apple TV Remote (2nd Generation)",
+};
+pub const COM_APPLE_APPLE_TV_SIRI_REMOTE_GEN1: UTType = UTType {
+    identifier: "com.apple.apple-tv-siri-remote-gen1",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Apple TV Siri Remote (1st Generation)",
+};
+pub const COM_APPLE_APPLE_TV_SIRI_REMOTE_GEN2: UTType = UTType {
+    identifier: "com.apple.apple-tv-siri-remote-gen2",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Apple TV Siri Remote (2nd Generation)",
+};
+pub const COM_APPLE_ACCESSORY_HEADPHONES: UTType = UTType {
+    identifier: "com.apple.accessory.headphones",
+    conforms_to: r#"["com.apple.accessory-device", "public.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Apple Headphones",
+};
+pub const COM_APPLE_AIRPODS: UTType = UTType {
+    identifier: "com.apple.airpods",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "AirPods",
+};
+pub const COM_APPLE_AIRPODS_GEN2: UTType = UTType {
+    identifier: "com.apple.airpods-gen2",
+    conforms_to: r#"["com.apple.airpods"]"#,
+    tags: r#"{}"#,
+    description: "AirPods (2nd Generation)",
+};
+pub const COM_APPLE_AIRPODS_GEN3: UTType = UTType {
+    identifier: "com.apple.airpods-gen3",
+    conforms_to: r#"["com.apple.airpods"]"#,
+    tags: r#"{}"#,
+    description: "AirPods (3rd Generation)",
+};
+pub const COM_APPLE_AIRPODS_PRO: UTType = UTType {
+    identifier: "com.apple.airpods-pro",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "AirPods Pro",
+};
+pub const COM_APPLE_AIRPODS_MAX: UTType = UTType {
+    identifier: "com.apple.airpods-max",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "AirPods Max",
+};
+pub const COM_APPLE_BEATS_HEADPHONES: UTType = UTType {
+    identifier: "com.apple.beats-headphones",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Beats",
+};
+pub const COM_APPLE_POWER_BEATS_4: UTType = UTType {
+    identifier: "com.apple.power-beats-4",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Powerbeats 4",
+};
+pub const COM_APPLE_POWER_BEATS_3: UTType = UTType {
+    identifier: "com.apple.power-beats-3",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Powerbeats 3",
+};
+pub const COM_APPLE_POWER_BEATS_PRO: UTType = UTType {
+    identifier: "com.apple.power-beats-pro",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Powerbeats Pro",
+};
+pub const COM_APPLE_BEATS_STUDIO_BUDS: UTType = UTType {
+    identifier: "com.apple.beats-studio-buds",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Beats Studio Buds",
+};
+pub const COM_APPLE_BEATS_X: UTType = UTType {
+    identifier: "com.apple.beats-x",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "BeatsX",
+};
+pub const COM_APPLE_BEATS_FLEX: UTType = UTType {
+    identifier: "com.apple.beats-flex",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Beats Flex",
+};
+pub const COM_APPLE_BEATS_FIT_PRO: UTType = UTType {
+    identifier: "com.apple.beats-fit-pro",
+    conforms_to: r#"["com.apple.accessory.headphones"]"#,
+    tags: r#"{}"#,
+    description: "Beats Fit Pro",
+};
+pub const COM_APPLE_AIRPODS_CHARGING_CASE: UTType = UTType {
+    identifier: "com.apple.airpods-charging-case",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "AirPods Charging Case",
+};
+pub const COM_APPLE_AIRPODS_WIRELESS_CHARGING_CASE: UTType = UTType {
+    identifier: "com.apple.airpods-wireless-charging-case",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "AirPods Wireless Charging Case",
+};
+pub const COM_APPLE_AIRPODS_PRO_CHARGING_CASE: UTType = UTType {
+    identifier: "com.apple.airpods-pro-charging-case",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "AirPods Pro Charging Case",
+};
+pub const COM_APPLE_AIRPODS_GEN3_CHARGING_CASE: UTType = UTType {
+    identifier: "com.apple.airpods-gen3-charging-case",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "AirPods (3rd Generation) Charging Case",
+};
+pub const COM_APPLE_BEATS_STUDIO_BUDS_CHARGING_CASE: UTType = UTType {
+    identifier: "com.apple.beats-studio-buds-charging-case",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Beats Studio Buds Charging Case",
+};
+pub const COM_APPLE_BEATS_FIT_PRO_CHARGING_CASE: UTType = UTType {
+    identifier: "com.apple.beats-fit-pro-charging-case",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Beats Fit Pro Charging Case",
+};
+pub const COM_APPLE_POWER_BEATS_PRO_CHARGING_CASE: UTType = UTType {
+    identifier: "com.apple.power-beats-pro-charging-case",
+    conforms_to: r#"["com.apple.accessory-device"]"#,
+    tags: r#"{}"#,
+    description: "Powerbeats Pro Charging Case",
+};
 pub const COM_APPLE_DEVELOPER_TRANSITION_KIT_2005: UTType = UTType {
     identifier: "com.apple.developer-transition-kit-2005",
     conforms_to: r#"["com.apple.mac.tower"]"#,
@@ -3266,6 +3560,12 @@ pub const COM_APPLE_HOMEPOD: UTType = UTType {
     conforms_to: r#"["com.apple.ios-device", "public.speaker"]"#,
     tags: r#"{}"#,
     description: "HomePod",
+};
+pub const COM_APPLE_HOMEPOD_MINI: UTType = UTType {
+    identifier: "com.apple.homepod-mini",
+    conforms_to: r#"["com.apple.homepod"]"#,
+    tags: r#"{}"#,
+    description: "HomePod mini",
 };
 pub const COM_APPLE_IOS_SIMULATOR: UTType = UTType {
     identifier: "com.apple.ios-simulator",
@@ -3373,49 +3673,49 @@ pub const COM_APPLE_IPOD_SHUFFLE: UTType = UTType {
     identifier: "com.apple.ipod-shuffle",
     conforms_to: r#"["com.apple.legacy-ipod"]"#,
     tags: r#"{}"#,
-    description: "iPod Shuffle",
+    description: "iPod shuffle",
 };
 pub const COM_APPLE_IPOD_SHUFFLE_GEN1: UTType = UTType {
     identifier: "com.apple.ipod-shuffle-gen1",
     conforms_to: r#"["com.apple.ipod-shuffle"]"#,
     tags: r#"{}"#,
-    description: "iPod Shuffle",
+    description: "iPod shuffle",
 };
 pub const COM_APPLE_IPOD_SHUFFLE_GEN2: UTType = UTType {
     identifier: "com.apple.ipod-shuffle-gen2",
     conforms_to: r#"["com.apple.ipod-shuffle"]"#,
     tags: r#"{}"#,
-    description: "iPod Shuffle (2th generation)",
+    description: "iPod shuffle (2nd generation)",
 };
 pub const COM_APPLE_IPOD_SHUFFLE_GEN3: UTType = UTType {
     identifier: "com.apple.ipod-shuffle-gen3",
     conforms_to: r#"["com.apple.ipod-shuffle"]"#,
     tags: r#"{}"#,
-    description: "iPod Shuffle (3th generation)",
+    description: "iPod shuffle (3rd generation)",
 };
 pub const COM_APPLE_IPOD_SHUFFLE_GEN4: UTType = UTType {
     identifier: "com.apple.ipod-shuffle-gen4",
     conforms_to: r#"["com.apple.ipod-shuffle"]"#,
     tags: r#"{}"#,
-    description: "iPod Shuffle (4th generation)",
+    description: "iPod shuffle (4th generation)",
 };
 pub const COM_APPLE_IPOD_NANO: UTType = UTType {
     identifier: "com.apple.ipod-nano",
     conforms_to: r#"["com.apple.legacy-ipod"]"#,
     tags: r#"{}"#,
-    description: "iPod Nano",
+    description: "iPod nano",
 };
 pub const COM_APPLE_IPOD_MINI: UTType = UTType {
     identifier: "com.apple.ipod-mini",
     conforms_to: r#"["com.apple.legacy-ipod"]"#,
     tags: r#"{}"#,
-    description: "iPod Nano",
+    description: "iPod nano",
 };
 pub const COM_APPLE_IPOD_CLASSIC: UTType = UTType {
     identifier: "com.apple.ipod-classic",
     conforms_to: r#"["com.apple.legacy-ipod"]"#,
     tags: r#"{}"#,
-    description: "iPod Classic",
+    description: "iPod classic",
 };
 pub const COM_APPLE_IPOD: UTType = UTType {
     identifier: "com.apple.ipod",
@@ -3462,6 +3762,18 @@ pub const COM_APPLE_HOMEBUTTONLESS_IPAD: UTType = UTType {
 pub const COM_APPLE_HOMEBUTTONLESS_IPHONE: UTType = UTType {
     identifier: "com.apple.homebuttonless-iphone",
     conforms_to: r#"["com.apple.iphone", "com.apple.homebuttonless-device"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_DYNAMIC_ISLAND_IPHONE: UTType = UTType {
+    identifier: "com.apple.dynamic-island-iphone",
+    conforms_to: r#"["com.apple.homebuttonless-iphone"]"#,
+    tags: r#"{}"#,
+    description: "",
+};
+pub const COM_APPLE_D7X_DEVICE: UTType = UTType {
+    identifier: "com.apple.d7x-device",
+    conforms_to: r#"["com.apple.dynamic-island-iphone"]"#,
     tags: r#"{}"#,
     description: "",
 };
@@ -3571,7 +3883,7 @@ pub const COM_APPLE_FILE_VAULT: UTType = UTType {
     identifier: "com.apple.file-vault",
     conforms_to: r#"[]"#,
     tags: r#"{}"#,
-    description: "File Vault",
+    description: "FileVault",
 };
 pub const COM_APPLE_GENERIC_AIRDISK: UTType = UTType {
     identifier: "com.apple.generic-airdisk",
@@ -4043,6 +4355,10 @@ lazy_static! {
                 COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION
             ),
             (
+                "com.pixar.universal-scene-description-utf8",
+                COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION_UTF8
+            ),
+            (
                 "com.pixar.universal-scene-description-mobile",
                 COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION_MOBILE
             ),
@@ -4080,12 +4396,17 @@ lazy_static! {
             ("com.apple.hangreport", COM_APPLE_HANGREPORT),
             ("com.apple.spinreport", COM_APPLE_SPINREPORT),
             ("com.apple.panicreport", COM_APPLE_PANICREPORT),
+            ("com.apple.trace", COM_APPLE_TRACE),
             ("com.apple.ktrace", COM_APPLE_KTRACE),
             ("public.filename-extension", PUBLIC_FILENAME_EXTENSION),
             ("public.mime-type", PUBLIC_MIME_TYPE),
             ("com.apple.ostype", COM_APPLE_OSTYPE),
             ("com.apple.nspboard-type", COM_APPLE_NSPBOARD_TYPE),
             ("com.apple.device-model-code", COM_APPLE_DEVICE_MODEL_CODE),
+            (
+                "public.bluetooth-vendor-product-id",
+                PUBLIC_BLUETOOTH_VENDOR_PRODUCT_ID
+            ),
             (
                 "com.apple.pasteboard.promised-file-url",
                 COM_APPLE_PASTEBOARD_PROMISED_FILE_URL
@@ -4275,6 +4596,7 @@ lazy_static! {
             ("public.css", PUBLIC_CSS),
             ("public.patch-file", PUBLIC_PATCH_FILE),
             ("public.json", PUBLIC_JSON),
+            ("public.geojson", PUBLIC_GEOJSON),
             ("public.ndjson", PUBLIC_NDJSON),
             ("public.yaml", PUBLIC_YAML),
             ("com.scenarist.closed-caption", COM_SCENARIST_CLOSED_CAPTION),
@@ -4647,16 +4969,28 @@ lazy_static! {
             ("com.apple.pkpass", COM_APPLE_PKPASS),
             ("com.apple.pkpass-data", COM_APPLE_PKPASS_DATA),
             ("com.apple.pkpasses-data", COM_APPLE_PKPASSES_DATA),
+            ("com.apple.finance.order", COM_APPLE_FINANCE_ORDER),
             ("com.apple.watchface", COM_APPLE_WATCHFACE),
+            (
+                "public.media-streaming-protocol",
+                PUBLIC_MEDIA_STREAMING_PROTOCOL
+            ),
             ("public.device", PUBLIC_DEVICE),
             ("com.apple.virtual-machine", COM_APPLE_VIRTUAL_MACHINE),
             ("public.display", PUBLIC_DISPLAY),
             ("public.speaker", PUBLIC_SPEAKER),
+            ("public.headphones", PUBLIC_HEADPHONES),
             ("public.computer", PUBLIC_COMPUTER),
             ("public.generic-pc", PUBLIC_GENERIC_PC),
+            ("public.video-camera", PUBLIC_VIDEO_CAMERA),
             ("com.apple.device", COM_APPLE_DEVICE),
             ("com.apple.mac", COM_APPLE_MAC),
             ("com.apple.mac.laptop", COM_APPLE_MAC_LAPTOP),
+            (
+                "com.apple.mac.notchless-laptop",
+                COM_APPLE_MAC_NOTCHLESS_LAPTOP
+            ),
+            ("com.apple.mac.notched-laptop", COM_APPLE_MAC_NOTCHED_LAPTOP),
             (
                 "com.apple.macbookpro-13-retina-usbc",
                 COM_APPLE_MACBOOKPRO_13_RETINA_USBC
@@ -5069,6 +5403,99 @@ lazy_static! {
             ("com.apple.imac-2021-red", COM_APPLE_IMAC_2021_RED),
             ("com.apple.imac-2021-purple", COM_APPLE_IMAC_2021_PURPLE),
             ("com.apple.imac-2021-orange", COM_APPLE_IMAC_2021_ORANGE),
+            ("com.apple.macbookpro-14", COM_APPLE_MACBOOKPRO_14),
+            (
+                "com.apple.macbookpro-14-silver",
+                COM_APPLE_MACBOOKPRO_14_SILVER
+            ),
+            (
+                "com.apple.macbookpro-14-space-gray",
+                COM_APPLE_MACBOOKPRO_14_SPACE_GRAY
+            ),
+            ("com.apple.macbookpro-2021", COM_APPLE_MACBOOKPRO_2021),
+            ("com.apple.macbookpro-14-2021", COM_APPLE_MACBOOKPRO_14_2021),
+            (
+                "com.apple.macbookpro-14-2021-silver",
+                COM_APPLE_MACBOOKPRO_14_2021_SILVER
+            ),
+            (
+                "com.apple.macbookpro-14-2021-space-gray",
+                COM_APPLE_MACBOOKPRO_14_2021_SPACE_GRAY
+            ),
+            ("com.apple.macbookpro-16-2021", COM_APPLE_MACBOOKPRO_16_2021),
+            (
+                "com.apple.macbookpro-16-2021-silver",
+                COM_APPLE_MACBOOKPRO_16_2021_SILVER
+            ),
+            (
+                "com.apple.macbookpro-16-2021-space-gray",
+                COM_APPLE_MACBOOKPRO_16_2021_SPACE_GRAY
+            ),
+            ("com.apple.accessory-device", COM_APPLE_ACCESSORY_DEVICE),
+            ("com.apple.airtag", COM_APPLE_AIRTAG),
+            ("com.apple.magic-mouse", COM_APPLE_MAGIC_MOUSE),
+            ("com.apple.pencil", COM_APPLE_PENCIL),
+            (
+                "com.apple.apple-tv-remote-gen1",
+                COM_APPLE_APPLE_TV_REMOTE_GEN1
+            ),
+            (
+                "com.apple.apple-tv-remote-gen2",
+                COM_APPLE_APPLE_TV_REMOTE_GEN2
+            ),
+            (
+                "com.apple.apple-tv-siri-remote-gen1",
+                COM_APPLE_APPLE_TV_SIRI_REMOTE_GEN1
+            ),
+            (
+                "com.apple.apple-tv-siri-remote-gen2",
+                COM_APPLE_APPLE_TV_SIRI_REMOTE_GEN2
+            ),
+            (
+                "com.apple.accessory.headphones",
+                COM_APPLE_ACCESSORY_HEADPHONES
+            ),
+            ("com.apple.airpods", COM_APPLE_AIRPODS),
+            ("com.apple.airpods-gen2", COM_APPLE_AIRPODS_GEN2),
+            ("com.apple.airpods-gen3", COM_APPLE_AIRPODS_GEN3),
+            ("com.apple.airpods-pro", COM_APPLE_AIRPODS_PRO),
+            ("com.apple.airpods-max", COM_APPLE_AIRPODS_MAX),
+            ("com.apple.beats-headphones", COM_APPLE_BEATS_HEADPHONES),
+            ("com.apple.power-beats-4", COM_APPLE_POWER_BEATS_4),
+            ("com.apple.power-beats-3", COM_APPLE_POWER_BEATS_3),
+            ("com.apple.power-beats-pro", COM_APPLE_POWER_BEATS_PRO),
+            ("com.apple.beats-studio-buds", COM_APPLE_BEATS_STUDIO_BUDS),
+            ("com.apple.beats-x", COM_APPLE_BEATS_X),
+            ("com.apple.beats-flex", COM_APPLE_BEATS_FLEX),
+            ("com.apple.beats-fit-pro", COM_APPLE_BEATS_FIT_PRO),
+            (
+                "com.apple.airpods-charging-case",
+                COM_APPLE_AIRPODS_CHARGING_CASE
+            ),
+            (
+                "com.apple.airpods-wireless-charging-case",
+                COM_APPLE_AIRPODS_WIRELESS_CHARGING_CASE
+            ),
+            (
+                "com.apple.airpods-pro-charging-case",
+                COM_APPLE_AIRPODS_PRO_CHARGING_CASE
+            ),
+            (
+                "com.apple.airpods-gen3-charging-case",
+                COM_APPLE_AIRPODS_GEN3_CHARGING_CASE
+            ),
+            (
+                "com.apple.beats-studio-buds-charging-case",
+                COM_APPLE_BEATS_STUDIO_BUDS_CHARGING_CASE
+            ),
+            (
+                "com.apple.beats-fit-pro-charging-case",
+                COM_APPLE_BEATS_FIT_PRO_CHARGING_CASE
+            ),
+            (
+                "com.apple.power-beats-pro-charging-case",
+                COM_APPLE_POWER_BEATS_PRO_CHARGING_CASE
+            ),
             (
                 "com.apple.developer-transition-kit-2005",
                 COM_APPLE_DEVELOPER_TRANSITION_KIT_2005
@@ -5080,6 +5507,7 @@ lazy_static! {
             ("com.apple.ios-device", COM_APPLE_IOS_DEVICE),
             ("com.apple.apple-tv", COM_APPLE_APPLE_TV),
             ("com.apple.homepod", COM_APPLE_HOMEPOD),
+            ("com.apple.homepod-mini", COM_APPLE_HOMEPOD_MINI),
             ("com.apple.ios-simulator", COM_APPLE_IOS_SIMULATOR),
             ("com.apple.iphone", COM_APPLE_IPHONE),
             ("com.apple.iphone-3g", COM_APPLE_IPHONE_3G),
@@ -5119,6 +5547,11 @@ lazy_static! {
                 "com.apple.homebuttonless-iphone",
                 COM_APPLE_HOMEBUTTONLESS_IPHONE
             ),
+            (
+                "com.apple.dynamic-island-iphone",
+                COM_APPLE_DYNAMIC_ISLAND_IPHONE
+            ),
+            ("com.apple.d7x-device", COM_APPLE_D7X_DEVICE),
             ("com.apple.watch", COM_APPLE_WATCH),
             ("com.apple.airport-express", COM_APPLE_AIRPORT_EXPRESS),
             ("com.apple.airport", COM_APPLE_AIRPORT),
@@ -5346,12 +5779,11 @@ lazy_static! {
         HashMap::from([
             ("csstore", "com.apple.csstore"),
             ("abc", "public.alembic"),
-            ("obj", "public.geometry-definition-format"),
             ("stl", "public.standard-tesselated-geometry-format"),
             ("ply", "public.polygon-file-format"),
             ("usd", "com.pixar.universal-scene-description"),
-            ("usda", "com.pixar.universal-scene-description"),
             ("usdc", "com.pixar.universal-scene-description"),
+            ("usda", "com.pixar.universal-scene-description-utf8"),
             ("scn", "com.apple.scenekit.scene"),
             ("scnz", "com.apple.scenekit.scene"),
             ("vcs", "com.apple.ical.vcs"),
@@ -5365,6 +5797,7 @@ lazy_static! {
             ("hang", "com.apple.hangreport"),
             ("spin", "com.apple.spinreport"),
             ("panic", "com.apple.panicreport"),
+            ("atrc", "com.apple.trace"),
             ("ktrace", "com.apple.ktrace"),
             ("icloud", "com.apple.icloud-file-fault"),
             ("sndClipping", "com.apple.finder.sound-clipping"),
@@ -5404,6 +5837,7 @@ lazy_static! {
             ("patch", "public.patch-file"),
             ("diff", "public.patch-file"),
             ("json", "public.json"),
+            ("geojson", "public.geojson"),
             ("ndjson", "public.ndjson"),
             ("yml", "public.yaml"),
             ("yaml", "public.yaml"),
@@ -5570,6 +6004,7 @@ lazy_static! {
             ("pkpass", "com.apple.pkpass"),
             ("pkpass", "com.apple.pkpass-data"),
             ("pkpasses", "com.apple.pkpasses-data"),
+            ("order", "com.apple.finance.order"),
             ("watchface", "com.apple.watchface")
         ]);
     pub(crate) static ref SYSTEM_MIME_MAP: HashMap<&'static str, &'static str> = HashMap::from([
@@ -5600,6 +6035,7 @@ lazy_static! {
         ("application/rss+xml", "public.rss"),
         ("text/css", "public.css"),
         ("application/json", "public.json"),
+        ("application/geo+json", "public.geojson"),
         ("application/x-ndjson", "public.ndjson"),
         ("application/x-yaml", "public.yaml"),
         ("text/vtt", "org.w3.webvtt"),
@@ -5667,7 +6103,11 @@ lazy_static! {
             "com.apple.mobileprovision"
         ),
         ("application/vnd.apple.pkpass", "com.apple.pkpass"),
-        ("application/vnd.apple.pkpasses", "com.apple.pkpasses-data")
+        ("application/vnd.apple.pkpasses", "com.apple.pkpasses-data"),
+        (
+            "application/vnd.apple.finance.order",
+            "com.apple.finance.order"
+        )
     ]);
 }
 pub const COM_ADOBE_PDF: UTType = UTType {
@@ -6252,6 +6692,12 @@ pub const PUBLIC_AVCS: UTType = UTType {
     tags: r#"{}"#,
     description: "HEIF Image Sequence",
 };
+pub const PUBLIC_AVIF: UTType = UTType {
+    identifier: "public.avif",
+    conforms_to: r#"["public.heif-standard"]"#,
+    tags: r#"{}"#,
+    description: "AV1 Image File Format",
+};
 pub const COM_APPLE_DRAWING: UTType = UTType {
     identifier: "com.apple.drawing",
     conforms_to: r#"["public.image"]"#,
@@ -6546,6 +6992,12 @@ pub const COM_APPLE_ICON_DECORATION_SYSTEM: UTType = UTType {
     tags: r#"{}"#,
     description: "Icon Decoration System",
 };
+pub const COM_APPLE_GRAPHIC_ICON: UTType = UTType {
+    identifier: "com.apple.graphic-icon",
+    conforms_to: r#"[]"#,
+    tags: r#"{}"#,
+    description: "Graphic Icon",
+};
 pub const COM_APPLE_ICON_DECORATION_SYSTEM_UNSUPPORTED: UTType = UTType {
     identifier: "com.apple.icon-decoration.system.unsupported",
     conforms_to: r#"["com.apple.icon-decoration.system"]"#,
@@ -6647,6 +7099,228 @@ pub const COM_APPLE_ICON_DECORATION_BADGE_WARNING: UTType = UTType {
     conforms_to: r#"["com.apple.icon-decoration-position.trailing-bottom", "com.apple.icon-decoration.badge"]"#,
     tags: r#"{}"#,
     description: "Icon Decoration Warning Badge",
+};
+pub const COM_APPLE_GRAPHIC_ICON_WIFI: UTType = UTType {
+    identifier: "com.apple.graphic-icon.wifi",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Wireless Network Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_BLUETOOTH: UTType = UTType {
+    identifier: "com.apple.graphic-icon.bluetooth",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Bluetooth Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_VPN: UTType = UTType {
+    identifier: "com.apple.graphic-icon.vpn",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "VPN Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_SOUND: UTType = UTType {
+    identifier: "com.apple.graphic-icon.sound",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Sound Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_FOCUS: UTType = UTType {
+    identifier: "com.apple.graphic-icon.focus",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Focus Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_ACCESSIBILITY: UTType = UTType {
+    identifier: "com.apple.graphic-icon.accessibility",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Accessibility Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_DESKTOP: UTType = UTType {
+    identifier: "com.apple.graphic-icon.desktop",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Desktop Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_PRIVACY: UTType = UTType {
+    identifier: "com.apple.graphic-icon.privacy",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Privacy Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_KEYBOARD: UTType = UTType {
+    identifier: "com.apple.graphic-icon.keyboard",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Keyboard Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_INPUT_MONITORING: UTType = UTType {
+    identifier: "com.apple.graphic-icon.input-monitoring",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Input Monitoring Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_LOCATION: UTType = UTType {
+    identifier: "com.apple.graphic-icon.location",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Location Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_VIDEO_CAMERA: UTType = UTType {
+    identifier: "com.apple.graphic-icon.video-camera",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Video Camera Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_MICROPHONE: UTType = UTType {
+    identifier: "com.apple.graphic-icon.microphone",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Microphone Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_WAVEFORM: UTType = UTType {
+    identifier: "com.apple.graphic-icon.waveform",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Waveform Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_SCREEN_RECORDING: UTType = UTType {
+    identifier: "com.apple.graphic-icon.screen-recording",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Screen Recording Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_AUTOMATION: UTType = UTType {
+    identifier: "com.apple.graphic-icon.automation",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Automation Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_DEVELOPER_TOOLS: UTType = UTType {
+    identifier: "com.apple.graphic-icon.developer-tools",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Developer Tools Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_ETHERNET: UTType = UTType {
+    identifier: "com.apple.graphic-icon.ethernet",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Ethernet Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_CELLULAR: UTType = UTType {
+    identifier: "com.apple.graphic-icon.cellular",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Cellular Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_MORE: UTType = UTType {
+    identifier: "com.apple.graphic-icon.more",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "More Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_AIRDROP: UTType = UTType {
+    identifier: "com.apple.graphic-icon.airdrop",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "AirDrop Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_BATTERY: UTType = UTType {
+    identifier: "com.apple.graphic-icon.battery",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Battery Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_NOTIFICATIONS: UTType = UTType {
+    identifier: "com.apple.graphic-icon.notifications",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Notifications Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_SEARCH: UTType = UTType {
+    identifier: "com.apple.graphic-icon.search",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Search Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_DISPLAY: UTType = UTType {
+    identifier: "com.apple.graphic-icon.display",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Display Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_ACCOUNT: UTType = UTType {
+    identifier: "com.apple.graphic-icon.account",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Account Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_GROUP: UTType = UTType {
+    identifier: "com.apple.graphic-icon.group",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Group Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_INTERNAL_DRIVE: UTType = UTType {
+    identifier: "com.apple.graphic-icon.internal-drive",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Internal Drive Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_USB: UTType = UTType {
+    identifier: "com.apple.graphic-icon.usb",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "USB Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_AIRPLAY_VIDEO: UTType = UTType {
+    identifier: "com.apple.graphic-icon.airplay-video",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "AirPlay Video Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_SCREEN_TIME: UTType = UTType {
+    identifier: "com.apple.graphic-icon.screen-time",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Screen Time Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_SUBSCRIPTIONS: UTType = UTType {
+    identifier: "com.apple.graphic-icon.subscriptions",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Subscription Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_THUNDERBOLT: UTType = UTType {
+    identifier: "com.apple.graphic-icon.thunderbolt",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Thunderbolt Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_AIRPLAY_AUDIO: UTType = UTType {
+    identifier: "com.apple.graphic-icon.airplay-audio",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "AirPlay Audio Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_ENERGY_SAVER: UTType = UTType {
+    identifier: "com.apple.graphic-icon.energy-saver",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Energy Saver Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_SD_CARD: UTType = UTType {
+    identifier: "com.apple.graphic-icon.sd-card",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "SD Card Graphic Icon",
+};
+pub const COM_APPLE_GRAPHIC_ICON_PERSON_PASSKEY: UTType = UTType {
+    identifier: "com.apple.graphic-icon.person-passkey",
+    conforms_to: r#"["com.apple.graphic-icon"]"#,
+    tags: r#"{}"#,
+    description: "Person Passkey Graphic Icon",
 };
 pub const COM_APPLE_DOCUMENT_TYPE: UTType = UTType {
     identifier: "com.apple.document-type",
@@ -7156,6 +7830,7 @@ lazy_static! {
             ("public.heifs", PUBLIC_HEIFS),
             ("public.heics", PUBLIC_HEICS),
             ("public.avcs", PUBLIC_AVCS),
+            ("public.avif", PUBLIC_AVIF),
             ("com.apple.drawing", COM_APPLE_DRAWING),
             ("com.j2.jfx-fax", COM_J2_JFX_FAX),
             ("com.j2.efx-fax", COM_J2_EFX_FAX),
@@ -7265,6 +7940,7 @@ lazy_static! {
                 "com.apple.icon-decoration.system",
                 COM_APPLE_ICON_DECORATION_SYSTEM
             ),
+            ("com.apple.graphic-icon", COM_APPLE_GRAPHIC_ICON),
             (
                 "com.apple.icon-decoration.system.unsupported",
                 COM_APPLE_ICON_DECORATION_SYSTEM_UNSUPPORTED
@@ -7332,6 +8008,133 @@ lazy_static! {
             (
                 "com.apple.icon-decoration.badge.warning",
                 COM_APPLE_ICON_DECORATION_BADGE_WARNING
+            ),
+            ("com.apple.graphic-icon.wifi", COM_APPLE_GRAPHIC_ICON_WIFI),
+            (
+                "com.apple.graphic-icon.bluetooth",
+                COM_APPLE_GRAPHIC_ICON_BLUETOOTH
+            ),
+            ("com.apple.graphic-icon.vpn", COM_APPLE_GRAPHIC_ICON_VPN),
+            ("com.apple.graphic-icon.sound", COM_APPLE_GRAPHIC_ICON_SOUND),
+            ("com.apple.graphic-icon.focus", COM_APPLE_GRAPHIC_ICON_FOCUS),
+            (
+                "com.apple.graphic-icon.accessibility",
+                COM_APPLE_GRAPHIC_ICON_ACCESSIBILITY
+            ),
+            (
+                "com.apple.graphic-icon.desktop",
+                COM_APPLE_GRAPHIC_ICON_DESKTOP
+            ),
+            (
+                "com.apple.graphic-icon.privacy",
+                COM_APPLE_GRAPHIC_ICON_PRIVACY
+            ),
+            (
+                "com.apple.graphic-icon.keyboard",
+                COM_APPLE_GRAPHIC_ICON_KEYBOARD
+            ),
+            (
+                "com.apple.graphic-icon.input-monitoring",
+                COM_APPLE_GRAPHIC_ICON_INPUT_MONITORING
+            ),
+            (
+                "com.apple.graphic-icon.location",
+                COM_APPLE_GRAPHIC_ICON_LOCATION
+            ),
+            (
+                "com.apple.graphic-icon.video-camera",
+                COM_APPLE_GRAPHIC_ICON_VIDEO_CAMERA
+            ),
+            (
+                "com.apple.graphic-icon.microphone",
+                COM_APPLE_GRAPHIC_ICON_MICROPHONE
+            ),
+            (
+                "com.apple.graphic-icon.waveform",
+                COM_APPLE_GRAPHIC_ICON_WAVEFORM
+            ),
+            (
+                "com.apple.graphic-icon.screen-recording",
+                COM_APPLE_GRAPHIC_ICON_SCREEN_RECORDING
+            ),
+            (
+                "com.apple.graphic-icon.automation",
+                COM_APPLE_GRAPHIC_ICON_AUTOMATION
+            ),
+            (
+                "com.apple.graphic-icon.developer-tools",
+                COM_APPLE_GRAPHIC_ICON_DEVELOPER_TOOLS
+            ),
+            (
+                "com.apple.graphic-icon.ethernet",
+                COM_APPLE_GRAPHIC_ICON_ETHERNET
+            ),
+            (
+                "com.apple.graphic-icon.cellular",
+                COM_APPLE_GRAPHIC_ICON_CELLULAR
+            ),
+            ("com.apple.graphic-icon.more", COM_APPLE_GRAPHIC_ICON_MORE),
+            (
+                "com.apple.graphic-icon.airdrop",
+                COM_APPLE_GRAPHIC_ICON_AIRDROP
+            ),
+            (
+                "com.apple.graphic-icon.battery",
+                COM_APPLE_GRAPHIC_ICON_BATTERY
+            ),
+            (
+                "com.apple.graphic-icon.notifications",
+                COM_APPLE_GRAPHIC_ICON_NOTIFICATIONS
+            ),
+            (
+                "com.apple.graphic-icon.search",
+                COM_APPLE_GRAPHIC_ICON_SEARCH
+            ),
+            (
+                "com.apple.graphic-icon.display",
+                COM_APPLE_GRAPHIC_ICON_DISPLAY
+            ),
+            (
+                "com.apple.graphic-icon.account",
+                COM_APPLE_GRAPHIC_ICON_ACCOUNT
+            ),
+            ("com.apple.graphic-icon.group", COM_APPLE_GRAPHIC_ICON_GROUP),
+            (
+                "com.apple.graphic-icon.internal-drive",
+                COM_APPLE_GRAPHIC_ICON_INTERNAL_DRIVE
+            ),
+            ("com.apple.graphic-icon.usb", COM_APPLE_GRAPHIC_ICON_USB),
+            (
+                "com.apple.graphic-icon.airplay-video",
+                COM_APPLE_GRAPHIC_ICON_AIRPLAY_VIDEO
+            ),
+            (
+                "com.apple.graphic-icon.screen-time",
+                COM_APPLE_GRAPHIC_ICON_SCREEN_TIME
+            ),
+            (
+                "com.apple.graphic-icon.subscriptions",
+                COM_APPLE_GRAPHIC_ICON_SUBSCRIPTIONS
+            ),
+            (
+                "com.apple.graphic-icon.thunderbolt",
+                COM_APPLE_GRAPHIC_ICON_THUNDERBOLT
+            ),
+            (
+                "com.apple.graphic-icon.airplay-audio",
+                COM_APPLE_GRAPHIC_ICON_AIRPLAY_AUDIO
+            ),
+            (
+                "com.apple.graphic-icon.energy-saver",
+                COM_APPLE_GRAPHIC_ICON_ENERGY_SAVER
+            ),
+            (
+                "com.apple.graphic-icon.sd-card",
+                COM_APPLE_GRAPHIC_ICON_SD_CARD
+            ),
+            (
+                "com.apple.graphic-icon.person-passkey",
+                COM_APPLE_GRAPHIC_ICON_PERSON_PASSKEY
             ),
             ("com.apple.document-type", COM_APPLE_DOCUMENT_TYPE),
             (
@@ -7793,344 +8596,188 @@ lazy_static! {
 }
 pub const MIME_TYPE_TO_EXTENSION_VEC: [MIMETypeAndExtension; 89] = [
     MIMETypeAndExtension {
-        mime_type: "image/x-rgb",
-        extensions: "rgb",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-xpixmap",
-        extensions: "xpm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff-me",
-        extensions: "me",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/sgml",
-        extensions: "sgml|sgm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-shar",
-        extensions: "shar",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/msexcel",
-        extensions: "xls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/mac-compactpro",
-        extensions: "cpt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/plain",
-        extensions: "txt|asc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-bittorrent",
-        extensions: "torrent",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-sh",
-        extensions: "sh",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-pcx",
-        extensions: "pcx",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.ms-excel",
-        extensions: "xls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/xml",
-        extensions: "xml|xsl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-m4p",
-        extensions: "m4p",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/html",
-        extensions: "html|jhtml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-tcl",
-        extensions: "tcl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff",
-        extensions: "t|tr|roff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/octet-stream",
-        extensions: "dms|lha|lzh|class|so|iso|fla",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-xwindowdump",
-        extensions: "xwd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/aiff",
-        extensions: "aiff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-futuresplash",
-        extensions: "spl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/ief",
-        extensions: "ief",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff-man",
-        extensions: "man",
-    },
-    MIMETypeAndExtension {
-        mime_type: "chemical/x-pdb",
-        extensions: "pdb",
-    },
-    MIMETypeAndExtension {
-        mime_type: "model/mesh",
-        extensions: "msh|mesh|silo",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-csh",
-        extensions: "csh",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xfd+xml",
-        extensions: "xfd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-koan",
-        extensions: "skp|skd|skt|skm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-diskcopy",
-        extensions: "dmg",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-macpaint",
-        extensions: "pnt|pntg|mac",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-targa",
-        extensions: "targa",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-msdownload",
-        extensions: "dll",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-cdlink",
-        extensions: "vcd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wbxml",
-        extensions: "wbxml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "model/iges",
-        extensions: "igs|iges",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xdp+xml",
-        extensions: "xdp",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-cpio",
-        extensions: "cpio",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-latex",
-        extensions: "latex",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/xml",
-        extensions: "xml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xfdf",
-        extensions: "xfdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/mpeg",
-        extensions: "mp3|mpga|mp2",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-bitmap",
-        extensions: "pbm",
+        mime_type: "application/mspowerpoint",
+        extensions: "ppt",
     },
     MIMETypeAndExtension {
         mime_type: "image/x-portable-graymap",
         extensions: "pgm",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-tex",
-        extensions: "tex",
-    },
-    MIMETypeAndExtension {
-        mime_type: "model/vrml",
-        extensions: "wrl|vrml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-shockwave-flash",
-        extensions: "swf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-hdf",
-        extensions: "hdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/vnd.wap.wmlscript",
-        extensions: "wmls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-aiff",
-        extensions: "aiff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/x-sgi-movie",
-        extensions: "movie",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-director",
-        extensions: "dcr|dir|dxr",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/richtext",
-        extensions: "rtx",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/mp4",
-        extensions: "mp4|mpg4",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/vnd.wap.wbmp",
-        extensions: "wbmp",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wmlc",
-        extensions: "wmlc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/oda",
-        extensions: "oda",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/postscript",
-        extensions: "ps|eps|ai",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/msword",
-        extensions: "doc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-bcpio",
-        extensions: "bcpio",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/vnd.wap.wml",
-        extensions: "wml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/x-setext",
-        extensions: "etx",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-netcdf",
-        extensions: "nc|cdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-chess-pgn",
-        extensions: "pgn",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-olympus-or",
-        extensions: "orf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-sv4crc",
-        extensions: "sv4crc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-texinfo",
-        extensions: "texinfo|texi",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.ms-powerpoint",
-        extensions: "ppt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-pn-realaudio-plugin",
-        extensions: "rpm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/css",
-        extensions: "css",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/vnd.mpegurl",
-        extensions: "mxu",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wmlscriptc",
-        extensions: "wmlsc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-ustar",
-        extensions: "ustar",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-pixmap",
-        extensions: "ppm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-wais-source",
-        extensions: "src",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-filemaker",
-        extensions: "fp6|fp5|fp4|fp3|fp2|fp",
+        mime_type: "application/vnd.mif",
+        extensions: "mif",
     },
     MIMETypeAndExtension {
         mime_type: "chemical/x-xyz",
         extensions: "xyz",
     },
     MIMETypeAndExtension {
-        mime_type: "x-conference/x-cooltalk",
-        extensions: "ice",
+        mime_type: "application/vnd.adobe.xfd+xml",
+        extensions: "xfd",
     },
     MIMETypeAndExtension {
-        mime_type: "application/mspowerpoint",
-        extensions: "ppt",
+        mime_type: "audio/x-aiff",
+        extensions: "aiff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "chemical/x-pdb",
+        extensions: "pdb",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-pcx",
+        extensions: "pcx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-xwindowdump",
+        extensions: "xwd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-chess-pgn",
+        extensions: "pgn",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-pixmap",
+        extensions: "ppm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/postscript",
+        extensions: "ps|eps|ai",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/richtext",
+        extensions: "rtx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/andrew-inset",
+        extensions: "ez",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/sgml",
+        extensions: "sgml|sgm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/xml",
+        extensions: "xml|xsl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-wais-source",
+        extensions: "src",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wbxml",
+        extensions: "wbxml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/mesh",
+        extensions: "msh|mesh|silo",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-troff-ms",
         extensions: "ms",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-sv4cpio",
-        extensions: "sv4cpio",
+        mime_type: "application/x-sh",
+        extensions: "sh",
     },
     MIMETypeAndExtension {
-        mime_type: "application/vnd.fdf",
-        extensions: "fdf",
+        mime_type: "application/x-cpio",
+        extensions: "cpio",
     },
     MIMETypeAndExtension {
         mime_type: "image/x-cmu-raster",
         extensions: "ras",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-dvi",
-        extensions: "dvi",
+        mime_type: "application/x-diskcopy",
+        extensions: "dmg",
     },
     MIMETypeAndExtension {
-        mime_type: "image/x-portable-anymap",
-        extensions: "pnm",
+        mime_type: "application/vnd.adobe.xdp+xml",
+        extensions: "xdp",
     },
     MIMETypeAndExtension {
-        mime_type: "application/vnd.mif",
-        extensions: "mif",
+        mime_type: "audio/aiff",
+        extensions: "aiff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-xpixmap",
+        extensions: "xpm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-bcpio",
+        extensions: "bcpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/mac-compactpro",
+        extensions: "cpt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.fdf",
+        extensions: "fdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/iges",
+        extensions: "igs|iges",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/vnd.wap.wbmp",
+        extensions: "wbmp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-msdownload",
+        extensions: "dll",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/vnd.mpegurl",
+        extensions: "mxu",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-macpaint",
+        extensions: "pnt|pntg|mac",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-bitmap",
+        extensions: "pbm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wml",
+        extensions: "wml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/mp4",
+        extensions: "mp4|mpg4",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.ms-excel",
+        extensions: "xls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-csh",
+        extensions: "csh",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/mpeg",
+        extensions: "mp3|mpga|mp2",
+    },
+    MIMETypeAndExtension {
+        mime_type: "x-conference/x-cooltalk",
+        extensions: "ice",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wmlscript",
+        extensions: "wmls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wmlscriptc",
+        extensions: "wmlsc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-futuresplash",
+        extensions: "spl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-ustar",
+        extensions: "ustar",
     },
     MIMETypeAndExtension {
         mime_type: "text/qif",
@@ -8141,11 +8788,167 @@ pub const MIME_TYPE_TO_EXTENSION_VEC: [MIMETypeAndExtension; 89] = [
         extensions: "gz|tgz|cpgz",
     },
     MIMETypeAndExtension {
-        mime_type: "application/andrew-inset",
-        extensions: "ez",
+        mime_type: "application/x-latex",
+        extensions: "latex",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/msexcel",
+        extensions: "xls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xfdf",
+        extensions: "xfdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff-man",
+        extensions: "man",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/css",
+        extensions: "css",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-bittorrent",
+        extensions: "torrent",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wmlc",
+        extensions: "wmlc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff-me",
+        extensions: "me",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-filemaker",
+        extensions: "fp6|fp5|fp4|fp3|fp2|fp",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-ms-wmd",
         extensions: "wmd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-shockwave-flash",
+        extensions: "swf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/x-sgi-movie",
+        extensions: "movie",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/html",
+        extensions: "html|jhtml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-texinfo",
+        extensions: "texinfo|texi",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-koan",
+        extensions: "skp|skd|skt|skm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-netcdf",
+        extensions: "nc|cdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/x-setext",
+        extensions: "etx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-targa",
+        extensions: "targa",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/octet-stream",
+        extensions: "dms|lha|lzh|class|so|iso|fla",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-sv4crc",
+        extensions: "sv4crc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-hdf",
+        extensions: "hdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-tcl",
+        extensions: "tcl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-sv4cpio",
+        extensions: "sv4cpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-shar",
+        extensions: "shar",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/ief",
+        extensions: "ief",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-olympus-or",
+        extensions: "orf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.ms-powerpoint",
+        extensions: "ppt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-rgb",
+        extensions: "rgb",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/vrml",
+        extensions: "wrl|vrml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-m4p",
+        extensions: "m4p",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff",
+        extensions: "t|tr|roff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/plain",
+        extensions: "txt|asc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-cdlink",
+        extensions: "vcd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-pn-realaudio-plugin",
+        extensions: "rpm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/xml",
+        extensions: "xml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/msword",
+        extensions: "doc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-anymap",
+        extensions: "pnm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/oda",
+        extensions: "oda",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-dvi",
+        extensions: "dvi",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-director",
+        extensions: "dcr|dir|dxr",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-tex",
+        extensions: "tex",
     },
 ];
