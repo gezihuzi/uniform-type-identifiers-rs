@@ -7793,359 +7793,359 @@ lazy_static! {
 }
 pub const MIME_TYPE_TO_EXTENSION_VEC: [MIMETypeAndExtension; 89] = [
     MIMETypeAndExtension {
-        mime_type: "text/sgml",
-        extensions: "sgml|sgm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/mpeg",
-        extensions: "mp3|mpga|mp2",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-tex",
-        extensions: "tex",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/andrew-inset",
-        extensions: "ez",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-koan",
-        extensions: "skp|skd|skt|skm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-ms-wmd",
-        extensions: "wmd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-netcdf",
-        extensions: "nc|cdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/vnd.wap.wml",
-        extensions: "wml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-shar",
-        extensions: "shar",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-targa",
-        extensions: "targa",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/x-sgi-movie",
-        extensions: "movie",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/msexcel",
-        extensions: "xls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-m4p",
-        extensions: "m4p",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-bittorrent",
-        extensions: "torrent",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/vnd.wap.wmlscript",
-        extensions: "wmls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-hdf",
-        extensions: "hdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wbxml",
-        extensions: "wbxml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xfd+xml",
-        extensions: "xfd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff-man",
-        extensions: "man",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-wais-source",
-        extensions: "src",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/css",
-        extensions: "css",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-director",
-        extensions: "dcr|dir|dxr",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/octet-stream",
-        extensions: "dms|lha|lzh|class|so|iso|fla",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-graymap",
-        extensions: "pgm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-macpaint",
-        extensions: "pnt|pntg|mac",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/vnd.wap.wbmp",
-        extensions: "wbmp",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-msdownload",
-        extensions: "dll",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/postscript",
-        extensions: "ps|eps|ai",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/vnd.mpegurl",
-        extensions: "mxu",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/plain",
-        extensions: "txt|asc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-chess-pgn",
-        extensions: "pgn",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-pcx",
-        extensions: "pcx",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-dvi",
-        extensions: "dvi",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/oda",
-        extensions: "oda",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/msword",
-        extensions: "doc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-pixmap",
-        extensions: "ppm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff-me",
-        extensions: "me",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-ustar",
-        extensions: "ustar",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wmlc",
-        extensions: "wmlc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "model/iges",
-        extensions: "igs|iges",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-cdlink",
-        extensions: "vcd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-gzip",
-        extensions: "gz|tgz|cpgz",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/xml",
-        extensions: "xml|xsl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-filemaker",
-        extensions: "fp6|fp5|fp4|fp3|fp2|fp",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/qif",
-        extensions: "qif",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-sh",
-        extensions: "sh",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-pn-realaudio-plugin",
-        extensions: "rpm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/mspowerpoint",
-        extensions: "ppt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-texinfo",
-        extensions: "texinfo|texi",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-tcl",
-        extensions: "tcl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.ms-excel",
-        extensions: "xls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-aiff",
-        extensions: "aiff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/aiff",
-        extensions: "aiff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "x-conference/x-cooltalk",
-        extensions: "ice",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/mac-compactpro",
-        extensions: "cpt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/mp4",
-        extensions: "mp4|mpg4",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-bcpio",
-        extensions: "bcpio",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xfdf",
-        extensions: "xfdf",
-    },
-    MIMETypeAndExtension {
         mime_type: "image/x-rgb",
         extensions: "rgb",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-diskcopy",
-        extensions: "dmg",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wmlscriptc",
-        extensions: "wmlsc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xdp+xml",
-        extensions: "xdp",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.mif",
-        extensions: "mif",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/xml",
-        extensions: "xml",
     },
     MIMETypeAndExtension {
         mime_type: "image/x-xpixmap",
         extensions: "xpm",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-latex",
-        extensions: "latex",
+        mime_type: "application/x-troff-me",
+        extensions: "me",
     },
     MIMETypeAndExtension {
-        mime_type: "text/richtext",
-        extensions: "rtx",
+        mime_type: "text/sgml",
+        extensions: "sgml|sgm",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-futuresplash",
-        extensions: "spl",
+        mime_type: "application/x-shar",
+        extensions: "shar",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-sv4crc",
-        extensions: "sv4crc",
+        mime_type: "application/msexcel",
+        extensions: "xls",
     },
     MIMETypeAndExtension {
-        mime_type: "image/x-xwindowdump",
-        extensions: "xwd",
+        mime_type: "application/mac-compactpro",
+        extensions: "cpt",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-shockwave-flash",
-        extensions: "swf",
+        mime_type: "text/plain",
+        extensions: "txt|asc",
     },
     MIMETypeAndExtension {
-        mime_type: "image/x-portable-anymap",
-        extensions: "pnm",
+        mime_type: "application/x-bittorrent",
+        extensions: "torrent",
     },
     MIMETypeAndExtension {
-        mime_type: "application/vnd.fdf",
-        extensions: "fdf",
+        mime_type: "application/x-sh",
+        extensions: "sh",
     },
     MIMETypeAndExtension {
-        mime_type: "model/vrml",
-        extensions: "wrl|vrml",
+        mime_type: "image/x-pcx",
+        extensions: "pcx",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-cpio",
-        extensions: "cpio",
+        mime_type: "application/vnd.ms-excel",
+        extensions: "xls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/xml",
+        extensions: "xml|xsl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-m4p",
+        extensions: "m4p",
     },
     MIMETypeAndExtension {
         mime_type: "text/html",
         extensions: "html|jhtml",
     },
     MIMETypeAndExtension {
-        mime_type: "image/x-portable-bitmap",
-        extensions: "pbm",
+        mime_type: "application/x-tcl",
+        extensions: "tcl",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-troff",
         extensions: "t|tr|roff",
     },
     MIMETypeAndExtension {
+        mime_type: "application/octet-stream",
+        extensions: "dms|lha|lzh|class|so|iso|fla",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-xwindowdump",
+        extensions: "xwd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/aiff",
+        extensions: "aiff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-futuresplash",
+        extensions: "spl",
+    },
+    MIMETypeAndExtension {
         mime_type: "image/ief",
         extensions: "ief",
     },
     MIMETypeAndExtension {
-        mime_type: "image/x-olympus-or",
-        extensions: "orf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "chemical/x-xyz",
-        extensions: "xyz",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-sv4cpio",
-        extensions: "sv4cpio",
+        mime_type: "application/x-troff-man",
+        extensions: "man",
     },
     MIMETypeAndExtension {
         mime_type: "chemical/x-pdb",
         extensions: "pdb",
     },
     MIMETypeAndExtension {
-        mime_type: "application/vnd.ms-powerpoint",
-        extensions: "ppt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-cmu-raster",
-        extensions: "ras",
+        mime_type: "model/mesh",
+        extensions: "msh|mesh|silo",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-csh",
         extensions: "csh",
     },
     MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xfd+xml",
+        extensions: "xfd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-koan",
+        extensions: "skp|skd|skt|skm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-diskcopy",
+        extensions: "dmg",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-macpaint",
+        extensions: "pnt|pntg|mac",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-targa",
+        extensions: "targa",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-msdownload",
+        extensions: "dll",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-cdlink",
+        extensions: "vcd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wbxml",
+        extensions: "wbxml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/iges",
+        extensions: "igs|iges",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xdp+xml",
+        extensions: "xdp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-cpio",
+        extensions: "cpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-latex",
+        extensions: "latex",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/xml",
+        extensions: "xml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xfdf",
+        extensions: "xfdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/mpeg",
+        extensions: "mp3|mpga|mp2",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-bitmap",
+        extensions: "pbm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-graymap",
+        extensions: "pgm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-tex",
+        extensions: "tex",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/vrml",
+        extensions: "wrl|vrml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-shockwave-flash",
+        extensions: "swf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-hdf",
+        extensions: "hdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wmlscript",
+        extensions: "wmls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-aiff",
+        extensions: "aiff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/x-sgi-movie",
+        extensions: "movie",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-director",
+        extensions: "dcr|dir|dxr",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/richtext",
+        extensions: "rtx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/mp4",
+        extensions: "mp4|mpg4",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/vnd.wap.wbmp",
+        extensions: "wbmp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wmlc",
+        extensions: "wmlc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/oda",
+        extensions: "oda",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/postscript",
+        extensions: "ps|eps|ai",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/msword",
+        extensions: "doc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-bcpio",
+        extensions: "bcpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wml",
+        extensions: "wml",
+    },
+    MIMETypeAndExtension {
         mime_type: "text/x-setext",
         extensions: "etx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-netcdf",
+        extensions: "nc|cdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-chess-pgn",
+        extensions: "pgn",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-olympus-or",
+        extensions: "orf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-sv4crc",
+        extensions: "sv4crc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-texinfo",
+        extensions: "texinfo|texi",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.ms-powerpoint",
+        extensions: "ppt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-pn-realaudio-plugin",
+        extensions: "rpm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/css",
+        extensions: "css",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/vnd.mpegurl",
+        extensions: "mxu",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wmlscriptc",
+        extensions: "wmlsc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-ustar",
+        extensions: "ustar",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-pixmap",
+        extensions: "ppm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-wais-source",
+        extensions: "src",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-filemaker",
+        extensions: "fp6|fp5|fp4|fp3|fp2|fp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "chemical/x-xyz",
+        extensions: "xyz",
+    },
+    MIMETypeAndExtension {
+        mime_type: "x-conference/x-cooltalk",
+        extensions: "ice",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/mspowerpoint",
+        extensions: "ppt",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-troff-ms",
         extensions: "ms",
     },
     MIMETypeAndExtension {
-        mime_type: "model/mesh",
-        extensions: "msh|mesh|silo",
+        mime_type: "application/x-sv4cpio",
+        extensions: "sv4cpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.fdf",
+        extensions: "fdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-cmu-raster",
+        extensions: "ras",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-dvi",
+        extensions: "dvi",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-anymap",
+        extensions: "pnm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.mif",
+        extensions: "mif",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/qif",
+        extensions: "qif",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-gzip",
+        extensions: "gz|tgz|cpgz",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/andrew-inset",
+        extensions: "ez",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-ms-wmd",
+        extensions: "wmd",
     },
 ];
