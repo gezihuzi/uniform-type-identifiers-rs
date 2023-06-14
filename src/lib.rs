@@ -1,6 +1,6 @@
 pub mod system_defined;
 
-use std::{fmt::Display, vec};
+use std::{fmt::Display, path::Path, vec};
 
 use serde::{Deserialize, Serialize};
 use system_defined::{
@@ -94,6 +94,27 @@ impl UTType<'_> {
             }
         };
         Self::from_identifier(key)
+    }
+
+    pub fn from_path(path: &Path) -> Option<UTType> {
+        if path.is_absolute() {
+            if path.is_file() {
+                let extension = path
+                    .extension()
+                    .unwrap_or_default()
+                    .to_str()
+                    .unwrap_or_default();
+                UTType::from_filename_extension(extension)
+            } else if path.is_dir() {
+                Some(system_defined::PUBLIC_DIRECTORY)
+            } else if path.is_symlink() {
+                Some(system_defined::PUBLIC_SYMLINK)
+            } else {
+                None
+            }
+        } else {
+            None
+        }
     }
 
     /// The string that represents the type.
