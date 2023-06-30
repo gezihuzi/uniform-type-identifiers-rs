@@ -181,20 +181,17 @@ impl UTType<'_> {
     /// Returns a Boolean value that indicates whether a type conforms to the type.
     /// true if the type directly or indirectly conforms to type, or if it’s equal to type.
     pub fn is_conforms(&self, x: &Self) -> bool {
-        let super_types = self.super_types();
-        super_types.contains(x)
+        self == x || self.super_types().contains(x)
     }
 
     /// Returns a Boolean value that indicates whether a type is higher in a hierarchy than the type.
     pub fn is_subtype(&self, x: &Self) -> bool {
-        let super_types = self.super_types();
-        super_types.contains(x)
+        self == x || self.super_types().iter().any(|t| t.is_subtype(x))
     }
 
     /// Returns a Boolean value that indicates whether a type is lower in a hierarchy than the type.
     pub fn is_supertype(&self, x: &Self) -> bool {
-        let super_types = x.super_types();
-        super_types.contains(self)
+        x.is_subtype(self)
     }
 }
 

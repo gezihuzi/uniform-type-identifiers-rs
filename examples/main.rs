@@ -1,9 +1,16 @@
 use uniform_type_identifiers::{
-    system_defined::{PUBLIC_DATA, PUBLIC_ITEM, PUBLIC_JSON, PUBLIC_TEXT, PUBLIC_XML},
+    system_defined::{PUBLIC_DATA, PUBLIC_ITEM, PUBLIC_JSON, PUBLIC_TEXT, PUBLIC_XML, PUBLIC_MPEG_4, PUBLIC_MOVIE, PUBLIC_AUDIO},
     UTType,
 };
 
 fn main() {
+    let mp4 = UTType::from_filename_extension("mp4");
+    println!("MPEG-4: {:?}", mp4);
+    let mp4_is_movie = PUBLIC_MPEG_4.is_conforms(&PUBLIC_MOVIE);
+    let mp4_is_audio = PUBLIC_MPEG_4.is_conforms(&PUBLIC_AUDIO);
+    println!("MPEG-4 is movie: {:?}", mp4_is_movie);
+    println!("MPEG-4 is audio: {:?}", mp4_is_audio);
+
     let mime_type = PUBLIC_JSON.preferred_mime_type().unwrap_or_default();
     let extension = PUBLIC_JSON
         .preferred_filename_extension()
