@@ -5694,164 +5694,164 @@ lazy_static! {
             (r#"csstore"#, "com.apple.csstore")
         ]);
     pub(crate) static ref SYSTEM_MIME_MAP: HashMap<&'static str, &'static str> = HashMap::from([
-        (
-            r#"application/vnd.apple.pkpasses"#,
-            "com.apple.pkpasses-data"
-        ),
-        (r#"application/vnd.apple.pkpass"#, "com.apple.pkpass"),
-        (
-            r#"application/x-apple-aspen-mobileprovision"#,
-            "com.apple.mobileprovision"
-        ),
-        (
-            r#"application/x-apple-aspen-config"#,
-            "com.apple.mobileconfig"
-        ),
-        (r#"application/epub+zip"#, "org.idpf.epub-container"),
-        (r#"application/x-webarchive"#, "com.apple.webarchive"),
-        (r#"application/x-x509-ca-cert"#, "public.x509-certificate"),
-        (r#"application/x-pkcs12"#, "com.rsa.pkcs-12"),
-        (r#"font/ttf"#, "public.truetype-ttf-font"),
-        (r#"font/otf"#, "public.opentype-font"),
-        (r#"audio/vnd.audible.aax"#, "com.audible.aax-audiobook"),
-        (r#"audio/x-audible"#, "com.audible.aa-audiobook"),
-        (r#"audio/x-pn-audibleaudio"#, "com.audible.aa-audiobook"),
-        (r#"audio/audible"#, "com.audible.aa-audiobook"),
-        (r#"audio/x-aac"#, "public.aac-audio"),
-        (r#"audio/aac"#, "public.aac-audio"),
-        (r#"audio/amr"#, "org.3gpp.adaptive-multi-rate-audio"),
-        (r#"audio/eac3"#, "public.enhanced-ac3-audio"),
-        (r#"audio/ac3"#, "public.ac3-audio"),
-        (r#"audio/dls"#, "public.downloadable-sound"),
-        (r#"audio/x-midi"#, "public.midi-audio"),
-        (r#"audio/midi"#, "public.midi-audio"),
-        (r#"audio/x-aiff"#, "public.aiff-audio"),
-        (r#"audio/aiff"#, "public.aiff-audio"),
-        (r#"audio/basic"#, "public.au-audio"),
-        (r#"audio/x-m4r"#, "com.apple.mpeg-4-ringtone"),
-        (r#"audio/x-m4a"#, "com.apple.m4a-audio"),
-        (r#"audio/mp4a-latm"#, "public.mpeg-4-audio"),
-        (r#"audio/mp4"#, "public.mpeg-4-audio"),
-        (r#"audio/x-scpls"#, "public.pls-playlist"),
-        (r#"audio/x-mpegurl"#, "public.m3u-playlist"),
-        (r#"application/vnd.apple.mpegurl"#, "public.m3u-playlist"),
-        (r#"audio/mpegurl"#, "public.m3u-playlist"),
-        (r#"audio/x-mp3"#, "public.mp3"),
-        (r#"audio/x-mpg"#, "public.mp3"),
-        (r#"audio/x-mpeg3"#, "public.mp3"),
-        (r#"audio/x-mpeg"#, "public.mp3"),
-        (r#"audio/mp3"#, "public.mp3"),
-        (r#"audio/mpg"#, "public.mp3"),
-        (r#"audio/mpeg3"#, "public.mp3"),
-        (r#"audio/mpeg"#, "public.mp3"),
-        (r#"video/flc"#, "public.flc-animation"),
-        (r#"audio/3gpp2"#, "public.3gpp2"),
-        (r#"video/3gpp2"#, "public.3gpp2"),
-        (r#"audio/3gpp"#, "public.3gpp"),
-        (r#"video/3gpp"#, "public.3gpp"),
-        (r#"video/x-msvideo"#, "public.avi"),
-        (r#"video/msvideo"#, "public.avi"),
-        (r#"video/avi"#, "public.avi"),
-        (r#"video/x-dv"#, "public.dv-movie"),
-        (r#"video/x-m4v"#, "com.apple.m4v-video"),
-        (r#"video/mp4v-es"#, "public.mpeg-4"),
-        (r#"video/mp4"#, "public.mpeg-4"),
-        (r#"video/mpeg2-video"#, "public.mpeg-2-video"),
-        (r#"video/mpeg2"#, "public.mpeg-2-video"),
-        (r#"video/x-mpg"#, "public.mpeg"),
-        (r#"video/x-mpeg"#, "public.mpeg"),
-        (r#"video/mpg"#, "public.mpeg"),
-        (r#"video/mpeg"#, "public.mpeg"),
-        (r#"video/quicktime"#, "com.apple.quicktime-movie"),
-        (r#"application/dicom"#, "org.nema.dicom"),
-        (r#"image/x-xbitmap"#, "public.xbitmap-image"),
-        (r#"image/x-quicktime"#, "com.apple.quicktime-image"),
-        (r#"image/svg+xml"#, "public.svg-image"),
-        (r#"image/png"#, "public.png"),
-        (r#"image/x-macpict"#, "com.apple.pict"),
-        (r#"image/x-pict"#, "com.apple.pict"),
-        (r#"image/pict"#, "com.apple.pict"),
-        (r#"image/tiff"#, "public.tiff"),
-        (r#"image/jp2"#, "public.jpeg-2000"),
-        (r#"image/jpg"#, "public.jpeg"),
-        (r#"image/jpeg"#, "public.jpeg"),
-        (r#"application/jnlp"#, "com.sun.java-web-start"),
-        (r#"application/x-java-jnlp-file"#, "com.sun.java-web-start"),
-        (r#"application/php"#, "public.php-script"),
-        (r#"text/x-php-script"#, "public.php-script"),
-        (r#"text/php"#, "public.php-script"),
-        (r#"text/x-ruby-script"#, "public.ruby-script"),
-        (r#"text/x-python-script"#, "public.python-script"),
-        (r#"text/x-perl-script"#, "public.perl-script"),
-        (r#"text/javascript"#, "com.netscape.javascript-source"),
-        (r#"text/vtt"#, "org.w3.webvtt"),
-        (r#"application/x-yaml"#, "public.yaml"),
-        (r#"application/x-ndjson"#, "public.ndjson"),
-        (r#"application/json"#, "public.json"),
-        (r#"text/css"#, "public.css"),
-        (r#"application/rss+xml"#, "public.rss"),
-        (r#"application/xhtml+xml"#, "public.xhtml"),
-        (r#"text/xml"#, "public.xml"),
-        (r#"application/xml"#, "public.xml"),
-        (r#"text/html"#, "public.html"),
-        (r#"text/rtf"#, "public.rtf"),
-        (
-            r#"text/tab-separated-values"#,
-            "public.tab-separated-values-text"
-        ),
-        (
-            r#"text/comma-separated-values"#,
-            "public.comma-separated-values-text"
-        ),
-        (r#"text/csv"#, "public.comma-separated-values-text"),
-        (r#"application/x-zip-compressed"#, "public.zip-archive"),
-        (r#"application/zip"#, "public.zip-archive"),
-        (r#"application/x-compress"#, "public.z-archive"),
-        (r#"text/x-uuencode"#, "public.uuencoded-archive"),
-        (r#"application/x-macbinary"#, "com.apple.macbinary-archive"),
-        (r#"application/macbinary"#, "com.apple.macbinary-archive"),
-        (r#"application/binhex"#, "com.apple.binhex-archive"),
-        (r#"application/mac-binhex"#, "com.apple.binhex-archive"),
-        (r#"application/mac-binhex40"#, "com.apple.binhex-archive"),
-        (r#"application/x-bz2"#, "public.bzip2-archive"),
-        (r#"application/bzip"#, "public.bzip2-archive"),
-        (r#"application/bzip2"#, "public.bzip2-archive"),
-        (r#"application/x-bzip"#, "public.bzip2-archive"),
-        (r#"application/x-bzip2"#, "public.bzip2-archive"),
-        (r#"application/gzip"#, "org.gnu.gnu-zip-archive"),
-        (r#"application/x-gzip"#, "org.gnu.gnu-zip-archive"),
-        (r#"application/tar"#, "public.tar-archive"),
-        (r#"application/x-tar"#, "public.tar-archive"),
-        (r#"application/x-gtar"#, "org.gnu.gnu-tar-archive"),
-        (
-            r#"application/x-quartzcomposer"#,
-            "com.apple.quartz-composer-composition"
-        ),
-        (r#"application/java-archive"#, "com.sun.java-archive"),
-        (
-            r#"application/x-msdownload"#,
-            "com.microsoft.windows-dynamic-link-library"
-        ),
-        (
-            r#"application/x-msdownload"#,
-            "com.microsoft.windows-executable"
-        ),
-        (r#"text/plain;charset="utf-16""#, "public.utf16-plain-text"),
-        (r#"text/plain;charset=utf-16"#, "public.utf16-plain-text"),
-        (r#"text/plain;charset="utf-8""#, "public.utf8-plain-text"),
-        (r#"text/plain;charset=utf-8"#, "public.utf8-plain-text"),
-        (r#"text/plain"#, "public.plain-text"),
-        (r#"text/x-vcard"#, "public.vcard"),
-        (r#"text/directory"#, "public.vcard"),
-        (r#"text/vcard"#, "public.vcard"),
-        (r#"text/calendar"#, "com.apple.ical.ics"),
-        (r#"text/x-vcalendar"#, "com.apple.ical.vcs"),
-        (r#"model/vnd.reality"#, "com.apple.reality"),
+        (r#"application/octet-stream"#, "public.data"),
         (
             r#"model/vnd.usdz+zip"#,
             "com.pixar.universal-scene-description-mobile"
         ),
-        (r#"application/octet-stream"#, "public.data")
+        (r#"model/vnd.reality"#, "com.apple.reality"),
+        (r#"text/x-vcalendar"#, "com.apple.ical.vcs"),
+        (r#"text/calendar"#, "com.apple.ical.ics"),
+        (r#"text/vcard"#, "public.vcard"),
+        (r#"text/directory"#, "public.vcard"),
+        (r#"text/x-vcard"#, "public.vcard"),
+        (r#"text/plain"#, "public.plain-text"),
+        (r#"text/plain;charset=utf-8"#, "public.utf8-plain-text"),
+        (r#"text/plain;charset="utf-8""#, "public.utf8-plain-text"),
+        (r#"text/plain;charset=utf-16"#, "public.utf16-plain-text"),
+        (r#"text/plain;charset="utf-16""#, "public.utf16-plain-text"),
+        (
+            r#"application/x-msdownload"#,
+            "com.microsoft.windows-executable"
+        ),
+        (
+            r#"application/x-msdownload"#,
+            "com.microsoft.windows-dynamic-link-library"
+        ),
+        (r#"application/java-archive"#, "com.sun.java-archive"),
+        (
+            r#"application/x-quartzcomposer"#,
+            "com.apple.quartz-composer-composition"
+        ),
+        (r#"application/x-gtar"#, "org.gnu.gnu-tar-archive"),
+        (r#"application/x-tar"#, "public.tar-archive"),
+        (r#"application/tar"#, "public.tar-archive"),
+        (r#"application/x-gzip"#, "org.gnu.gnu-zip-archive"),
+        (r#"application/gzip"#, "org.gnu.gnu-zip-archive"),
+        (r#"application/x-bzip2"#, "public.bzip2-archive"),
+        (r#"application/x-bzip"#, "public.bzip2-archive"),
+        (r#"application/bzip2"#, "public.bzip2-archive"),
+        (r#"application/bzip"#, "public.bzip2-archive"),
+        (r#"application/x-bz2"#, "public.bzip2-archive"),
+        (r#"application/mac-binhex40"#, "com.apple.binhex-archive"),
+        (r#"application/mac-binhex"#, "com.apple.binhex-archive"),
+        (r#"application/binhex"#, "com.apple.binhex-archive"),
+        (r#"application/macbinary"#, "com.apple.macbinary-archive"),
+        (r#"application/x-macbinary"#, "com.apple.macbinary-archive"),
+        (r#"text/x-uuencode"#, "public.uuencoded-archive"),
+        (r#"application/x-compress"#, "public.z-archive"),
+        (r#"application/zip"#, "public.zip-archive"),
+        (r#"application/x-zip-compressed"#, "public.zip-archive"),
+        (r#"text/csv"#, "public.comma-separated-values-text"),
+        (
+            r#"text/comma-separated-values"#,
+            "public.comma-separated-values-text"
+        ),
+        (
+            r#"text/tab-separated-values"#,
+            "public.tab-separated-values-text"
+        ),
+        (r#"text/rtf"#, "public.rtf"),
+        (r#"text/html"#, "public.html"),
+        (r#"application/xml"#, "public.xml"),
+        (r#"text/xml"#, "public.xml"),
+        (r#"application/xhtml+xml"#, "public.xhtml"),
+        (r#"application/rss+xml"#, "public.rss"),
+        (r#"text/css"#, "public.css"),
+        (r#"application/json"#, "public.json"),
+        (r#"application/x-ndjson"#, "public.ndjson"),
+        (r#"application/x-yaml"#, "public.yaml"),
+        (r#"text/vtt"#, "org.w3.webvtt"),
+        (r#"text/javascript"#, "com.netscape.javascript-source"),
+        (r#"text/x-perl-script"#, "public.perl-script"),
+        (r#"text/x-python-script"#, "public.python-script"),
+        (r#"text/x-ruby-script"#, "public.ruby-script"),
+        (r#"text/php"#, "public.php-script"),
+        (r#"text/x-php-script"#, "public.php-script"),
+        (r#"application/php"#, "public.php-script"),
+        (r#"application/x-java-jnlp-file"#, "com.sun.java-web-start"),
+        (r#"application/jnlp"#, "com.sun.java-web-start"),
+        (r#"image/jpeg"#, "public.jpeg"),
+        (r#"image/jpg"#, "public.jpeg"),
+        (r#"image/jp2"#, "public.jpeg-2000"),
+        (r#"image/tiff"#, "public.tiff"),
+        (r#"image/pict"#, "com.apple.pict"),
+        (r#"image/x-pict"#, "com.apple.pict"),
+        (r#"image/x-macpict"#, "com.apple.pict"),
+        (r#"image/png"#, "public.png"),
+        (r#"image/svg+xml"#, "public.svg-image"),
+        (r#"image/x-quicktime"#, "com.apple.quicktime-image"),
+        (r#"image/x-xbitmap"#, "public.xbitmap-image"),
+        (r#"application/dicom"#, "org.nema.dicom"),
+        (r#"video/quicktime"#, "com.apple.quicktime-movie"),
+        (r#"video/mpeg"#, "public.mpeg"),
+        (r#"video/mpg"#, "public.mpeg"),
+        (r#"video/x-mpeg"#, "public.mpeg"),
+        (r#"video/x-mpg"#, "public.mpeg"),
+        (r#"video/mpeg2"#, "public.mpeg-2-video"),
+        (r#"video/mpeg2-video"#, "public.mpeg-2-video"),
+        (r#"video/mp4"#, "public.mpeg-4"),
+        (r#"video/mp4v-es"#, "public.mpeg-4"),
+        (r#"video/x-m4v"#, "com.apple.m4v-video"),
+        (r#"video/x-dv"#, "public.dv-movie"),
+        (r#"video/avi"#, "public.avi"),
+        (r#"video/msvideo"#, "public.avi"),
+        (r#"video/x-msvideo"#, "public.avi"),
+        (r#"video/3gpp"#, "public.3gpp"),
+        (r#"audio/3gpp"#, "public.3gpp"),
+        (r#"video/3gpp2"#, "public.3gpp2"),
+        (r#"audio/3gpp2"#, "public.3gpp2"),
+        (r#"video/flc"#, "public.flc-animation"),
+        (r#"audio/mpeg"#, "public.mp3"),
+        (r#"audio/mpeg3"#, "public.mp3"),
+        (r#"audio/mpg"#, "public.mp3"),
+        (r#"audio/mp3"#, "public.mp3"),
+        (r#"audio/x-mpeg"#, "public.mp3"),
+        (r#"audio/x-mpeg3"#, "public.mp3"),
+        (r#"audio/x-mpg"#, "public.mp3"),
+        (r#"audio/x-mp3"#, "public.mp3"),
+        (r#"audio/mpegurl"#, "public.m3u-playlist"),
+        (r#"application/vnd.apple.mpegurl"#, "public.m3u-playlist"),
+        (r#"audio/x-mpegurl"#, "public.m3u-playlist"),
+        (r#"audio/x-scpls"#, "public.pls-playlist"),
+        (r#"audio/mp4"#, "public.mpeg-4-audio"),
+        (r#"audio/mp4a-latm"#, "public.mpeg-4-audio"),
+        (r#"audio/x-m4a"#, "com.apple.m4a-audio"),
+        (r#"audio/x-m4r"#, "com.apple.mpeg-4-ringtone"),
+        (r#"audio/basic"#, "public.au-audio"),
+        (r#"audio/aiff"#, "public.aiff-audio"),
+        (r#"audio/x-aiff"#, "public.aiff-audio"),
+        (r#"audio/midi"#, "public.midi-audio"),
+        (r#"audio/x-midi"#, "public.midi-audio"),
+        (r#"audio/dls"#, "public.downloadable-sound"),
+        (r#"audio/ac3"#, "public.ac3-audio"),
+        (r#"audio/eac3"#, "public.enhanced-ac3-audio"),
+        (r#"audio/amr"#, "org.3gpp.adaptive-multi-rate-audio"),
+        (r#"audio/aac"#, "public.aac-audio"),
+        (r#"audio/x-aac"#, "public.aac-audio"),
+        (r#"audio/audible"#, "com.audible.aa-audiobook"),
+        (r#"audio/x-pn-audibleaudio"#, "com.audible.aa-audiobook"),
+        (r#"audio/x-audible"#, "com.audible.aa-audiobook"),
+        (r#"audio/vnd.audible.aax"#, "com.audible.aax-audiobook"),
+        (r#"font/otf"#, "public.opentype-font"),
+        (r#"font/ttf"#, "public.truetype-ttf-font"),
+        (r#"application/x-pkcs12"#, "com.rsa.pkcs-12"),
+        (r#"application/x-x509-ca-cert"#, "public.x509-certificate"),
+        (r#"application/x-webarchive"#, "com.apple.webarchive"),
+        (r#"application/epub+zip"#, "org.idpf.epub-container"),
+        (
+            r#"application/x-apple-aspen-config"#,
+            "com.apple.mobileconfig"
+        ),
+        (
+            r#"application/x-apple-aspen-mobileprovision"#,
+            "com.apple.mobileprovision"
+        ),
+        (r#"application/vnd.apple.pkpass"#, "com.apple.pkpass"),
+        (
+            r#"application/vnd.apple.pkpasses"#,
+            "com.apple.pkpasses-data"
+        )
     ]);
 }
 pub const COM_ADOBE_PDF: UTType = UTType {
@@ -7814,258 +7814,51 @@ lazy_static! {
             (r#"pdf"#, "com.adobe.pdf")
         ]);
     pub(crate) static ref OTHER_MIME_MAP: HashMap<&'static str, &'static str> = HashMap::from([
-        (r#"application/x-xz"#, "org.tukaani.xz-archive"),
-        (r#"application/x-7z-compressed"#, "org.7-zip.7-zip-archive"),
-        (r#"video/x-flv"#, "com.adobe.flash.video"),
-        (r#"application/x-sit"#, "com.stuffit.archive.sit"),
-        (r#"application/x-stuffit"#, "com.stuffit.archive.sit"),
-        (r#"application/x-sitx-index"#, "com.stuffit.archive.sidx"),
+        (r#"application/pdf"#, "com.adobe.pdf"),
+        (r#"application/postscript"#, "com.adobe.postscript"),
+        (r#"image/gif"#, "com.compuserve.gif"),
+        (r#"image/bmp"#, "com.microsoft.bmp"),
+        (r#"image/vnd.microsoft.icon"#, "com.microsoft.ico"),
+        (r#"image/webp"#, "org.webmproject.webp"),
+        (r#"video/webm"#, "org.webmproject.webm"),
+        (r#"audio/webm"#, "org.webmproject.webm"),
+        (r#"application/ofd"#, "public.ofd"),
+        (r#"application/vnd.sun.xml.writer"#, "org.openoffice.text"),
         (
-            r#"application/x-stuffitx-index"#,
-            "com.stuffit.archive.sidx"
-        ),
-        (r#"application/x-sitx"#, "com.stuffit.archive.sitx"),
-        (r#"application/x-stuffitx"#, "com.stuffit.archive.sitx"),
-        (r#"audio/mp4a-latm"#, "public.mp4a-latm"),
-        (r#"audio/flac"#, "org.xiph.flac"),
-        (r#"audio/x-realaudio"#, "com.real.realaudio"),
-        (r#"audio/x-pn-realaudio"#, "com.real.realaudio"),
-        (r#"audio/vnd.rn-realaudio"#, "com.real.realaudio"),
-        (r#"application/mxf"#, "org.smpte.mxf"),
-        (
-            r#"application/vnd.rn-realmedia-vbr"#,
-            "com.real.realmedia-vbr"
-        ),
-        (r#"application/vnd.rn-realmedia"#, "com.real.realmedia"),
-        (r#"video/x-ms-wax"#, "com.microsoft.windows-media-wax"),
-        (r#"video/x-ms-wvx"#, "com.microsoft.windows-media-wvx"),
-        (r#"video/x-ms-wmx"#, "com.microsoft.windows-media-wmx"),
-        (
-            r#"video/x-ms-asx"#,
-            "com.microsoft.advanced-stream-redirector"
-        ),
-        (r#"video/x-ms-wma"#, "com.microsoft.windows-media-wma"),
-        (r#"video/x-ms-wmp"#, "com.microsoft.windows-media-wmp"),
-        (r#"video/x-ms-wmv"#, "com.microsoft.windows-media-wmv"),
-        (r#"video/x-ms-wm"#, "com.microsoft.windows-media-wm"),
-        (r#"video/x-ms-asf"#, "com.microsoft.advanced-systems-format"),
-        (r#"audio/x-wav"#, "com.microsoft.waveform-audio"),
-        (r#"audio/wave"#, "com.microsoft.waveform-audio"),
-        (r#"audio/wav"#, "com.microsoft.waveform-audio"),
-        (r#"audio/vnd.wave"#, "com.microsoft.waveform-audio"),
-        (r#"image/efax"#, "com.j2.efx-fax"),
-        (r#"image/avcs"#, "public.avcs"),
-        (r#"image/heic-sequence"#, "public.heics"),
-        (r#"image/heif-sequence"#, "public.heifs"),
-        (r#"image/avci"#, "public.avci"),
-        (r#"image/heic"#, "public.heic"),
-        (r#"image/heif"#, "public.heif"),
-        (r#"application/vnd.fpx"#, "com.kodak.flashpix-image"),
-        (r#"image/fpx"#, "com.kodak.flashpix-image"),
-        (r#"image/sgi"#, "com.sgi.sgi-image"),
-        (r#"application/tga"#, "com.truevision.tga-image"),
-        (r#"image/tga"#, "com.truevision.tga-image"),
-        (r#"image/targa"#, "com.truevision.tga-image"),
-        (r#"application/photoshop"#, "com.adobe.photoshop-image"),
-        (r#"image/psd"#, "com.adobe.photoshop-image"),
-        (r#"image/x-photoshop"#, "com.adobe.photoshop-image"),
-        (r#"image/photoshop"#, "com.adobe.photoshop-image"),
-        (r#"image/vnd.adobe.photoshop"#, "com.adobe.photoshop-image"),
-        (
-            r#"application/x-iwork-numbers-sfftemplate"#,
-            "com.apple.iWork.Numbers.sfftemplate"
+            r#"application/vnd.stardivision.writer"#,
+            "org.openoffice.text"
         ),
         (
-            r#"application/x-iwork-numbers-sffnumbers"#,
-            "com.apple.iWork.Numbers.sffnumbers"
+            r#"application/vnd.sun.xml.writer.template"#,
+            "org.openoffice.text-template"
         ),
         (
-            r#"application/x-iwork-pages-sfftemplate"#,
-            "com.apple.iWork.Pages.sfftemplate"
+            r#"application/vnd.oasis.opendocument.text"#,
+            "org.oasis-open.opendocument.text"
         ),
         (
-            r#"application/x-iwork-pages-sffpages"#,
-            "com.apple.iWork.Pages.sffpages"
+            r#"application/vnd.oasis.opendocument.text-template"#,
+            "org.oasis-open.opendocument.text-template"
+        ),
+        (r#"application/vnd.sun.xml.draw"#, "org.openoffice.graphics"),
+        (
+            r#"application/vnd.stardivision.draw"#,
+            "org.openoffice.graphics"
         ),
         (
-            r#"application/x-iwork-keynote-sffkth"#,
-            "com.apple.iWork.Keynote.sffkth"
+            r#"application/vnd.sun.xml.draw.template"#,
+            "org.openoffice.graphics-template"
         ),
         (
-            r#"application/x-iwork-keynote-sffkey"#,
-            "com.apple.iWork.Keynote.sffkey"
+            r#"application/vnd.oasis.opendocument.graphics"#,
+            "org.oasis-open.opendocument.graphics"
         ),
         (
-            r#"application/mspowerpoint"#,
-            "com.microsoft.powerpoint.pps"
+            r#"application/vnd.oasis.opendocument.graphics-template"#,
+            "org.oasis-open.opendocument.graphics-template"
         ),
         (
-            r#"application/vnd.ms-powerpoint"#,
-            "com.microsoft.powerpoint.pps"
-        ),
-        (
-            r#"application/mspowerpoint"#,
-            "com.microsoft.powerpoint.pot"
-        ),
-        (
-            r#"application/vnd.ms-powerpoint"#,
-            "com.microsoft.powerpoint.pot"
-        ),
-        (
-            r#"application/mspowerpoint"#,
-            "com.microsoft.powerpoint.ppt"
-        ),
-        (
-            r#"application/vnd.ms-powerpoint"#,
-            "com.microsoft.powerpoint.ppt"
-        ),
-        (r#"application/msexcel"#, "com.microsoft.excel.xlw"),
-        (r#"application/vnd.ms-excel"#, "com.microsoft.excel.xlw"),
-        (r#"application/msexcel"#, "com.microsoft.excel.xlt"),
-        (r#"application/vnd.ms-excel"#, "com.microsoft.excel.xlt"),
-        (r#"application/msexcel"#, "com.microsoft.excel.xls"),
-        (r#"application/vnd.ms-excel"#, "com.microsoft.excel.xls"),
-        (r#"application/msword"#, "com.microsoft.word.dot"),
-        (r#"application/msword"#, "com.microsoft.word.doc"),
-        (
-            r#"application/vnd.ms-powerpoint.template.macroEnabled.12"#,
-            "org.openxmlformats.presentationml.template.macroenabled"
-        ),
-        (
-            r#"application/vnd.openxmlformats-officedocument.presentationml.template"#,
-            "org.openxmlformats.presentationml.template"
-        ),
-        (
-            r#"application/vnd.ms-powerpoint.slideshow.macroEnabled.12"#,
-            "org.openxmlformats.presentationml.slideshow.macroenabled"
-        ),
-        (
-            r#"application/vnd.openxmlformats-officedocument.presentationml.slideshow"#,
-            "org.openxmlformats.presentationml.slideshow"
-        ),
-        (
-            r#"application/vnd.ms-powerpoint.presentation.macroEnabled.12"#,
-            "org.openxmlformats.presentationml.presentation.macroenabled"
-        ),
-        (
-            r#"application/vnd.openxmlformats-officedocument.presentationml.presentation"#,
-            "org.openxmlformats.presentationml.presentation"
-        ),
-        (
-            r#"application/vnd.ms-excel.template.macroEnabled.12"#,
-            "org.openxmlformats.spreadsheetml.template.macroenabled"
-        ),
-        (
-            r#"application/vnd.openxmlformats-officedocument.spreadsheetml.template"#,
-            "org.openxmlformats.spreadsheetml.template"
-        ),
-        (
-            r#"application/vnd.ms-excel.sheet.binary.macroEnabled.12"#,
-            "com.microsoft.excel.sheet.binary.macroenabled"
-        ),
-        (
-            r#"application/vnd.ms-excel.sheet.macroEnabled.12"#,
-            "org.openxmlformats.spreadsheetml.sheet.macroenabled"
-        ),
-        (
-            r#"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"#,
-            "org.openxmlformats.spreadsheetml.sheet"
-        ),
-        (
-            r#"application/vnd.ms-word.template.macroEnabled.12"#,
-            "org.openxmlformats.wordprocessingml.template.macroenabled"
-        ),
-        (
-            r#"application/vnd.openxmlformats-officedocument.wordprocessingml.template"#,
-            "org.openxmlformats.wordprocessingml.template"
-        ),
-        (
-            r#"application/vnd.ms-word.document.macroEnabled.12"#,
-            "org.openxmlformats.wordprocessingml.document.macroenabled"
-        ),
-        (
-            r#"application/vnd.openxmlformats-officedocument.wordprocessingml.document"#,
-            "org.openxmlformats.wordprocessingml.document"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.database"#,
-            "org.oasis-open.opendocument.database"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.text-web"#,
-            "org.oasis-open.opendocument.text-web"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.text-master"#,
-            "org.oasis-open.opendocument.text-master"
-        ),
-        (
-            r#"application/vnd.sun.xml.writer.global"#,
-            "org.openoffice.text-master"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.formula-template"#,
-            "org.oasis-open.opendocument.formula-template"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.formula"#,
-            "org.oasis-open.opendocument.formula"
-        ),
-        (
-            r#"application/vnd.stardivision.math"#,
-            "org.openoffice.formula"
-        ),
-        (r#"application/vnd.sun.xml.math"#, "org.openoffice.formula"),
-        (
-            r#"application/vnd.oasis.opendocument.image-template"#,
-            "org.oasis-open.opendocument.image-template"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.image"#,
-            "org.oasis-open.opendocument.image"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.chart-template"#,
-            "org.oasis-open.opendocument.chart-template"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.chart"#,
-            "org.oasis-open.opendocument.chart"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.spreadsheet-template"#,
-            "org.oasis-open.opendocument.spreadsheet-template"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.spreadsheet"#,
-            "org.oasis-open.opendocument.spreadsheet"
-        ),
-        (
-            r#"application/vnd.sun.xml.calc.template"#,
-            "org.openoffice.spreadsheet-template"
-        ),
-        (
-            r#"application/vnd.stardivision.calc"#,
-            "org.openoffice.spreadsheet"
-        ),
-        (
-            r#"application/vnd.sun.xml.calc"#,
-            "org.openoffice.spreadsheet"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.presentation-template"#,
-            "org.oasis-open.opendocument.presentation-template"
-        ),
-        (
-            r#"application/vnd.oasis.opendocument.presentation"#,
-            "org.oasis-open.opendocument.presentation"
-        ),
-        (
-            r#"application/vnd.sun.xml.impress.template"#,
-            "org.openoffice.presentation-template"
-        ),
-        (
-            r#"application/vnd.stardivision.impress-packed"#,
+            r#"application/vnd.sun.xml.impress"#,
             "org.openoffice.presentation"
         ),
         (
@@ -8073,409 +7866,616 @@ lazy_static! {
             "org.openoffice.presentation"
         ),
         (
-            r#"application/vnd.sun.xml.impress"#,
+            r#"application/vnd.stardivision.impress-packed"#,
             "org.openoffice.presentation"
         ),
         (
-            r#"application/vnd.oasis.opendocument.graphics-template"#,
-            "org.oasis-open.opendocument.graphics-template"
+            r#"application/vnd.sun.xml.impress.template"#,
+            "org.openoffice.presentation-template"
         ),
         (
-            r#"application/vnd.oasis.opendocument.graphics"#,
-            "org.oasis-open.opendocument.graphics"
+            r#"application/vnd.oasis.opendocument.presentation"#,
+            "org.oasis-open.opendocument.presentation"
         ),
         (
-            r#"application/vnd.sun.xml.draw.template"#,
-            "org.openoffice.graphics-template"
+            r#"application/vnd.oasis.opendocument.presentation-template"#,
+            "org.oasis-open.opendocument.presentation-template"
         ),
         (
-            r#"application/vnd.stardivision.draw"#,
-            "org.openoffice.graphics"
-        ),
-        (r#"application/vnd.sun.xml.draw"#, "org.openoffice.graphics"),
-        (
-            r#"application/vnd.oasis.opendocument.text-template"#,
-            "org.oasis-open.opendocument.text-template"
+            r#"application/vnd.sun.xml.calc"#,
+            "org.openoffice.spreadsheet"
         ),
         (
-            r#"application/vnd.oasis.opendocument.text"#,
-            "org.oasis-open.opendocument.text"
+            r#"application/vnd.stardivision.calc"#,
+            "org.openoffice.spreadsheet"
         ),
         (
-            r#"application/vnd.sun.xml.writer.template"#,
-            "org.openoffice.text-template"
+            r#"application/vnd.sun.xml.calc.template"#,
+            "org.openoffice.spreadsheet-template"
         ),
         (
-            r#"application/vnd.stardivision.writer"#,
-            "org.openoffice.text"
+            r#"application/vnd.oasis.opendocument.spreadsheet"#,
+            "org.oasis-open.opendocument.spreadsheet"
         ),
-        (r#"application/vnd.sun.xml.writer"#, "org.openoffice.text"),
-        (r#"application/ofd"#, "public.ofd"),
-        (r#"audio/webm"#, "org.webmproject.webm"),
-        (r#"video/webm"#, "org.webmproject.webm"),
-        (r#"image/webp"#, "org.webmproject.webp"),
-        (r#"image/vnd.microsoft.icon"#, "com.microsoft.ico"),
-        (r#"image/bmp"#, "com.microsoft.bmp"),
-        (r#"image/gif"#, "com.compuserve.gif"),
-        (r#"application/postscript"#, "com.adobe.postscript"),
-        (r#"application/pdf"#, "com.adobe.pdf")
+        (
+            r#"application/vnd.oasis.opendocument.spreadsheet-template"#,
+            "org.oasis-open.opendocument.spreadsheet-template"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.chart"#,
+            "org.oasis-open.opendocument.chart"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.chart-template"#,
+            "org.oasis-open.opendocument.chart-template"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.image"#,
+            "org.oasis-open.opendocument.image"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.image-template"#,
+            "org.oasis-open.opendocument.image-template"
+        ),
+        (r#"application/vnd.sun.xml.math"#, "org.openoffice.formula"),
+        (
+            r#"application/vnd.stardivision.math"#,
+            "org.openoffice.formula"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.formula"#,
+            "org.oasis-open.opendocument.formula"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.formula-template"#,
+            "org.oasis-open.opendocument.formula-template"
+        ),
+        (
+            r#"application/vnd.sun.xml.writer.global"#,
+            "org.openoffice.text-master"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.text-master"#,
+            "org.oasis-open.opendocument.text-master"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.text-web"#,
+            "org.oasis-open.opendocument.text-web"
+        ),
+        (
+            r#"application/vnd.oasis.opendocument.database"#,
+            "org.oasis-open.opendocument.database"
+        ),
+        (
+            r#"application/vnd.openxmlformats-officedocument.wordprocessingml.document"#,
+            "org.openxmlformats.wordprocessingml.document"
+        ),
+        (
+            r#"application/vnd.ms-word.document.macroEnabled.12"#,
+            "org.openxmlformats.wordprocessingml.document.macroenabled"
+        ),
+        (
+            r#"application/vnd.openxmlformats-officedocument.wordprocessingml.template"#,
+            "org.openxmlformats.wordprocessingml.template"
+        ),
+        (
+            r#"application/vnd.ms-word.template.macroEnabled.12"#,
+            "org.openxmlformats.wordprocessingml.template.macroenabled"
+        ),
+        (
+            r#"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"#,
+            "org.openxmlformats.spreadsheetml.sheet"
+        ),
+        (
+            r#"application/vnd.ms-excel.sheet.macroEnabled.12"#,
+            "org.openxmlformats.spreadsheetml.sheet.macroenabled"
+        ),
+        (
+            r#"application/vnd.ms-excel.sheet.binary.macroEnabled.12"#,
+            "com.microsoft.excel.sheet.binary.macroenabled"
+        ),
+        (
+            r#"application/vnd.openxmlformats-officedocument.spreadsheetml.template"#,
+            "org.openxmlformats.spreadsheetml.template"
+        ),
+        (
+            r#"application/vnd.ms-excel.template.macroEnabled.12"#,
+            "org.openxmlformats.spreadsheetml.template.macroenabled"
+        ),
+        (
+            r#"application/vnd.openxmlformats-officedocument.presentationml.presentation"#,
+            "org.openxmlformats.presentationml.presentation"
+        ),
+        (
+            r#"application/vnd.ms-powerpoint.presentation.macroEnabled.12"#,
+            "org.openxmlformats.presentationml.presentation.macroenabled"
+        ),
+        (
+            r#"application/vnd.openxmlformats-officedocument.presentationml.slideshow"#,
+            "org.openxmlformats.presentationml.slideshow"
+        ),
+        (
+            r#"application/vnd.ms-powerpoint.slideshow.macroEnabled.12"#,
+            "org.openxmlformats.presentationml.slideshow.macroenabled"
+        ),
+        (
+            r#"application/vnd.openxmlformats-officedocument.presentationml.template"#,
+            "org.openxmlformats.presentationml.template"
+        ),
+        (
+            r#"application/vnd.ms-powerpoint.template.macroEnabled.12"#,
+            "org.openxmlformats.presentationml.template.macroenabled"
+        ),
+        (r#"application/msword"#, "com.microsoft.word.doc"),
+        (r#"application/msword"#, "com.microsoft.word.dot"),
+        (r#"application/vnd.ms-excel"#, "com.microsoft.excel.xls"),
+        (r#"application/msexcel"#, "com.microsoft.excel.xls"),
+        (r#"application/vnd.ms-excel"#, "com.microsoft.excel.xlt"),
+        (r#"application/msexcel"#, "com.microsoft.excel.xlt"),
+        (r#"application/vnd.ms-excel"#, "com.microsoft.excel.xlw"),
+        (r#"application/msexcel"#, "com.microsoft.excel.xlw"),
+        (
+            r#"application/vnd.ms-powerpoint"#,
+            "com.microsoft.powerpoint.ppt"
+        ),
+        (
+            r#"application/mspowerpoint"#,
+            "com.microsoft.powerpoint.ppt"
+        ),
+        (
+            r#"application/vnd.ms-powerpoint"#,
+            "com.microsoft.powerpoint.pot"
+        ),
+        (
+            r#"application/mspowerpoint"#,
+            "com.microsoft.powerpoint.pot"
+        ),
+        (
+            r#"application/vnd.ms-powerpoint"#,
+            "com.microsoft.powerpoint.pps"
+        ),
+        (
+            r#"application/mspowerpoint"#,
+            "com.microsoft.powerpoint.pps"
+        ),
+        (
+            r#"application/x-iwork-keynote-sffkey"#,
+            "com.apple.iWork.Keynote.sffkey"
+        ),
+        (
+            r#"application/x-iwork-keynote-sffkth"#,
+            "com.apple.iWork.Keynote.sffkth"
+        ),
+        (
+            r#"application/x-iwork-pages-sffpages"#,
+            "com.apple.iWork.Pages.sffpages"
+        ),
+        (
+            r#"application/x-iwork-pages-sfftemplate"#,
+            "com.apple.iWork.Pages.sfftemplate"
+        ),
+        (
+            r#"application/x-iwork-numbers-sffnumbers"#,
+            "com.apple.iWork.Numbers.sffnumbers"
+        ),
+        (
+            r#"application/x-iwork-numbers-sfftemplate"#,
+            "com.apple.iWork.Numbers.sfftemplate"
+        ),
+        (r#"image/vnd.adobe.photoshop"#, "com.adobe.photoshop-image"),
+        (r#"image/photoshop"#, "com.adobe.photoshop-image"),
+        (r#"image/x-photoshop"#, "com.adobe.photoshop-image"),
+        (r#"image/psd"#, "com.adobe.photoshop-image"),
+        (r#"application/photoshop"#, "com.adobe.photoshop-image"),
+        (r#"image/targa"#, "com.truevision.tga-image"),
+        (r#"image/tga"#, "com.truevision.tga-image"),
+        (r#"application/tga"#, "com.truevision.tga-image"),
+        (r#"image/sgi"#, "com.sgi.sgi-image"),
+        (r#"image/fpx"#, "com.kodak.flashpix-image"),
+        (r#"application/vnd.fpx"#, "com.kodak.flashpix-image"),
+        (r#"image/heif"#, "public.heif"),
+        (r#"image/heic"#, "public.heic"),
+        (r#"image/avci"#, "public.avci"),
+        (r#"image/heif-sequence"#, "public.heifs"),
+        (r#"image/heic-sequence"#, "public.heics"),
+        (r#"image/avcs"#, "public.avcs"),
+        (r#"image/efax"#, "com.j2.efx-fax"),
+        (r#"audio/vnd.wave"#, "com.microsoft.waveform-audio"),
+        (r#"audio/wav"#, "com.microsoft.waveform-audio"),
+        (r#"audio/wave"#, "com.microsoft.waveform-audio"),
+        (r#"audio/x-wav"#, "com.microsoft.waveform-audio"),
+        (r#"video/x-ms-asf"#, "com.microsoft.advanced-systems-format"),
+        (r#"video/x-ms-wm"#, "com.microsoft.windows-media-wm"),
+        (r#"video/x-ms-wmv"#, "com.microsoft.windows-media-wmv"),
+        (r#"video/x-ms-wmp"#, "com.microsoft.windows-media-wmp"),
+        (r#"video/x-ms-wma"#, "com.microsoft.windows-media-wma"),
+        (
+            r#"video/x-ms-asx"#,
+            "com.microsoft.advanced-stream-redirector"
+        ),
+        (r#"video/x-ms-wmx"#, "com.microsoft.windows-media-wmx"),
+        (r#"video/x-ms-wvx"#, "com.microsoft.windows-media-wvx"),
+        (r#"video/x-ms-wax"#, "com.microsoft.windows-media-wax"),
+        (r#"application/vnd.rn-realmedia"#, "com.real.realmedia"),
+        (
+            r#"application/vnd.rn-realmedia-vbr"#,
+            "com.real.realmedia-vbr"
+        ),
+        (r#"application/mxf"#, "org.smpte.mxf"),
+        (r#"audio/vnd.rn-realaudio"#, "com.real.realaudio"),
+        (r#"audio/x-pn-realaudio"#, "com.real.realaudio"),
+        (r#"audio/x-realaudio"#, "com.real.realaudio"),
+        (r#"audio/flac"#, "org.xiph.flac"),
+        (r#"audio/mp4a-latm"#, "public.mp4a-latm"),
+        (r#"application/x-stuffitx"#, "com.stuffit.archive.sitx"),
+        (r#"application/x-sitx"#, "com.stuffit.archive.sitx"),
+        (
+            r#"application/x-stuffitx-index"#,
+            "com.stuffit.archive.sidx"
+        ),
+        (r#"application/x-sitx-index"#, "com.stuffit.archive.sidx"),
+        (r#"application/x-stuffit"#, "com.stuffit.archive.sit"),
+        (r#"application/x-sit"#, "com.stuffit.archive.sit"),
+        (r#"video/x-flv"#, "com.adobe.flash.video"),
+        (r#"application/x-7z-compressed"#, "org.7-zip.7-zip-archive"),
+        (r#"application/x-xz"#, "org.tukaani.xz-archive")
     ]);
 }
 pub const MIME_TYPE_TO_EXTENSION_VEC: [MIMETypeAndExtension; 89] = [
     MIMETypeAndExtension {
-        mime_type: "application/x-latex",
-        extensions: "latex",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xfdf",
-        extensions: "xfdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-diskcopy",
-        extensions: "dmg",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/ief",
-        extensions: "ief",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/oda",
-        extensions: "oda",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/mac-compactpro",
-        extensions: "cpt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-bitmap",
-        extensions: "pbm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-xwindowdump",
-        extensions: "xwd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-futuresplash",
-        extensions: "spl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "model/vrml",
-        extensions: "wrl|vrml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-cmu-raster",
-        extensions: "ras",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-m4p",
-        extensions: "m4p",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff",
-        extensions: "t|tr|roff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-rgb",
-        extensions: "rgb",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-sv4cpio",
-        extensions: "sv4cpio",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-netcdf",
-        extensions: "nc|cdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-bittorrent",
-        extensions: "torrent",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/vnd.wap.wbmp",
-        extensions: "wbmp",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/vnd.wap.wmlscript",
-        extensions: "wmls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-tcl",
-        extensions: "tcl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-shockwave-flash",
-        extensions: "swf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-cdlink",
-        extensions: "vcd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/msexcel",
-        extensions: "xls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-dvi",
-        extensions: "dvi",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-xpixmap",
-        extensions: "xpm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-anymap",
-        extensions: "pnm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/mpeg",
-        extensions: "mp3|mpga|mp2",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff-me",
-        extensions: "me",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/mp4",
-        extensions: "mp4|mpg4",
-    },
-    MIMETypeAndExtension {
-        mime_type: "model/mesh",
-        extensions: "msh|mesh|silo",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/x-pn-realaudio-plugin",
-        extensions: "rpm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/qif",
-        extensions: "qif",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-ms-wmd",
-        extensions: "wmd",
-    },
-    MIMETypeAndExtension {
         mime_type: "audio/x-aiff",
         extensions: "aiff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-director",
-        extensions: "dcr|dir|dxr",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-graymap",
-        extensions: "pgm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/x-setext",
-        extensions: "etx",
-    },
-    MIMETypeAndExtension {
-        mime_type: "audio/aiff",
-        extensions: "aiff",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/xml",
-        extensions: "xml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-olympus-or",
-        extensions: "orf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/xml",
-        extensions: "xml|xsl",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.fdf",
-        extensions: "fdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/octet-stream",
-        extensions: "dms|lha|lzh|class|so|iso|fla",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff-man",
-        extensions: "man",
-    },
-    MIMETypeAndExtension {
-        mime_type: "chemical/x-pdb",
-        extensions: "pdb",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-shar",
-        extensions: "shar",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wmlscriptc",
-        extensions: "wmlsc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/vnd.wap.wml",
-        extensions: "wml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/postscript",
-        extensions: "ps|eps|ai",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-koan",
-        extensions: "skp|skd|skt|skm",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/css",
-        extensions: "css",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-filemaker",
-        extensions: "fp6|fp5|fp4|fp3|fp2|fp",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/mspowerpoint",
-        extensions: "ppt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-gzip",
-        extensions: "gz|tgz|cpgz",
-    },
-    MIMETypeAndExtension {
-        mime_type: "model/iges",
-        extensions: "igs|iges",
-    },
-    MIMETypeAndExtension {
-        mime_type: "x-conference/x-cooltalk",
-        extensions: "ice",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.mif",
-        extensions: "mif",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-sh",
-        extensions: "sh",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/x-sgi-movie",
-        extensions: "movie",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.ms-powerpoint",
-        extensions: "ppt",
-    },
-    MIMETypeAndExtension {
-        mime_type: "chemical/x-xyz",
-        extensions: "xyz",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-bcpio",
-        extensions: "bcpio",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-troff-ms",
-        extensions: "ms",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/richtext",
-        extensions: "rtx",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-portable-pixmap",
-        extensions: "ppm",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-msdownload",
         extensions: "dll",
     },
     MIMETypeAndExtension {
+        mime_type: "chemical/x-xyz",
+        extensions: "xyz",
+    },
+    MIMETypeAndExtension {
         mime_type: "application/msword",
         extensions: "doc",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xfd+xml",
-        extensions: "xfd",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/html",
-        extensions: "html|jhtml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "video/vnd.mpegurl",
-        extensions: "mxu",
-    },
-    MIMETypeAndExtension {
-        mime_type: "image/x-macpaint",
-        extensions: "pnt|pntg|mac",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.ms-excel",
-        extensions: "xls",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-hdf",
-        extensions: "hdf",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-texinfo",
-        extensions: "texinfo|texi",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/vnd.wap.wbxml",
-        extensions: "wbxml",
-    },
-    MIMETypeAndExtension {
-        mime_type: "text/sgml",
-        extensions: "sgml|sgm",
     },
     MIMETypeAndExtension {
         mime_type: "application/vnd.wap.wmlc",
         extensions: "wmlc",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-csh",
-        extensions: "csh",
-    },
-    MIMETypeAndExtension {
-        mime_type: "application/x-tex",
-        extensions: "tex",
+        mime_type: "application/x-sv4cpio",
+        extensions: "sv4cpio",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-ustar",
         extensions: "ustar",
     },
     MIMETypeAndExtension {
-        mime_type: "application/vnd.adobe.xdp+xml",
-        extensions: "xdp",
-    },
-    MIMETypeAndExtension {
         mime_type: "application/x-wais-source",
         extensions: "src",
     },
     MIMETypeAndExtension {
-        mime_type: "image/x-targa",
-        extensions: "targa",
+        mime_type: "text/sgml",
+        extensions: "sgml|sgm",
     },
     MIMETypeAndExtension {
-        mime_type: "application/x-chess-pgn",
-        extensions: "pgn",
+        mime_type: "application/octet-stream",
+        extensions: "dms|lha|lzh|class|so|iso|fla",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wmlscript",
+        extensions: "wmls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/mpeg",
+        extensions: "mp3|mpga|mp2",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-csh",
+        extensions: "csh",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/x-setext",
+        extensions: "etx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.fdf",
+        extensions: "fdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-futuresplash",
+        extensions: "spl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/qif",
+        extensions: "qif",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-anymap",
+        extensions: "pnm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/vrml",
+        extensions: "wrl|vrml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-sh",
+        extensions: "sh",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.ms-excel",
+        extensions: "xls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff-ms",
+        extensions: "ms",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-bittorrent",
+        extensions: "torrent",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-cdlink",
+        extensions: "vcd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-shar",
+        extensions: "shar",
     },
     MIMETypeAndExtension {
         mime_type: "image/x-pcx",
         extensions: "pcx",
     },
     MIMETypeAndExtension {
+        mime_type: "application/x-troff",
+        extensions: "t|tr|roff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-diskcopy",
+        extensions: "dmg",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-chess-pgn",
+        extensions: "pgn",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/html",
+        extensions: "html|jhtml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-xpixmap",
+        extensions: "xpm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/oda",
+        extensions: "oda",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-m4p",
+        extensions: "m4p",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/x-pn-realaudio-plugin",
+        extensions: "rpm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-texinfo",
+        extensions: "texinfo|texi",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-bitmap",
+        extensions: "pbm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-olympus-or",
+        extensions: "orf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-xwindowdump",
+        extensions: "xwd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-targa",
+        extensions: "targa",
+    },
+    MIMETypeAndExtension {
+        mime_type: "audio/aiff",
+        extensions: "aiff",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xfdf",
+        extensions: "xfdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/msexcel",
+        extensions: "xls",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/ief",
+        extensions: "ief",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/xml",
+        extensions: "xml|xsl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/mesh",
+        extensions: "msh|mesh|silo",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/plain",
+        extensions: "txt|asc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/mp4",
+        extensions: "mp4|mpg4",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-latex",
+        extensions: "latex",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.mif",
+        extensions: "mif",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-shockwave-flash",
+        extensions: "swf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-rgb",
+        extensions: "rgb",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/xml",
+        extensions: "xml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wbxml",
+        extensions: "wbxml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/css",
+        extensions: "css",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xdp+xml",
+        extensions: "xdp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.wap.wmlscriptc",
+        extensions: "wmlsc",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-pixmap",
+        extensions: "ppm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-ms-wmd",
+        extensions: "wmd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-macpaint",
+        extensions: "pnt|pntg|mac",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-hdf",
+        extensions: "hdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-netcdf",
+        extensions: "nc|cdf",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-portable-graymap",
+        extensions: "pgm",
+    },
+    MIMETypeAndExtension {
         mime_type: "application/x-cpio",
         extensions: "cpio",
     },
     MIMETypeAndExtension {
-        mime_type: "application/andrew-inset",
-        extensions: "ez",
+        mime_type: "application/x-bcpio",
+        extensions: "bcpio",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-tex",
+        extensions: "tex",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-koan",
+        extensions: "skp|skd|skt|skm",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/mspowerpoint",
+        extensions: "ppt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "x-conference/x-cooltalk",
+        extensions: "ice",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/vnd.wap.wml",
+        extensions: "wml",
+    },
+    MIMETypeAndExtension {
+        mime_type: "chemical/x-pdb",
+        extensions: "pdb",
     },
     MIMETypeAndExtension {
         mime_type: "application/x-sv4crc",
         extensions: "sv4crc",
     },
     MIMETypeAndExtension {
-        mime_type: "text/plain",
-        extensions: "txt|asc",
+        mime_type: "application/x-troff-me",
+        extensions: "me",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/mac-compactpro",
+        extensions: "cpt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/andrew-inset",
+        extensions: "ez",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-gzip",
+        extensions: "gz|tgz|cpgz",
+    },
+    MIMETypeAndExtension {
+        mime_type: "text/richtext",
+        extensions: "rtx",
+    },
+    MIMETypeAndExtension {
+        mime_type: "model/iges",
+        extensions: "igs|iges",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-filemaker",
+        extensions: "fp6|fp5|fp4|fp3|fp2|fp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/x-sgi-movie",
+        extensions: "movie",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/postscript",
+        extensions: "ps|eps|ai",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/x-cmu-raster",
+        extensions: "ras",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-tcl",
+        extensions: "tcl",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.adobe.xfd+xml",
+        extensions: "xfd",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-director",
+        extensions: "dcr|dir|dxr",
+    },
+    MIMETypeAndExtension {
+        mime_type: "video/vnd.mpegurl",
+        extensions: "mxu",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-troff-man",
+        extensions: "man",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/vnd.ms-powerpoint",
+        extensions: "ppt",
+    },
+    MIMETypeAndExtension {
+        mime_type: "image/vnd.wap.wbmp",
+        extensions: "wbmp",
+    },
+    MIMETypeAndExtension {
+        mime_type: "application/x-dvi",
+        extensions: "dvi",
     },
 ];
