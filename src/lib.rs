@@ -53,11 +53,13 @@ pub struct MIMETypeAndExtension<'a> {
 
 impl UTType<'_> {
     pub fn from_identifier(value: &str) -> Option<Self> {
-        let item = SYSTEM_TYPES_MAP.get(value);
+        let system_types_map = SYSTEM_TYPES_MAP.read().unwrap();
+        let item = system_types_map.get(value);
         if let Some(it) = item {
             Some(it.clone())
         } else {
-            let item = OTHER_TYPES_MAP.get(value);
+            let other_types_map = OTHER_TYPES_MAP.read().unwrap();
+            let item = other_types_map.get(value);
             if let Some(it) = item {
                 Some(it.clone())
             } else {
@@ -67,11 +69,13 @@ impl UTType<'_> {
     }
 
     pub fn from_mime_type(value: &str) -> Option<Self> {
-        let item = SYSTEM_MIME_MAP.get(value);
+        let system_mime_map = SYSTEM_MIME_MAP.read().unwrap();
+        let item = system_mime_map.get(value);
         let key = if let Some(it) = item {
             it
         } else {
-            let item = OTHER_MIME_MAP.get(value);
+            let other_mime_map = OTHER_MIME_MAP.read().unwrap();
+            let item = other_mime_map.get(value).cloned();
             if let Some(it) = item {
                 it
             } else {
@@ -82,11 +86,13 @@ impl UTType<'_> {
     }
 
     pub fn from_filename_extension(value: &str) -> Option<Self> {
-        let item: Option<&&str> = SYSTEM_FILENAME_EXTENSION_MAP.get(value);
+        let system_filename_extension_map = SYSTEM_FILENAME_EXTENSION_MAP.read().unwrap();
+        let item: Option<&&str> = system_filename_extension_map.get(value);
         let key = if let Some(it) = item {
             it
         } else {
-            let item = OTHER_FILENAME_EXTENSION_MAP.get(value);
+            let other_filename_extension_map = OTHER_FILENAME_EXTENSION_MAP.read().unwrap();
+            let item = other_filename_extension_map.get(value).cloned();
             if let Some(it) = item {
                 it
             } else {
@@ -159,7 +165,7 @@ impl UTType<'_> {
     /// A Boolean value that indicates whether the system declares the type.
     pub fn is_declared(&self) -> bool {
         let key = self.identifier;
-        SYSTEM_TYPES_MAP.contains_key(key)
+        SYSTEM_TYPES_MAP.read().unwrap().contains_key(key)
     }
 
     /// A Boolean value that indicates whether the system generates the type.
@@ -211,4 +217,13 @@ fn super_types<'a>(x: UTType<'a>) -> Vec<UTType<'a>> {
         i += 1;
     }
     values
+}
+
+pub fn preload_system_defined_types() {
+    let _system_types_map = SYSTEM_TYPES_MAP.read().unwrap();
+    let _other_types_map = OTHER_TYPES_MAP.read().unwrap();
+    let _system_mime_map = SYSTEM_MIME_MAP.read().unwrap();
+    let _other_mime_map = OTHER_MIME_MAP.read().unwrap();
+    let _system_filename_extension_map = SYSTEM_FILENAME_EXTENSION_MAP.read().unwrap();
+    let _other_filename_extension_map = OTHER_FILENAME_EXTENSION_MAP.read().unwrap();
 }
