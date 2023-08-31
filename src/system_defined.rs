@@ -4008,9 +4008,32 @@ pub const COM_APPLE_ACTIVE_WEBPAGE: UTType = UTType {
     tags: r#"{}"#,
     description: r#"Active Web Page"#,
 };
+pub const VND_ANDROID_PACKAGE_ARCHIVE: UTType = UTType {
+    identifier: "vnd.android.package-archive",
+    conforms_to: r#"["public.data", "public.archive"]"#,
+    tags: r#"{"public.filename-extension": ["apk"], "public.mime-type": ["application/vnd.android.package-archive"]}"#,
+    description: r#"Android APK file"#,
+};
+pub const PUBLIC_RUST_SOURCE_CODE: UTType = UTType {
+    identifier: "public.rust-source",
+    conforms_to: r#"["public.text", "public.source-code"]"#,
+    tags: r#"{
+        "public.filename-extension": ["rs"],
+        "public.mime-type": ["text/x-rust", "text/rust"]
+    }"#,
+    description: r#"Rust source code file"#
+};
 lazy_static! {
     pub(crate) static ref SYSTEM_TYPES_MAP: Arc<RwLock<HashMap<&'static str, UTType<'static>>>> =
         Arc::new(RwLock::new(HashMap::from([
+            (
+                "vnd.android.package-archive",
+                VND_ANDROID_PACKAGE_ARCHIVE
+            ),
+            (
+                "public.rust-source",
+                PUBLIC_RUST_SOURCE_CODE
+            ),
             ("com.apple.active-webpage", COM_APPLE_ACTIVE_WEBPAGE),
             (
                 "com.apple.structured-text.transit-information",
@@ -5347,6 +5370,8 @@ lazy_static! {
         ])));
     pub(crate) static ref SYSTEM_FILENAME_EXTENSION_MAP: Arc<RwLock<HashMap<&'static str, &'static str>>> =
         Arc::new(RwLock::new(HashMap::from([
+            (r#"apk"#, "vnd.android.package-archive"),
+            (r#"rs"#, "public.rust-source"),
             (r#"watchface"#, "com.apple.watchface"),
             (r#"pkpasses"#, "com.apple.pkpasses-data"),
             (r#"pkpass"#, "com.apple.pkpass-data"),
@@ -7094,32 +7119,10 @@ pub const COM_APPLE_LEGACY_MULTIPLE_ITEMS: UTType = UTType {
     tags: r#"{}"#,
     description: r#"Multiple Items"#,
 };
-pub const VND_ANDROID_PACKAGE_ARCHIVE: UTType = UTType {
-    identifier: "vnd.android.package-archive",
-    conforms_to: r#"["public.data", "public.archive"]"#,
-    tags: r#"{"public.filename-extension": ["apk"], "public.mime-type": ["application/vnd.android.package-archive"]}"#,
-    description: r#"Android APK file"#,
-};
-pub const PUBLIC_RUST_SOURCE_CODE: UTType = UTType {
-    identifier: "public.rust-source",
-    conforms_to: r#"["public.text", "public.source-code"]"#,
-    tags: r#"{
-        "public.filename-extension": ["rs"],
-        "public.mime-type": ["text/x-rust", "text/rust"]
-    }"#,
-    description: r#"Rust source code file"#
-};
+
 lazy_static! {
     pub(crate) static ref OTHER_TYPES_MAP: Arc<RwLock<HashMap<&'static str, UTType<'static>>>> =
         Arc::new(RwLock::new(HashMap::from([
-            (
-                "vnd.android.package-archive",
-                VND_ANDROID_PACKAGE_ARCHIVE
-            ),
-            (
-                "public.rust-source",
-                PUBLIC_RUST_SOURCE_CODE
-            ),
             (
                 "com.apple.legacy.multiple-items",
                 COM_APPLE_LEGACY_MULTIPLE_ITEMS
