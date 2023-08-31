@@ -4023,9 +4023,19 @@ pub const PUBLIC_RUST_SOURCE_CODE: UTType = UTType {
     }"#,
     description: r#"Rust source code file"#
 };
+pub const COM_APPLE_IPHONE_PACKAGE_ARCHIVE: UTType = UTType {
+    identifier: "com.apple.iphone.package-archive",
+    conforms_to: r#"["public.data", "public.archive"]"#,
+    tags: r#"{"public.filename-extension": ["ipa"], "public.mime-type": ["application/octet-stream"]}"#,
+    description: r#"iOS application archive"#,
+};
 lazy_static! {
     pub(crate) static ref SYSTEM_TYPES_MAP: Arc<RwLock<HashMap<&'static str, UTType<'static>>>> =
         Arc::new(RwLock::new(HashMap::from([
+            (
+                "com.apple.iphone.package-archive",
+                COM_APPLE_IPHONE_PACKAGE_ARCHIVE
+            ),
             (
                 "vnd.android.package-archive",
                 VND_ANDROID_PACKAGE_ARCHIVE
@@ -5370,6 +5380,7 @@ lazy_static! {
         ])));
     pub(crate) static ref SYSTEM_FILENAME_EXTENSION_MAP: Arc<RwLock<HashMap<&'static str, &'static str>>> =
         Arc::new(RwLock::new(HashMap::from([
+            (r#"ipa"#, "com.apple.iphone.package-archive"),
             (r#"apk"#, "vnd.android.package-archive"),
             (r#"rs"#, "public.rust-source"),
             (r#"watchface"#, "com.apple.watchface"),
