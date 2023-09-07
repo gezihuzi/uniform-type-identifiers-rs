@@ -8,7 +8,7 @@ use system_defined::{
     SYSTEM_MIME_MAP, SYSTEM_TYPES_MAP,
 };
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct UTType<'a> {
     pub identifier: &'a str,
     pub conforms_to: &'a str,
