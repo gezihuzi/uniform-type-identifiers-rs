@@ -8,7 +8,7 @@ use system_defined::{
     SYSTEM_MIME_MAP, SYSTEM_TYPES_MAP,
 };
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub struct UTType<'a> {
     pub identifier: &'a str,
     pub conforms_to: &'a str,
@@ -45,6 +45,14 @@ impl<'a> UTType<'a> {
         }
     }
 }
+
+impl PartialEq for UTType<'_> {
+    fn eq(&self, other: &Self) -> bool {
+        self.identifier == other.identifier
+    }
+}
+
+impl Eq for UTType<'_> {}
 
 pub struct MIMETypeAndExtension<'a> {
     pub mime_type: &'a str,
