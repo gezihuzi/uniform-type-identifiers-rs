@@ -28,6 +28,10 @@ fn main() {
     );
     println!("-----");
     println!(
+        "Json is equal text: {:}",
+        PUBLIC_JSON == PUBLIC_TEXT,
+    );
+    println!(
         "Json is conforms data: {:}",
         PUBLIC_JSON.is_conforms(&PUBLIC_DATA)
     );

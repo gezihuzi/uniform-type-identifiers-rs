@@ -22,6 +22,14 @@ impl Display for UTType<'_> {
     }
 }
 
+impl PartialEq for UTType<'_> {
+    fn eq(&self, other: &Self) -> bool {
+        self.identifier == other.identifier
+    }
+}
+
+impl Eq for UTType<'_> {}
+
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Tags {
     #[serde(default, alias = "public.filename-extension")]
@@ -45,14 +53,6 @@ impl<'a> UTType<'a> {
         }
     }
 }
-
-impl PartialEq for UTType<'_> {
-    fn eq(&self, other: &Self) -> bool {
-        self.identifier == other.identifier
-    }
-}
-
-impl Eq for UTType<'_> {}
 
 pub struct MIMETypeAndExtension<'a> {
     pub mime_type: &'a str,
