@@ -8,7 +8,7 @@ use system_defined::{
     SYSTEM_MIME_MAP, SYSTEM_TYPES_MAP,
 };
 
-#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
 pub struct UTType<'a> {
     pub identifier: &'a str,
     pub conforms_to: &'a str,
@@ -21,14 +21,6 @@ impl Display for UTType<'_> {
         write!(f, "{}", self.identifier)
     }
 }
-
-impl PartialEq for UTType<'_> {
-    fn eq(&self, other: &Self) -> bool {
-        self.identifier == other.identifier
-    }
-}
-
-impl Eq for UTType<'_> {}
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Tags {
