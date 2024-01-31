@@ -56,15 +56,11 @@ impl UTType<'_> {
         let system_types_map = SYSTEM_TYPES_MAP.read().unwrap();
         let item = system_types_map.get(value);
         if let Some(it) = item {
-            Some(it.clone())
+            Some(*it)
         } else {
             let other_types_map = OTHER_TYPES_MAP.read().unwrap();
             let item = other_types_map.get(value);
-            if let Some(it) = item {
-                Some(it.clone())
-            } else {
-                None
-            }
+            item.copied()
         }
     }
 
@@ -75,12 +71,7 @@ impl UTType<'_> {
             it
         } else {
             let other_mime_map = OTHER_MIME_MAP.read().unwrap();
-            let item = other_mime_map.get(value).cloned();
-            if let Some(it) = item {
-                it
-            } else {
-                return None;
-            }
+            other_mime_map.get(value).cloned()?
         };
         Self::from_identifier(key)
     }
@@ -92,12 +83,7 @@ impl UTType<'_> {
             it
         } else {
             let other_filename_extension_map = OTHER_FILENAME_EXTENSION_MAP.read().unwrap();
-            let item = other_filename_extension_map.get(value).cloned();
-            if let Some(it) = item {
-                it
-            } else {
-                return None;
-            }
+            other_filename_extension_map.get(value).cloned()?
         };
         Self::from_identifier(key)
     }
@@ -105,12 +91,8 @@ impl UTType<'_> {
     pub fn from_path(path: &Path) -> Option<UTType> {
         if path.is_absolute() {
             if path.is_file() {
-                let extension = path
-                    .extension()
-                    .unwrap_or_default()
-                    .to_str()
-                    .unwrap_or_default();
-                UTType::from_filename_extension(extension)
+                let extension = path.extension()?.to_string_lossy().to_lowercase();
+                UTType::from_filename_extension(&extension)
             } else if path.is_dir() {
                 Some(system_defined::PUBLIC_DIRECTORY)
             } else if path.is_symlink() {
@@ -180,8 +162,7 @@ impl UTType<'_> {
 
     /// The set of types the type directly or indirectly conforms to.
     pub fn super_types(&self) -> Vec<UTType> {
-        let item = self.clone();
-        super_types(item)
+        super_types(*self)
     }
 
     /// Returns a Boolean value that indicates whether a type conforms to the type.
@@ -201,7 +182,7 @@ impl UTType<'_> {
     }
 }
 
-fn super_types<'a>(x: UTType<'a>) -> Vec<UTType<'a>> {
+fn super_types(x: UTType<'_>) -> Vec<UTType<'_>> {
     let types = serde_json::from_str::<Vec<&str>>(x.conforms_to)
         .unwrap_or_default()
         .iter()
@@ -211,7 +192,7 @@ fn super_types<'a>(x: UTType<'a>) -> Vec<UTType<'a>> {
     let mut values: Vec<UTType> = types.clone();
     let mut i = 0;
     while i < types.len() {
-        let item = types[i].clone();
+        let item = types[i];
         let super_types = super_types(item);
         values.extend(super_types);
         i += 1;
@@ -226,4 +207,24 @@ pub fn preload_system_defined_types() {
     let _other_mime_map = OTHER_MIME_MAP.read().unwrap();
     let _system_filename_extension_map = SYSTEM_FILENAME_EXTENSION_MAP.read().unwrap();
     let _other_filename_extension_map = OTHER_FILENAME_EXTENSION_MAP.read().unwrap();
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::UTType;
+
+    #[test]
+    fn test_plain_text() {
+        let text = UTType::from_identifier("public.text").unwrap();
+        let plain_text = UTType::from_identifier("public.plain-text").unwrap();
+        let utf8_text = UTType::from_identifier("public.utf8-plain-text").unwrap();
+        let utf16_text = UTType::from_identifier("public.utf16-plain-text").unwrap();
+        let html_text = UTType::from_identifier("public.html").unwrap();
+        let rtf_text = UTType::from_identifier("public.rtf").unwrap();
+        assert!(plain_text.is_conforms(&text));
+        assert!(utf8_text.is_conforms(&plain_text));
+        assert!(utf16_text.is_conforms(&plain_text));
+        assert!(html_text.is_conforms(&text));
+        assert!(rtf_text.is_conforms(&text));
+    }
 }
