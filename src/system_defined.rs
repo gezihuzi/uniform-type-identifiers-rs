@@ -4021,7 +4021,7 @@ pub const PUBLIC_RUST_SOURCE_CODE: UTType = UTType {
         "public.filename-extension": ["rs"],
         "public.mime-type": ["text/x-rust", "text/rust"]
     }"#,
-    description: r#"Rust source code file"#
+    description: r#"Rust source code file"#,
 };
 pub const COM_APPLE_IPHONE_PACKAGE_ARCHIVE: UTType = UTType {
     identifier: "com.apple.iphone.package-archive",
@@ -4036,14 +4036,8 @@ lazy_static! {
                 "com.apple.iphone.package-archive",
                 COM_APPLE_IPHONE_PACKAGE_ARCHIVE
             ),
-            (
-                "vnd.android.package-archive",
-                VND_ANDROID_PACKAGE_ARCHIVE
-            ),
-            (
-                "public.rust-source",
-                PUBLIC_RUST_SOURCE_CODE
-            ),
+            ("vnd.android.package-archive", VND_ANDROID_PACKAGE_ARCHIVE),
+            ("public.rust-source", PUBLIC_RUST_SOURCE_CODE),
             ("com.apple.active-webpage", COM_APPLE_ACTIVE_WEBPAGE),
             (
                 "com.apple.structured-text.transit-information",
@@ -5897,391 +5891,391 @@ lazy_static! {
 pub const COM_ADOBE_PDF: UTType = UTType {
     identifier: "com.adobe.pdf",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["pdf"], "public.mime-type": ["application/pdf"]}"#,
+    tags: r#"{"public.filename-extension": ["pdf"], "public.mime-type": ["application/pdf"]}"#,
     description: r#"PDF document"#,
 };
 pub const COM_ADOBE_EDN: UTType = UTType {
     identifier: "com.adobe.edn",
     conforms_to: r#"["public.data"]"#,
-    tags: r#"{public.filename-extension: ["edn"]}"#,
+    tags: r#"{"public.filename-extension": ["edn"]}"#,
     description: r#"Adobe DRM Activation Key (EDN)"#,
 };
 pub const COM_ADOBE_ETD: UTType = UTType {
     identifier: "com.adobe.etd",
     conforms_to: r#"["public.data"]"#,
-    tags: r#"{public.filename-extension: ["etd"]}"#,
+    tags: r#"{"public.filename-extension": ["etd"]}"#,
     description: r#"Adobe Digital Editions (ETD)"#,
 };
 pub const COM_ADOBE_XFDF: UTType = UTType {
     identifier: "com.adobe.xfdf",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["xfdf"]}"#,
+    tags: r#"{"public.filename-extension": ["xfdf"]}"#,
     description: r#"Adobe Acrobat Forms Document (XFDF)"#,
 };
 pub const COM_ADOBE_FDF: UTType = UTType {
     identifier: "com.adobe.fdf",
     conforms_to: r#"["public.data"]"#,
-    tags: r#"{public.filename-extension: ["fdf"]}"#,
+    tags: r#"{"public.filename-extension": ["fdf"]}"#,
     description: r#"Adobe Acrobat Forms Document (FDF)"#,
 };
 pub const COM_ADOBE_POSTSCRIPT: UTType = UTType {
     identifier: "com.adobe.postscript",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["ps"], "public.mime-type": ["application/postscript"]}"#,
+    tags: r#"{"public.filename-extension": ["ps"], "public.mime-type": ["application/postscript"]}"#,
     description: r#"PostScript"#,
 };
 pub const COM_ADOBE_ENCAPSULATED_POSTSCRIPT: UTType = UTType {
     identifier: "com.adobe.encapsulated-postscript",
     conforms_to: r#"["com.adobe.postscript"]"#,
-    tags: r#"{public.filename-extension: ["eps"]}"#,
+    tags: r#"{"public.filename-extension": ["eps"]}"#,
     description: r#"Encapsulated PostScript"#,
 };
 pub const COM_COMPUSERVE_GIF: UTType = UTType {
     identifier: "com.compuserve.gif",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["gif"], "public.mime-type": ["image/gif"]}"#,
+    tags: r#"{"public.filename-extension": ["gif"], "public.mime-type": ["image/gif"]}"#,
     description: r#"GIF image"#,
 };
 pub const COM_MICROSOFT_BMP: UTType = UTType {
     identifier: "com.microsoft.bmp",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["bmp", "dib"], "public.mime-type": ["image/bmp"]}"#,
+    tags: r#"{"public.filename-extension": ["bmp", "dib"], "public.mime-type": ["image/bmp"]}"#,
     description: r#"Windows BMP image"#,
 };
 pub const COM_MICROSOFT_ICO: UTType = UTType {
     identifier: "com.microsoft.ico",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["ico"], "public.mime-type": ["image/vnd.microsoft.icon"]}"#,
+    tags: r#"{"public.filename-extension": ["ico"], "public.mime-type": ["image/vnd.microsoft.icon"]}"#,
     description: r#"Windows icon image"#,
 };
 pub const ORG_WEBMPROJECT_WEBP: UTType = UTType {
     identifier: "org.webmproject.webp",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["webp"], "public.mime-type": ["image/webp"]}"#,
+    tags: r#"{"public.filename-extension": ["webp"], "public.mime-type": ["image/webp"]}"#,
     description: r#"WebP Image"#,
 };
 pub const ORG_WEBMPROJECT_WEBM: UTType = UTType {
     identifier: "org.webmproject.webm",
     conforms_to: r#"["public.movie"]"#,
-    tags: r#"{public.filename-extension: ["webm"], "public.mime-type": ["video/webm", "audio/webm"]}"#,
+    tags: r#"{"public.filename-extension": ["webm"], "public.mime-type": ["video/webm", "audio/webm"]}"#,
     description: r#"WebM Media"#,
 };
 pub const PUBLIC_OFD: UTType = UTType {
     identifier: "public.ofd",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["ofd"], "public.mime-type": ["application/ofd"]}"#,
+    tags: r#"{"public.filename-extension": ["ofd"], "public.mime-type": ["application/ofd"]}"#,
     description: r#"Open Fixed-layout Document"#,
 };
 pub const ORG_OPENOFFICE_TEXT: UTType = UTType {
     identifier: "org.openoffice.text",
     conforms_to: r#"["public.data", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["sxw", "sdw"], "public.mime-type": ["application/vnd.sun.xml.writer", "application/vnd.stardivision.writer"]}"#,
+    tags: r#"{"public.filename-extension": ["sxw", "sdw"], "public.mime-type": ["application/vnd.sun.xml.writer", "application/vnd.stardivision.writer"]}"#,
     description: r#"OpenOffice.org 1.0 Text"#,
 };
 pub const ORG_OPENOFFICE_TEXT_TEMPLATE: UTType = UTType {
     identifier: "org.openoffice.text-template",
     conforms_to: r#"["public.data", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["stw"], "public.mime-type": ["application/vnd.sun.xml.writer.template"]}"#,
+    tags: r#"{"public.filename-extension": ["stw"], "public.mime-type": ["application/vnd.sun.xml.writer.template"]}"#,
     description: r#"OpenOffice.org 1.0 Text Template"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT: UTType = UTType {
     identifier: "org.oasis-open.opendocument.text",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["odt"], "public.mime-type": ["application/vnd.oasis.opendocument.text"]}"#,
+    tags: r#"{"public.filename-extension": ["odt"], "public.mime-type": ["application/vnd.oasis.opendocument.text"]}"#,
     description: r#"Open Document text"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_TEMPLATE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.text-template",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["ott"], "public.mime-type": ["application/vnd.oasis.opendocument.text-template"]}"#,
+    tags: r#"{"public.filename-extension": ["ott"], "public.mime-type": ["application/vnd.oasis.opendocument.text-template"]}"#,
     description: r#"Open Document text template"#,
 };
 pub const ORG_OPENOFFICE_GRAPHICS: UTType = UTType {
     identifier: "org.openoffice.graphics",
     conforms_to: r#"["public.data", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["sxd", "sda"], "public.mime-type": ["application/vnd.sun.xml.draw", "application/vnd.stardivision.draw"]}"#,
+    tags: r#"{"public.filename-extension": ["sxd", "sda"], "public.mime-type": ["application/vnd.sun.xml.draw", "application/vnd.stardivision.draw"]}"#,
     description: r#"OpenOffice.org 1.0 Drawing"#,
 };
 pub const ORG_OPENOFFICE_GRAPHICS_TEMPLATE: UTType = UTType {
     identifier: "org.openoffice.graphics-template",
     conforms_to: r#"["public.data", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["std"], "public.mime-type": ["application/vnd.sun.xml.draw.template"]}"#,
+    tags: r#"{"public.filename-extension": ["std"], "public.mime-type": ["application/vnd.sun.xml.draw.template"]}"#,
     description: r#"OpenOffice.org 1.0 Drawing Template"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS: UTType = UTType {
     identifier: "org.oasis-open.opendocument.graphics",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["odg"], "public.mime-type": ["application/vnd.oasis.opendocument.graphics"]}"#,
+    tags: r#"{"public.filename-extension": ["odg"], "public.mime-type": ["application/vnd.oasis.opendocument.graphics"]}"#,
     description: r#"Open Document graphics"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS_TEMPLATE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.graphics-template",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["otg"], "public.mime-type": ["application/vnd.oasis.opendocument.graphics-template"]}"#,
+    tags: r#"{"public.filename-extension": ["otg"], "public.mime-type": ["application/vnd.oasis.opendocument.graphics-template"]}"#,
     description: r#"Open Document graphics template"#,
 };
 pub const ORG_OPENOFFICE_PRESENTATION: UTType = UTType {
     identifier: "org.openoffice.presentation",
     conforms_to: r#"["public.data", "public.content", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["sxi", "sdd", "sdp"], "public.mime-type": ["application/vnd.sun.xml.impress", "application/vnd.stardivision.impress", "application/vnd.stardivision.impress-packed"]}"#,
+    tags: r#"{"public.filename-extension": ["sxi", "sdd", "sdp"], "public.mime-type": ["application/vnd.sun.xml.impress", "application/vnd.stardivision.impress", "application/vnd.stardivision.impress-packed"]}"#,
     description: r#"OpenOffice.org 1.0 Presentation"#,
 };
 pub const ORG_OPENOFFICE_PRESENTATION_TEMPLATE: UTType = UTType {
     identifier: "org.openoffice.presentation-template",
     conforms_to: r#"["public.data", "public.content", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["sti"], "public.mime-type": ["application/vnd.sun.xml.impress.template"]}"#,
+    tags: r#"{"public.filename-extension": ["sti"], "public.mime-type": ["application/vnd.sun.xml.impress.template"]}"#,
     description: r#"OpenOffice.org 1.0 Presentation Template"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION: UTType = UTType {
     identifier: "org.oasis-open.opendocument.presentation",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["odp"], "public.mime-type": ["application/vnd.oasis.opendocument.presentation"]}"#,
+    tags: r#"{"public.filename-extension": ["odp"], "public.mime-type": ["application/vnd.oasis.opendocument.presentation"]}"#,
     description: r#"Open Document presentation"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION_TEMPLATE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.presentation-template",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["otp"], "public.mime-type": ["application/vnd.oasis.opendocument.presentation-template"]}"#,
+    tags: r#"{"public.filename-extension": ["otp"], "public.mime-type": ["application/vnd.oasis.opendocument.presentation-template"]}"#,
     description: r#"Open Document presentation template"#,
 };
 pub const ORG_OPENOFFICE_SPREADSHEET: UTType = UTType {
     identifier: "org.openoffice.spreadsheet",
     conforms_to: r#"["public.data", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["sxc", "sdc"], "public.mime-type": ["application/vnd.sun.xml.calc", "application/vnd.stardivision.calc"]}"#,
+    tags: r#"{"public.filename-extension": ["sxc", "sdc"], "public.mime-type": ["application/vnd.sun.xml.calc", "application/vnd.stardivision.calc"]}"#,
     description: r#"OpenOffice.org 1.0 Spreadsheet"#,
 };
 pub const ORG_OPENOFFICE_SPREADSHEET_TEMPLATE: UTType = UTType {
     identifier: "org.openoffice.spreadsheet-template",
     conforms_to: r#"["public.data", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["stc"], "public.mime-type": ["application/vnd.sun.xml.calc.template"]}"#,
+    tags: r#"{"public.filename-extension": ["stc"], "public.mime-type": ["application/vnd.sun.xml.calc.template"]}"#,
     description: r#"OpenOffice.org 1.0 Spreadsheet Template"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET: UTType = UTType {
     identifier: "org.oasis-open.opendocument.spreadsheet",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["ods"], "public.mime-type": ["application/vnd.oasis.opendocument.spreadsheet"]}"#,
+    tags: r#"{"public.filename-extension": ["ods"], "public.mime-type": ["application/vnd.oasis.opendocument.spreadsheet"]}"#,
     description: r#"Open Document spreadsheet"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET_TEMPLATE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.spreadsheet-template",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["ots"], "public.mime-type": ["application/vnd.oasis.opendocument.spreadsheet-template"]}"#,
+    tags: r#"{"public.filename-extension": ["ots"], "public.mime-type": ["application/vnd.oasis.opendocument.spreadsheet-template"]}"#,
     description: r#"Open Document spreadsheet template"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_CHART: UTType = UTType {
     identifier: "org.oasis-open.opendocument.chart",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["odc"], "public.mime-type": ["application/vnd.oasis.opendocument.chart"]}"#,
+    tags: r#"{"public.filename-extension": ["odc"], "public.mime-type": ["application/vnd.oasis.opendocument.chart"]}"#,
     description: r#"Open Document chart"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_CHART_TEMPLATE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.chart-template",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["otc"], "public.mime-type": ["application/vnd.oasis.opendocument.chart-template"]}"#,
+    tags: r#"{"public.filename-extension": ["otc"], "public.mime-type": ["application/vnd.oasis.opendocument.chart-template"]}"#,
     description: r#"Open Document chart template"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.image",
     conforms_to: r#"["org.oasis-open.opendocument", "public.image"]"#,
-    tags: r#"{public.filename-extension: ["odi"], "public.mime-type": ["application/vnd.oasis.opendocument.image"]}"#,
+    tags: r#"{"public.filename-extension": ["odi"], "public.mime-type": ["application/vnd.oasis.opendocument.image"]}"#,
     description: r#"Open Document image"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE_TEMPLATE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.image-template",
     conforms_to: r#"["org.oasis-open.opendocument", "public.image"]"#,
-    tags: r#"{public.filename-extension: ["oti"], "public.mime-type": ["application/vnd.oasis.opendocument.image-template"]}"#,
+    tags: r#"{"public.filename-extension": ["oti"], "public.mime-type": ["application/vnd.oasis.opendocument.image-template"]}"#,
     description: r#"Open Document image template"#,
 };
 pub const ORG_OPENOFFICE_FORMULA: UTType = UTType {
     identifier: "org.openoffice.formula",
     conforms_to: r#"["public.data", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["sxm", "smf"], "public.mime-type": ["application/vnd.sun.xml.math", "application/vnd.stardivision.math"]}"#,
+    tags: r#"{"public.filename-extension": ["sxm", "smf"], "public.mime-type": ["application/vnd.sun.xml.math", "application/vnd.stardivision.math"]}"#,
     description: r#"OpenOffice.org 1.0 Formula"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA: UTType = UTType {
     identifier: "org.oasis-open.opendocument.formula",
     conforms_to: r#"["org.oasis-open.opendocument", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["odf"], "public.mime-type": ["application/vnd.oasis.opendocument.formula"]}"#,
+    tags: r#"{"public.filename-extension": ["odf"], "public.mime-type": ["application/vnd.oasis.opendocument.formula"]}"#,
     description: r#"Open Document formula"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA_TEMPLATE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.formula-template",
     conforms_to: r#"["org.oasis-open.opendocument", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["otf"], "public.mime-type": ["application/vnd.oasis.opendocument.formula-template"]}"#,
+    tags: r#"{"public.filename-extension": ["otf"], "public.mime-type": ["application/vnd.oasis.opendocument.formula-template"]}"#,
     description: r#"Open Document formula template"#,
 };
 pub const ORG_OPENOFFICE_TEXT_MASTER: UTType = UTType {
     identifier: "org.openoffice.text-master",
     conforms_to: r#"["public.data", "public.content"]"#,
-    tags: r#"{public.filename-extension: ["sxg"], "public.mime-type": ["application/vnd.sun.xml.writer.global"]}"#,
+    tags: r#"{"public.filename-extension": ["sxg"], "public.mime-type": ["application/vnd.sun.xml.writer.global"]}"#,
     description: r#"OpenOffice.org 1.0 Master"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_MASTER: UTType = UTType {
     identifier: "org.oasis-open.opendocument.text-master",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["odm"], "public.mime-type": ["application/vnd.oasis.opendocument.text-master"]}"#,
+    tags: r#"{"public.filename-extension": ["odm"], "public.mime-type": ["application/vnd.oasis.opendocument.text-master"]}"#,
     description: r#"Open Document text master"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_WEB: UTType = UTType {
     identifier: "org.oasis-open.opendocument.text-web",
     conforms_to: r#"["org.oasis-open.opendocument", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["oth"], "public.mime-type": ["application/vnd.oasis.opendocument.text-web"]}"#,
+    tags: r#"{"public.filename-extension": ["oth"], "public.mime-type": ["application/vnd.oasis.opendocument.text-web"]}"#,
     description: r#"Open Document HTML template"#,
 };
 pub const ORG_OASIS_OPEN_OPENDOCUMENT_DATABASE: UTType = UTType {
     identifier: "org.oasis-open.opendocument.database",
     conforms_to: r#"["public.data", "public.content", "public.database"]"#,
-    tags: r#"{public.filename-extension: ["odb"], "public.mime-type": ["application/vnd.oasis.opendocument.database"]}"#,
+    tags: r#"{"public.filename-extension": ["odb"], "public.mime-type": ["application/vnd.oasis.opendocument.database"]}"#,
     description: r#"Open Document database"#,
 };
 pub const COM_MICROSOFT_WORD_WORDML: UTType = UTType {
     identifier: "com.microsoft.word.wordml",
     conforms_to: r#"["public.xml", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["xml"]}"#,
+    tags: r#"{"public.filename-extension": ["xml"]}"#,
     description: r#"Microsoft Word 2003 XML document"#,
 };
 pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT: UTType = UTType {
     identifier: "org.openxmlformats.wordprocessingml.document",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["docx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"]}"#,
+    tags: r#"{"public.filename-extension": ["docx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.wordprocessingml.document"]}"#,
     description: r#"Office Open XML word processing document"#,
 };
 pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT_MACROENABLED: UTType = UTType {
     identifier: "org.openxmlformats.wordprocessingml.document.macroenabled",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["docm"], "public.mime-type": ["application/vnd.ms-word.document.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["docm"], "public.mime-type": ["application/vnd.ms-word.document.macroEnabled.12"]}"#,
     description: r#"Office Open XML word processing document (macros enabled)"#,
 };
 pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE: UTType = UTType {
     identifier: "org.openxmlformats.wordprocessingml.template",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["dotx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.wordprocessingml.template"]}"#,
+    tags: r#"{"public.filename-extension": ["dotx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.wordprocessingml.template"]}"#,
     description: r#"Office Open XML word processing template"#,
 };
 pub const ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE_MACROENABLED: UTType = UTType {
     identifier: "org.openxmlformats.wordprocessingml.template.macroenabled",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["dotm"], "public.mime-type": ["application/vnd.ms-word.template.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["dotm"], "public.mime-type": ["application/vnd.ms-word.template.macroEnabled.12"]}"#,
     description: r#"Office Open XML word processing template (macros enabled)"#,
 };
 pub const ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET: UTType = UTType {
     identifier: "org.openxmlformats.spreadsheetml.sheet",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["xlsx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]}"#,
+    tags: r#"{"public.filename-extension": ["xlsx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]}"#,
     description: r#"Office Open XML spreadsheet"#,
 };
 pub const ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET_MACROENABLED: UTType = UTType {
     identifier: "org.openxmlformats.spreadsheetml.sheet.macroenabled",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content", "public.spreadsheet", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["xlsm"], "public.mime-type": ["application/vnd.ms-excel.sheet.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["xlsm"], "public.mime-type": ["application/vnd.ms-excel.sheet.macroEnabled.12"]}"#,
     description: r#"Office Open XML spreadsheet (macros enabled)"#,
 };
 pub const COM_MICROSOFT_EXCEL_SHEET_BINARY_MACROENABLED: UTType = UTType {
     identifier: "com.microsoft.excel.sheet.binary.macroenabled",
     conforms_to: r#"["public.zip-archive", "public.composite-content", "public.spreadsheet", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["xlsb"], "public.mime-type": ["application/vnd.ms-excel.sheet.binary.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["xlsb"], "public.mime-type": ["application/vnd.ms-excel.sheet.binary.macroEnabled.12"]}"#,
     description: r#"Microsoft Excel 2007 spreadsheet (macros enabled)"#,
 };
 pub const ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE: UTType = UTType {
     identifier: "org.openxmlformats.spreadsheetml.template",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["xltx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.spreadsheetml.template"]}"#,
+    tags: r#"{"public.filename-extension": ["xltx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.spreadsheetml.template"]}"#,
     description: r#"Office Open XML spreadsheet template"#,
 };
 pub const ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE_MACROENABLED: UTType = UTType {
     identifier: "org.openxmlformats.spreadsheetml.template.macroenabled",
     conforms_to: r#"["org.openxmlformats.openxml", "public.composite-content", "public.spreadsheet", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["xltm"], "public.mime-type": ["application/vnd.ms-excel.template.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["xltm"], "public.mime-type": ["application/vnd.ms-excel.template.macroEnabled.12"]}"#,
     description: r#"Office Open XML spreadsheet template (macros enabled)"#,
 };
 pub const ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION: UTType = UTType {
     identifier: "org.openxmlformats.presentationml.presentation",
     conforms_to: r#"["org.openxmlformats.openxml", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["pptx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.presentationml.presentation"]}"#,
+    tags: r#"{"public.filename-extension": ["pptx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.presentationml.presentation"]}"#,
     description: r#"Office Open XML presentation"#,
 };
 pub const ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION_MACROENABLED: UTType = UTType {
     identifier: "org.openxmlformats.presentationml.presentation.macroenabled",
     conforms_to: r#"["org.openxmlformats.openxml", "public.presentation", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["pptm"], "public.mime-type": ["application/vnd.ms-powerpoint.presentation.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["pptm"], "public.mime-type": ["application/vnd.ms-powerpoint.presentation.macroEnabled.12"]}"#,
     description: r#"Office Open XML presentation (macros enabled)"#,
 };
 pub const ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW: UTType = UTType {
     identifier: "org.openxmlformats.presentationml.slideshow",
     conforms_to: r#"["org.openxmlformats.openxml", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["ppsx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.presentationml.slideshow"]}"#,
+    tags: r#"{"public.filename-extension": ["ppsx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.presentationml.slideshow"]}"#,
     description: r#"Office Open XML slide show"#,
 };
 pub const ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW_MACROENABLED: UTType = UTType {
     identifier: "org.openxmlformats.presentationml.slideshow.macroenabled",
     conforms_to: r#"["org.openxmlformats.openxml", "public.presentation", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["ppsm"], "public.mime-type": ["application/vnd.ms-powerpoint.slideshow.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["ppsm"], "public.mime-type": ["application/vnd.ms-powerpoint.slideshow.macroEnabled.12"]}"#,
     description: r#"Office Open XML slide show (macros enabled)"#,
 };
 pub const ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE: UTType = UTType {
     identifier: "org.openxmlformats.presentationml.template",
     conforms_to: r#"["org.openxmlformats.openxml", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["potx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.presentationml.template"]}"#,
+    tags: r#"{"public.filename-extension": ["potx"], "public.mime-type": ["application/vnd.openxmlformats-officedocument.presentationml.template"]}"#,
     description: r#"Office Open XML presentation template"#,
 };
 pub const ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE_MACROENABLED: UTType = UTType {
     identifier: "org.openxmlformats.presentationml.template.macroenabled",
     conforms_to: r#"["org.openxmlformats.openxml", "public.presentation", "public.executable"]"#,
-    tags: r#"{public.filename-extension: ["potm"], "public.mime-type": ["application/vnd.ms-powerpoint.template.macroEnabled.12"]}"#,
+    tags: r#"{"public.filename-extension": ["potm"], "public.mime-type": ["application/vnd.ms-powerpoint.template.macroEnabled.12"]}"#,
     description: r#"Office Open XML presentation template (macros enabled)"#,
 };
 pub const COM_MICROSOFT_WORD_DOC: UTType = UTType {
     identifier: "com.microsoft.word.doc",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["doc"], "public.mime-type": ["application/msword"]}"#,
+    tags: r#"{"public.filename-extension": ["doc"], "public.mime-type": ["application/msword"]}"#,
     description: r#"Microsoft Word 97-2004 document"#,
 };
 pub const COM_MICROSOFT_WORD_DOT: UTType = UTType {
     identifier: "com.microsoft.word.dot",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["dot"], "public.mime-type": ["application/msword"]}"#,
+    tags: r#"{"public.filename-extension": ["dot"], "public.mime-type": ["application/msword"]}"#,
     description: r#"Microsoft Word 97-2004 template"#,
 };
 pub const COM_MICROSOFT_EXCEL_XLS: UTType = UTType {
     identifier: "com.microsoft.excel.xls",
     conforms_to: r#"["public.data", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["xls"], "public.mime-type": ["application/vnd.ms-excel", "application/msexcel"]}"#,
+    tags: r#"{"public.filename-extension": ["xls"], "public.mime-type": ["application/vnd.ms-excel", "application/msexcel"]}"#,
     description: r#"Microsoft Excel 97-2004 worksheet"#,
 };
 pub const COM_MICROSOFT_EXCEL_XLT: UTType = UTType {
     identifier: "com.microsoft.excel.xlt",
     conforms_to: r#"["public.data", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["xlt"], "public.mime-type": ["application/vnd.ms-excel", "application/msexcel"]}"#,
+    tags: r#"{"public.filename-extension": ["xlt"], "public.mime-type": ["application/vnd.ms-excel", "application/msexcel"]}"#,
     description: r#"Microsoft Excel 97-2004 template"#,
 };
 pub const COM_MICROSOFT_EXCEL_XLW: UTType = UTType {
     identifier: "com.microsoft.excel.xlw",
     conforms_to: r#"["public.data", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["xlw"], "public.mime-type": ["application/vnd.ms-excel", "application/msexcel"]}"#,
+    tags: r#"{"public.filename-extension": ["xlw"], "public.mime-type": ["application/vnd.ms-excel", "application/msexcel"]}"#,
     description: r#"Microsoft Excel 97-2004 workspace"#,
 };
 pub const COM_MICROSOFT_EXCEL_XLA: UTType = UTType {
     identifier: "com.microsoft.excel.xla",
     conforms_to: r#"["public.data"]"#,
-    tags: r#"{public.filename-extension: ["xla"]}"#,
+    tags: r#"{"public.filename-extension": ["xla"]}"#,
     description: r#"Microsoft Excel add-in"#,
 };
 pub const COM_MICROSOFT_POWERPOINT_PPT: UTType = UTType {
     identifier: "com.microsoft.powerpoint.ppt",
     conforms_to: r#"["public.data", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["ppt"], "public.mime-type": ["application/vnd.ms-powerpoint", "application/mspowerpoint"]}"#,
+    tags: r#"{"public.filename-extension": ["ppt"], "public.mime-type": ["application/vnd.ms-powerpoint", "application/mspowerpoint"]}"#,
     description: r#"Microsoft PowerPoint 97-2004 presentation"#,
 };
 pub const COM_MICROSOFT_POWERPOINT_POT: UTType = UTType {
     identifier: "com.microsoft.powerpoint.pot",
     conforms_to: r#"["public.data", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["pot"], "public.mime-type": ["application/vnd.ms-powerpoint", "application/mspowerpoint"]}"#,
+    tags: r#"{"public.filename-extension": ["pot"], "public.mime-type": ["application/vnd.ms-powerpoint", "application/mspowerpoint"]}"#,
     description: r#"Microsoft PowerPoint 97-2004 template"#,
 };
 pub const COM_MICROSOFT_POWERPOINT_PPS: UTType = UTType {
     identifier: "com.microsoft.powerpoint.pps",
     conforms_to: r#"["public.data", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["pps"], "public.mime-type": ["application/vnd.ms-powerpoint", "application/mspowerpoint"]}"#,
+    tags: r#"{"public.filename-extension": ["pps"], "public.mime-type": ["application/vnd.ms-powerpoint", "application/mspowerpoint"]}"#,
     description: r#"Microsoft PowerPoint 97-2004 slide show"#,
 };
 pub const COM_APPLE_KEYNOTE_KEY: UTType = UTType {
@@ -6299,139 +6293,139 @@ pub const COM_APPLE_KEYNOTE_KTH: UTType = UTType {
 pub const COM_APPLE_IWORK_KEYNOTE_KEY: UTType = UTType {
     identifier: "com.apple.iWork.Keynote.key",
     conforms_to: r#"["com.apple.package", "public.presentation", "com.apple.keynote.key"]"#,
-    tags: r#"{public.filename-extension: ["key"]}"#,
+    tags: r#"{"public.filename-extension": ["key"]}"#,
     description: r#"Keynote document"#,
 };
 pub const COM_APPLE_IWORK_KEYNOTE_KEY_TEF: UTType = UTType {
     identifier: "com.apple.iWork.Keynote.key-tef",
     conforms_to: r#"["com.apple.package", "public.presentation", "com.apple.keynote.key"]"#,
-    tags: r#"{public.filename-extension: ["key-tef"]}"#,
+    tags: r#"{"public.filename-extension": ["key-tef"]}"#,
     description: r#"Keynote document"#,
 };
 pub const COM_APPLE_IWORK_KEYNOTE_SFFKEY: UTType = UTType {
     identifier: "com.apple.iWork.Keynote.sffkey",
     conforms_to: r#"["public.data", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["key"], "public.mime-type": ["application/x-iwork-keynote-sffkey"]}"#,
+    tags: r#"{"public.filename-extension": ["key"], "public.mime-type": ["application/x-iwork-keynote-sffkey"]}"#,
     description: r#"Keynote document"#,
 };
 pub const COM_APPLE_IWORK_KEYNOTE_KTH: UTType = UTType {
     identifier: "com.apple.iWork.Keynote.kth",
     conforms_to: r#"["com.apple.package", "public.presentation", "com.apple.keynote.kth"]"#,
-    tags: r#"{public.filename-extension: ["kth"]}"#,
+    tags: r#"{"public.filename-extension": ["kth"]}"#,
     description: r#"Keynote theme"#,
 };
 pub const COM_APPLE_IWORK_KEYNOTE_SFFKTH: UTType = UTType {
     identifier: "com.apple.iWork.Keynote.sffkth",
     conforms_to: r#"["public.data", "public.presentation"]"#,
-    tags: r#"{public.filename-extension: ["kth"], "public.mime-type": ["application/x-iwork-keynote-sffkth"]}"#,
+    tags: r#"{"public.filename-extension": ["kth"], "public.mime-type": ["application/x-iwork-keynote-sffkth"]}"#,
     description: r#"Keynote theme"#,
 };
 pub const COM_APPLE_IWORK_PAGES_PAGES: UTType = UTType {
     identifier: "com.apple.iWork.Pages.pages",
     conforms_to: r#"["com.apple.package", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["pages"]}"#,
+    tags: r#"{"public.filename-extension": ["pages"]}"#,
     description: r#"Pages document"#,
 };
 pub const COM_APPLE_IWORK_PAGES_PAGES_TEF: UTType = UTType {
     identifier: "com.apple.iWork.Pages.pages-tef",
     conforms_to: r#"["com.apple.package", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["pages-tef"]}"#,
+    tags: r#"{"public.filename-extension": ["pages-tef"]}"#,
     description: r#"Pages document"#,
 };
 pub const COM_APPLE_IWORK_PAGES_SFFPAGES: UTType = UTType {
     identifier: "com.apple.iWork.Pages.sffpages",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["pages"], "public.mime-type": ["application/x-iwork-pages-sffpages"]}"#,
+    tags: r#"{"public.filename-extension": ["pages"], "public.mime-type": ["application/x-iwork-pages-sffpages"]}"#,
     description: r#"Pages document"#,
 };
 pub const COM_APPLE_IWORK_PAGES_TEMPLATE: UTType = UTType {
     identifier: "com.apple.iWork.Pages.template",
     conforms_to: r#"["com.apple.package", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["template"]}"#,
+    tags: r#"{"public.filename-extension": ["template"]}"#,
     description: r#"Pages template"#,
 };
 pub const COM_APPLE_IWORK_PAGES_SFFTEMPLATE: UTType = UTType {
     identifier: "com.apple.iWork.Pages.sfftemplate",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
-    tags: r#"{public.filename-extension: ["template"], "public.mime-type": ["application/x-iwork-pages-sfftemplate"]}"#,
+    tags: r#"{"public.filename-extension": ["template"], "public.mime-type": ["application/x-iwork-pages-sfftemplate"]}"#,
     description: r#"Pages template"#,
 };
 pub const COM_APPLE_IWORK_NUMBERS_NUMBERS: UTType = UTType {
     identifier: "com.apple.iWork.Numbers.numbers",
     conforms_to: r#"["com.apple.package", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["numbers"]}"#,
+    tags: r#"{"public.filename-extension": ["numbers"]}"#,
     description: r#"Numbers document"#,
 };
 pub const COM_APPLE_IWORK_NUMBERS_NUMBERS_TEF: UTType = UTType {
     identifier: "com.apple.iWork.Numbers.numbers-tef",
     conforms_to: r#"["com.apple.package", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["numbers-tef"]}"#,
+    tags: r#"{"public.filename-extension": ["numbers-tef"]}"#,
     description: r#"Numbers document"#,
 };
 pub const COM_APPLE_IWORK_NUMBERS_SFFNUMBERS: UTType = UTType {
     identifier: "com.apple.iWork.Numbers.sffnumbers",
     conforms_to: r#"["public.data", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["numbers"], "public.mime-type": ["application/x-iwork-numbers-sffnumbers"]}"#,
+    tags: r#"{"public.filename-extension": ["numbers"], "public.mime-type": ["application/x-iwork-numbers-sffnumbers"]}"#,
     description: r#"Numbers document"#,
 };
 pub const COM_APPLE_IWORK_NUMBERS_TEMPLATE: UTType = UTType {
     identifier: "com.apple.iWork.Numbers.template",
     conforms_to: r#"["com.apple.package", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["nmbtemplate"]}"#,
+    tags: r#"{"public.filename-extension": ["nmbtemplate"]}"#,
     description: r#"Numbers template"#,
 };
 pub const COM_APPLE_IWORK_NUMBERS_SFFTEMPLATE: UTType = UTType {
     identifier: "com.apple.iWork.Numbers.sfftemplate",
     conforms_to: r#"["public.data", "public.composite-content", "public.spreadsheet"]"#,
-    tags: r#"{public.filename-extension: ["nmbtemplate"], "public.mime-type": ["application/x-iwork-numbers-sfftemplate"]}"#,
+    tags: r#"{"public.filename-extension": ["nmbtemplate"], "public.mime-type": ["application/x-iwork-numbers-sfftemplate"]}"#,
     description: r#"Numbers template"#,
 };
 pub const COM_APPLE_GARAGEBAND_PROJECT: UTType = UTType {
     identifier: "com.apple.garageband.project",
     conforms_to: r#"["com.apple.package", "public.audiovisual-content"]"#,
-    tags: r#"{public.filename-extension: ["band", "gbProj"]}"#,
+    tags: r#"{"public.filename-extension": ["band", "gbProj"]}"#,
     description: r#"GarageBand Project"#,
 };
 pub const COM_ADOBE_PHOTOSHOP_IMAGE: UTType = UTType {
     identifier: "com.adobe.photoshop-image",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["psd"], "public.mime-type": ["image/vnd.adobe.photoshop", "image/photoshop", "image/x-photoshop", "image/psd", "application/photoshop"]}"#,
+    tags: r#"{"public.filename-extension": ["psd"], "public.mime-type": ["image/vnd.adobe.photoshop", "image/photoshop", "image/x-photoshop", "image/psd", "application/photoshop"]}"#,
     description: r#"Adobe Photoshop document"#,
 };
 pub const COM_ADOBE_PHOTOSHOP_LARGE_IMAGE: UTType = UTType {
     identifier: "com.adobe.photoshop-large-image",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["psb"]}"#,
+    tags: r#"{"public.filename-extension": ["psb"]}"#,
     description: r#"Adobe Photoshop large document"#,
 };
 pub const COM_ADOBE_ILLUSTRATOR_AI_IMAGE: UTType = UTType {
     identifier: "com.adobe.illustrator.ai-image",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["ai"]}"#,
+    tags: r#"{"public.filename-extension": ["ai"]}"#,
     description: r#"Adobe Illustrator document"#,
 };
 pub const COM_TRUEVISION_TGA_IMAGE: UTType = UTType {
     identifier: "com.truevision.tga-image",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["tga"], "public.mime-type": ["image/targa", "image/tga", "application/tga"]}"#,
+    tags: r#"{"public.filename-extension": ["tga"], "public.mime-type": ["image/targa", "image/tga", "application/tga"]}"#,
     description: r#"TGA image"#,
 };
 pub const COM_SGI_SGI_IMAGE: UTType = UTType {
     identifier: "com.sgi.sgi-image",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["sgi"], "public.mime-type": ["image/sgi"]}"#,
+    tags: r#"{"public.filename-extension": ["sgi"], "public.mime-type": ["image/sgi"]}"#,
     description: r#"Silicon Graphics image"#,
 };
 pub const COM_ILM_OPENEXR_IMAGE: UTType = UTType {
     identifier: "com.ilm.openexr-image",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["exr"]}"#,
+    tags: r#"{"public.filename-extension": ["exr"]}"#,
     description: r#"OpenEXR image"#,
 };
 pub const COM_KODAK_FLASHPIX_IMAGE: UTType = UTType {
     identifier: "com.kodak.flashpix-image",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["fpx"], "public.mime-type": ["image/fpx", "application/vnd.fpx"]}"#,
+    tags: r#"{"public.filename-extension": ["fpx"], "public.mime-type": ["image/fpx", "application/vnd.fpx"]}"#,
     description: r#"FlashPix image"#,
 };
 pub const PUBLIC_HEIF_STANDARD: UTType = UTType {
@@ -6443,169 +6437,169 @@ pub const PUBLIC_HEIF_STANDARD: UTType = UTType {
 pub const PUBLIC_HEIF: UTType = UTType {
     identifier: "public.heif",
     conforms_to: r#"["public.heif-standard"]"#,
-    tags: r#"{public.filename-extension: ["heif", "hif"], "public.mime-type": ["image/heif"]}"#,
+    tags: r#"{"public.filename-extension": ["heif", "hif"], "public.mime-type": ["image/heif"]}"#,
     description: r#""#,
 };
 pub const PUBLIC_HEIC: UTType = UTType {
     identifier: "public.heic",
     conforms_to: r#"["public.heif-standard"]"#,
-    tags: r#"{public.filename-extension: ["heic"], "public.mime-type": ["image/heic"]}"#,
+    tags: r#"{"public.filename-extension": ["heic"], "public.mime-type": ["image/heic"]}"#,
     description: r#""#,
 };
 pub const PUBLIC_AVCI: UTType = UTType {
     identifier: "public.avci",
     conforms_to: r#"["public.heif-standard"]"#,
-    tags: r#"{public.filename-extension: ["avci"], "public.mime-type": ["image/avci"]}"#,
+    tags: r#"{"public.filename-extension": ["avci"], "public.mime-type": ["image/avci"]}"#,
     description: r#""#,
 };
 pub const PUBLIC_HEIFS: UTType = UTType {
     identifier: "public.heifs",
     conforms_to: r#"["public.heif-standard"]"#,
-    tags: r#"{public.filename-extension: ["heifs"], "public.mime-type": ["image/heif-sequence"]}"#,
+    tags: r#"{"public.filename-extension": ["heifs"], "public.mime-type": ["image/heif-sequence"]}"#,
     description: r#"HEIF Image Sequence"#,
 };
 pub const PUBLIC_HEICS: UTType = UTType {
     identifier: "public.heics",
     conforms_to: r#"["public.heif-standard"]"#,
-    tags: r#"{public.filename-extension: ["heics"], "public.mime-type": ["image/heic-sequence"]}"#,
+    tags: r#"{"public.filename-extension": ["heics"], "public.mime-type": ["image/heic-sequence"]}"#,
     description: r#"HEIF Image Sequence"#,
 };
 pub const PUBLIC_AVCS: UTType = UTType {
     identifier: "public.avcs",
     conforms_to: r#"["public.heif-standard"]"#,
-    tags: r#"{public.filename-extension: ["avcs"], "public.mime-type": ["image/avcs"]}"#,
+    tags: r#"{"public.filename-extension": ["avcs"], "public.mime-type": ["image/avcs"]}"#,
     description: r#"HEIF Image Sequence"#,
 };
 pub const COM_APPLE_DRAWING: UTType = UTType {
     identifier: "com.apple.drawing",
     conforms_to: r#"["public.image"]"#,
-    tags: r#"{public.filename-extension: ["drawing"]}"#,
+    tags: r#"{"public.filename-extension": ["drawing"]}"#,
     description: r#"Apple Drawing Format"#,
 };
 pub const COM_J2_JFX_FAX: UTType = UTType {
     identifier: "com.j2.jfx-fax",
     conforms_to: r#"["public.fax"]"#,
-    tags: r#"{public.filename-extension: ["jfx"]}"#,
+    tags: r#"{"public.filename-extension": ["jfx"]}"#,
     description: r#"J2 fax"#,
 };
 pub const COM_J2_EFX_FAX: UTType = UTType {
     identifier: "com.j2.efx-fax",
     conforms_to: r#"["public.fax"]"#,
-    tags: r#"{public.filename-extension: ["efx"], "public.mime-type": ["image/efax"]}"#,
+    tags: r#"{"public.filename-extension": ["efx"], "public.mime-type": ["image/efax"]}"#,
     description: r#"eFax fax"#,
 };
 pub const COM_DIGIDESIGN_SD2_AUDIO: UTType = UTType {
     identifier: "com.digidesign.sd2-audio",
     conforms_to: r#"["public.audio"]"#,
-    tags: r#"{public.filename-extension: ["sd2"]}"#,
+    tags: r#"{"public.filename-extension": ["sd2"]}"#,
     description: r#"Sound Designer II audio"#,
 };
 pub const COM_MICROSOFT_WAVEFORM_AUDIO: UTType = UTType {
     identifier: "com.microsoft.waveform-audio",
     conforms_to: r#"["public.audio"]"#,
-    tags: r#"{public.filename-extension: ["wav", "wave", "bwf"], "public.mime-type": ["audio/vnd.wave", "audio/wav", "audio/wave", "audio/x-wav"]}"#,
+    tags: r#"{"public.filename-extension": ["wav", "wave", "bwf"], "public.mime-type": ["audio/vnd.wave", "audio/wav", "audio/wave", "audio/x-wav"]}"#,
     description: r#"Waveform audio"#,
 };
 pub const COM_MICROSOFT_ADVANCED_SYSTEMS_FORMAT: UTType = UTType {
     identifier: "com.microsoft.advanced-systems-format",
     conforms_to: r#"["public.audiovisual-content"]"#,
-    tags: r#"{public.filename-extension: ["asf"], "public.mime-type": ["video/x-ms-asf"]}"#,
+    tags: r#"{"public.filename-extension": ["asf"], "public.mime-type": ["video/x-ms-asf"]}"#,
     description: r#"Microsoft Advanced Systems Format"#,
 };
 pub const COM_MICROSOFT_WINDOWS_MEDIA_WM: UTType = UTType {
     identifier: "com.microsoft.windows-media-wm",
     conforms_to: r#"["public.movie", "com.microsoft.advanced-systems-format"]"#,
-    tags: r#"{public.filename-extension: ["wm"], "public.mime-type": ["video/x-ms-wm"]}"#,
+    tags: r#"{"public.filename-extension": ["wm"], "public.mime-type": ["video/x-ms-wm"]}"#,
     description: r#"Windows media"#,
 };
 pub const COM_MICROSOFT_WINDOWS_MEDIA_WMV: UTType = UTType {
     identifier: "com.microsoft.windows-media-wmv",
     conforms_to: r#"["public.movie", "com.microsoft.advanced-systems-format"]"#,
-    tags: r#"{public.filename-extension: ["wmv"], "public.mime-type": ["video/x-ms-wmv"]}"#,
+    tags: r#"{"public.filename-extension": ["wmv"], "public.mime-type": ["video/x-ms-wmv"]}"#,
     description: r#"Windows media"#,
 };
 pub const COM_MICROSOFT_WINDOWS_MEDIA_WMP: UTType = UTType {
     identifier: "com.microsoft.windows-media-wmp",
     conforms_to: r#"["public.movie", "com.microsoft.advanced-systems-format"]"#,
-    tags: r#"{public.filename-extension: ["wmp"], "public.mime-type": ["video/x-ms-wmp"]}"#,
+    tags: r#"{"public.filename-extension": ["wmp"], "public.mime-type": ["video/x-ms-wmp"]}"#,
     description: r#"Windows media"#,
 };
 pub const COM_MICROSOFT_WINDOWS_MEDIA_WMA: UTType = UTType {
     identifier: "com.microsoft.windows-media-wma",
     conforms_to: r#"["public.audio", "com.microsoft.advanced-systems-format"]"#,
-    tags: r#"{public.filename-extension: ["wma"], "public.mime-type": ["video/x-ms-wma"]}"#,
+    tags: r#"{"public.filename-extension": ["wma"], "public.mime-type": ["video/x-ms-wma"]}"#,
     description: r#"Windows media audio"#,
 };
 pub const COM_MICROSOFT_ADVANCED_STREAM_REDIRECTOR: UTType = UTType {
     identifier: "com.microsoft.advanced-stream-redirector",
     conforms_to: r#"["public.audiovisual-content", "public.xml"]"#,
-    tags: r#"{public.filename-extension: ["asx"], "public.mime-type": ["video/x-ms-asx"]}"#,
+    tags: r#"{"public.filename-extension": ["asx"], "public.mime-type": ["video/x-ms-asx"]}"#,
     description: r#"Advanced Stream Redirector"#,
 };
 pub const COM_MICROSOFT_WINDOWS_MEDIA_WMX: UTType = UTType {
     identifier: "com.microsoft.windows-media-wmx",
     conforms_to: r#"["public.movie", "com.microsoft.advanced-stream-redirector"]"#,
-    tags: r#"{public.filename-extension: ["wmx"], "public.mime-type": ["video/x-ms-wmx"]}"#,
+    tags: r#"{"public.filename-extension": ["wmx"], "public.mime-type": ["video/x-ms-wmx"]}"#,
     description: r#"Windows media"#,
 };
 pub const COM_MICROSOFT_WINDOWS_MEDIA_WVX: UTType = UTType {
     identifier: "com.microsoft.windows-media-wvx",
     conforms_to: r#"["public.movie", "com.microsoft.advanced-stream-redirector"]"#,
-    tags: r#"{public.filename-extension: ["wvx"], "public.mime-type": ["video/x-ms-wvx"]}"#,
+    tags: r#"{"public.filename-extension": ["wvx"], "public.mime-type": ["video/x-ms-wvx"]}"#,
     description: r#"Windows media"#,
 };
 pub const COM_MICROSOFT_WINDOWS_MEDIA_WAX: UTType = UTType {
     identifier: "com.microsoft.windows-media-wax",
     conforms_to: r#"["public.audio", "com.microsoft.advanced-stream-redirector"]"#,
-    tags: r#"{public.filename-extension: ["wax"], "public.mime-type": ["video/x-ms-wax"]}"#,
+    tags: r#"{"public.filename-extension": ["wax"], "public.mime-type": ["video/x-ms-wax"]}"#,
     description: r#"Windows media audio"#,
 };
 pub const COM_REAL_REALMEDIA: UTType = UTType {
     identifier: "com.real.realmedia",
     conforms_to: r#"["public.movie"]"#,
-    tags: r#"{public.filename-extension: ["rm"], "public.mime-type": ["application/vnd.rn-realmedia"]}"#,
+    tags: r#"{"public.filename-extension": ["rm"], "public.mime-type": ["application/vnd.rn-realmedia"]}"#,
     description: r#"RealMedia"#,
 };
 pub const COM_REAL_REALMEDIA_VBR: UTType = UTType {
     identifier: "com.real.realmedia-vbr",
     conforms_to: r#"["public.movie"]"#,
-    tags: r#"{public.filename-extension: ["rmvb"], "public.mime-type": ["application/vnd.rn-realmedia-vbr"]}"#,
+    tags: r#"{"public.filename-extension": ["rmvb"], "public.mime-type": ["application/vnd.rn-realmedia-vbr"]}"#,
     description: r#"RealMedia Variable Bitrate"#,
 };
 pub const ORG_SMPTE_MXF: UTType = UTType {
     identifier: "org.smpte.mxf",
     conforms_to: r#"["public.movie"]"#,
-    tags: r#"{public.filename-extension: ["mxf"], "public.mime-type": ["application/mxf"]}"#,
+    tags: r#"{"public.filename-extension": ["mxf"], "public.mime-type": ["application/mxf"]}"#,
     description: r#"Material eXchange Format"#,
 };
 pub const COM_REAL_REALAUDIO: UTType = UTType {
     identifier: "com.real.realaudio",
     conforms_to: r#"["public.audio"]"#,
-    tags: r#"{public.filename-extension: ["ram", "ra"], "public.mime-type": ["audio/vnd.rn-realaudio", "audio/x-pn-realaudio", "audio/x-realaudio"]}"#,
+    tags: r#"{"public.filename-extension": ["ram", "ra"], "public.mime-type": ["audio/vnd.rn-realaudio", "audio/x-pn-realaudio", "audio/x-realaudio"]}"#,
     description: r#"RealMedia Audio"#,
 };
 pub const COM_SOUNDBLASTER_SOUNDFONT: UTType = UTType {
     identifier: "com.soundblaster.soundfont",
     conforms_to: r#"["public.audio"]"#,
-    tags: r#"{public.filename-extension: ["sf2"]}"#,
+    tags: r#"{"public.filename-extension": ["sf2"]}"#,
     description: r#"SoundFont audio"#,
 };
 pub const ORG_XIPH_FLAC: UTType = UTType {
     identifier: "org.xiph.flac",
     conforms_to: r#"["public.audio"]"#,
-    tags: r#"{public.filename-extension: ["flac"], "public.mime-type": ["audio/flac"]}"#,
+    tags: r#"{"public.filename-extension": ["flac"], "public.mime-type": ["audio/flac"]}"#,
     description: r#"FLAC audio"#,
 };
 pub const COM_AVID_OPEN_MEDIA_FRAMEWORK: UTType = UTType {
     identifier: "com.avid.open-media-framework",
     conforms_to: r#"["public.audiovisual-content"]"#,
-    tags: r#"{public.filename-extension: ["omf"]}"#,
+    tags: r#"{"public.filename-extension": ["omf"]}"#,
     description: r#"Open Media Framework interchange format"#,
 };
 pub const PUBLIC_MP4A_LOAS: UTType = UTType {
     identifier: "public.mp4a-loas",
     conforms_to: r#"["public.audio"]"#,
-    tags: r#"{public.filename-extension: ["loas", "latm"]}"#,
+    tags: r#"{"public.filename-extension": ["loas", "latm"]}"#,
     description: r#"Low Overhead MPEG-4 Audio Stream"#,
 };
 pub const PUBLIC_MP4A_LATM: UTType = UTType {
@@ -6623,67 +6617,67 @@ pub const COM_ALLUME_STUFFIT_ARCHIVE: UTType = UTType {
 pub const COM_STUFFIT_ARCHIVE_SITX: UTType = UTType {
     identifier: "com.stuffit.archive.sitx",
     conforms_to: r#"["com.allume.stuffit-archive"]"#,
-    tags: r#"{public.filename-extension: ["sitx"], "public.mime-type": ["application/x-stuffitx", "application/x-sitx"]}"#,
+    tags: r#"{"public.filename-extension": ["sitx"], "public.mime-type": ["application/x-stuffitx", "application/x-sitx"]}"#,
     description: r#"StuffIt X archive"#,
 };
 pub const COM_STUFFIT_ARCHIVE_SIDX: UTType = UTType {
     identifier: "com.stuffit.archive.sidx",
     conforms_to: r#"["com.allume.stuffit-archive"]"#,
-    tags: r#"{public.filename-extension: ["sidx"], "public.mime-type": ["application/x-stuffitx-index", "application/x-sitx-index"]}"#,
+    tags: r#"{"public.filename-extension": ["sidx"], "public.mime-type": ["application/x-stuffitx-index", "application/x-sitx-index"]}"#,
     description: r#"StuffIt X index"#,
 };
 pub const COM_STUFFIT_ARCHIVE_SIT: UTType = UTType {
     identifier: "com.stuffit.archive.sit",
     conforms_to: r#"["com.allume.stuffit-archive"]"#,
-    tags: r#"{public.filename-extension: ["sit", "sea"], "public.mime-type": ["application/x-stuffit", "application/x-sit"]}"#,
+    tags: r#"{"public.filename-extension": ["sit", "sea"], "public.mime-type": ["application/x-stuffit", "application/x-sit"]}"#,
     description: r#"StuffIt archive"#,
 };
 pub const COM_ADOBE_FLASH_VIDEO: UTType = UTType {
     identifier: "com.adobe.flash.video",
     conforms_to: r#"["public.movie"]"#,
-    tags: r#"{public.filename-extension: ["flv", "f4v", "f4p", "f4a", "f4b"], "public.mime-type": ["video/x-flv"]}"#,
+    tags: r#"{"public.filename-extension": ["flv", "f4v", "f4p", "f4a", "f4b"], "public.mime-type": ["video/x-flv"]}"#,
     description: r#"Flash video"#,
 };
 pub const ORG_KHRONOS_COLLADA_DIGITAL_ASSET_EXCHANGE: UTType = UTType {
     identifier: "org.khronos.collada.digital-asset-exchange",
     conforms_to: r#"["public.xml", "public.audiovisual-content", "public.3d-content"]"#,
-    tags: r#"{public.filename-extension: ["dae"]}"#,
+    tags: r#"{"public.filename-extension": ["dae"]}"#,
     description: r#"Digital Asset Exchange (DAE)"#,
 };
 pub const COM_APPLE_IMOVIELIBRARY: UTType = UTType {
     identifier: "com.apple.iMovieLibrary",
     conforms_to: r#"["com.apple.package"]"#,
-    tags: r#"{public.filename-extension: ["imovielibrary"]}"#,
+    tags: r#"{"public.filename-extension": ["imovielibrary"]}"#,
     description: r#"iMovie Library"#,
 };
 pub const COM_APPLE_IMOVIETHEATER: UTType = UTType {
     identifier: "com.apple.iMovieTheater",
     conforms_to: r#"["com.apple.package"]"#,
-    tags: r#"{public.filename-extension: ["theater"]}"#,
+    tags: r#"{"public.filename-extension": ["theater"]}"#,
     description: r#"iMovie Theater"#,
 };
 pub const ORG_7_ZIP_7_ZIP_ARCHIVE: UTType = UTType {
     identifier: "org.7-zip.7-zip-archive",
     conforms_to: r#"["public.data", "public.archive"]"#,
-    tags: r#"{public.filename-extension: ["7z"], "public.mime-type": ["application/x-7z-compressed"]}"#,
+    tags: r#"{"public.filename-extension": ["7z"], "public.mime-type": ["application/x-7z-compressed"]}"#,
     description: r#"7-Zip archive"#,
 };
 pub const ORG_TUKAANI_XZ_ARCHIVE: UTType = UTType {
     identifier: "org.tukaani.xz-archive",
     conforms_to: r#"["public.data", "public.archive"]"#,
-    tags: r#"{public.filename-extension: ["xz"], "public.mime-type": ["application/x-xz"]}"#,
+    tags: r#"{"public.filename-extension": ["xz"], "public.mime-type": ["application/x-xz"]}"#,
     description: r#"xz compressed archive"#,
 };
 pub const ORG_TUKAANI_TAR_XZ_ARCHIVE: UTType = UTType {
     identifier: "org.tukaani.tar-xz-archive",
     conforms_to: r#"["public.data", "public.archive"]"#,
-    tags: r#"{public.filename-extension: ["txz"]}"#,
+    tags: r#"{"public.filename-extension": ["txz"]}"#,
     description: r#"xz compressed tar archive"#,
 };
 pub const COM_MICROSOFT_CAB: UTType = UTType {
     identifier: "com.microsoft.cab",
     conforms_to: r#"["public.data", "public.archive"]"#,
-    tags: r#"{public.filename-extension: ["cab"]}"#,
+    tags: r#"{"public.filename-extension": ["cab"]}"#,
     description: r#"Microsoft Cabinet archive"#,
 };
 pub const PUBLIC_HAPTICS_CONTENT: UTType = UTType {
@@ -6695,25 +6689,25 @@ pub const PUBLIC_HAPTICS_CONTENT: UTType = UTType {
 pub const COM_APPLE_HAPTICS_AHAP: UTType = UTType {
     identifier: "com.apple.haptics.ahap",
     conforms_to: r#"["public.haptics-content", "public.json"]"#,
-    tags: r#"{public.filename-extension: ["ahap"]}"#,
+    tags: r#"{"public.filename-extension": ["ahap"]}"#,
     description: r#"Apple Haptics Audio Pattern"#,
 };
 pub const COM_APPLE_COREML_MODEL: UTType = UTType {
     identifier: "com.apple.coreml.model",
     conforms_to: r#"["public.data"]"#,
-    tags: r#"{public.filename-extension: ["mlmodel", "mlkitmodel"]}"#,
+    tags: r#"{"public.filename-extension": ["mlmodel", "mlkitmodel"]}"#,
     description: r#"Core ML Machine Learning Model"#,
 };
 pub const COM_APPLE_COREML_MLPACKAGE: UTType = UTType {
     identifier: "com.apple.coreml.mlpackage",
     conforms_to: r#"["com.apple.package"]"#,
-    tags: r#"{public.filename-extension: ["mlpackage"]}"#,
+    tags: r#"{"public.filename-extension": ["mlpackage"]}"#,
     description: r#"Core ML Machine Learning Model Package"#,
 };
 pub const COM_APPLE_GROUPACTIVITIES_ACTIVITY: UTType = UTType {
     identifier: "com.apple.groupactivities.activity",
     conforms_to: r#"["public.data"]"#,
-    tags: r#"{public.filename-extension: ["groupactivity"]}"#,
+    tags: r#"{"public.filename-extension": ["groupactivity"]}"#,
     description: r#"Group Activity"#,
 };
 pub const COM_APPLE_ICON_DECORATION: UTType = UTType {
