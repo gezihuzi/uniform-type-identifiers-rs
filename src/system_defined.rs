@@ -1,8 +1,6 @@
-use lazy_static::lazy_static;
-use std::{
-    collections::HashMap,
-    sync::{Arc, RwLock},
-};
+use std::{collections::HashMap, sync::Arc};
+
+use once_cell::sync::Lazy;
 
 use crate::{MIMETypeAndExtension, UTType};
 
@@ -4029,183 +4027,184 @@ pub const COM_APPLE_IPHONE_PACKAGE_ARCHIVE: UTType = UTType {
     tags: r#"{"public.filename-extension": ["ipa"], "public.mime-type": ["application/octet-stream"]}"#,
     description: r#"iOS application archive"#,
 };
-lazy_static! {
-    pub(crate) static ref SYSTEM_TYPES_MAP: Arc<RwLock<HashMap<&'static str, UTType<'static>>>> =
-        Arc::new(RwLock::new(HashMap::from([
+
+pub(crate) static SYSTEM_TYPES_MAP: Lazy<Arc<HashMap<&'static str, UTType<'static>>>> =
+    Lazy::new(|| {
+        let map = HashMap::from([
             (
                 "com.apple.iphone.package-archive",
-                COM_APPLE_IPHONE_PACKAGE_ARCHIVE
+                COM_APPLE_IPHONE_PACKAGE_ARCHIVE,
             ),
             ("vnd.android.package-archive", VND_ANDROID_PACKAGE_ARCHIVE),
             ("public.rust-source", PUBLIC_RUST_SOURCE_CODE),
             ("com.apple.active-webpage", COM_APPLE_ACTIVE_WEBPAGE),
             (
                 "com.apple.structured-text.transit-information",
-                COM_APPLE_STRUCTURED_TEXT_TRANSIT_INFORMATION
+                COM_APPLE_STRUCTURED_TEXT_TRANSIT_INFORMATION,
             ),
             (
                 "com.apple.structured-text.telephone-number",
-                COM_APPLE_STRUCTURED_TEXT_TELEPHONE_NUMBER
+                COM_APPLE_STRUCTURED_TEXT_TELEPHONE_NUMBER,
             ),
             (
                 "com.apple.structured-text.address",
-                COM_APPLE_STRUCTURED_TEXT_ADDRESS
+                COM_APPLE_STRUCTURED_TEXT_ADDRESS,
             ),
             (
                 "com.apple.structured-text.date",
-                COM_APPLE_STRUCTURED_TEXT_DATE
+                COM_APPLE_STRUCTURED_TEXT_DATE,
             ),
             ("com.apple.structured-text", COM_APPLE_STRUCTURED_TEXT),
             (
                 "public.app-category.magazines-and-newspapers",
-                PUBLIC_APP_CATEGORY_MAGAZINES_AND_NEWSPAPERS
+                PUBLIC_APP_CATEGORY_MAGAZINES_AND_NEWSPAPERS,
             ),
             ("public.app-category.shopping", PUBLIC_APP_CATEGORY_SHOPPING),
             (
                 "public.app-category.food-and-drink",
-                PUBLIC_APP_CATEGORY_FOOD_AND_DRINK
+                PUBLIC_APP_CATEGORY_FOOD_AND_DRINK,
             ),
             (
                 "public.app-category.photography-and-video",
-                PUBLIC_APP_CATEGORY_PHOTOGRAPHY_AND_VIDEO
+                PUBLIC_APP_CATEGORY_PHOTOGRAPHY_AND_VIDEO,
             ),
             (
                 "public.app-category.navigation",
-                PUBLIC_APP_CATEGORY_NAVIGATION
+                PUBLIC_APP_CATEGORY_NAVIGATION,
             ),
             ("public.app-category.books", PUBLIC_APP_CATEGORY_BOOKS),
             (
                 "public.app-category.bookmarks",
-                PUBLIC_APP_CATEGORY_BOOKMARKS
+                PUBLIC_APP_CATEGORY_BOOKMARKS,
             ),
             ("public.app-category.weather", PUBLIC_APP_CATEGORY_WEATHER),
             ("public.app-category.video", PUBLIC_APP_CATEGORY_VIDEO),
             (
                 "public.app-category.utilities",
-                PUBLIC_APP_CATEGORY_UTILITIES
+                PUBLIC_APP_CATEGORY_UTILITIES,
             ),
             ("public.app-category.travel", PUBLIC_APP_CATEGORY_TRAVEL),
             ("public.app-category.sports", PUBLIC_APP_CATEGORY_SPORTS),
             (
                 "public.app-category.social-networking",
-                PUBLIC_APP_CATEGORY_SOCIAL_NETWORKING
+                PUBLIC_APP_CATEGORY_SOCIAL_NETWORKING,
             ),
             (
                 "public.app-category.reference",
-                PUBLIC_APP_CATEGORY_REFERENCE
+                PUBLIC_APP_CATEGORY_REFERENCE,
             ),
             (
                 "public.app-category.productivity",
-                PUBLIC_APP_CATEGORY_PRODUCTIVITY
+                PUBLIC_APP_CATEGORY_PRODUCTIVITY,
             ),
             (
                 "public.app-category.photography",
-                PUBLIC_APP_CATEGORY_PHOTOGRAPHY
+                PUBLIC_APP_CATEGORY_PHOTOGRAPHY,
             ),
             ("public.app-category.news", PUBLIC_APP_CATEGORY_NEWS),
             ("public.app-category.music", PUBLIC_APP_CATEGORY_MUSIC),
             ("public.app-category.medical", PUBLIC_APP_CATEGORY_MEDICAL),
             (
                 "public.app-category.lifestyle",
-                PUBLIC_APP_CATEGORY_LIFESTYLE
+                PUBLIC_APP_CATEGORY_LIFESTYLE,
             ),
             (
                 "public.app-category.healthcare-fitness",
-                PUBLIC_APP_CATEGORY_HEALTHCARE_FITNESS
+                PUBLIC_APP_CATEGORY_HEALTHCARE_FITNESS,
             ),
             (
                 "public.app-category.graphics-design",
-                PUBLIC_APP_CATEGORY_GRAPHICS_DESIGN
+                PUBLIC_APP_CATEGORY_GRAPHICS_DESIGN,
             ),
             (
                 "public.app-category.word-games",
-                PUBLIC_APP_CATEGORY_WORD_GAMES
+                PUBLIC_APP_CATEGORY_WORD_GAMES,
             ),
             (
                 "public.app-category.trivia-games",
-                PUBLIC_APP_CATEGORY_TRIVIA_GAMES
+                PUBLIC_APP_CATEGORY_TRIVIA_GAMES,
             ),
             (
                 "public.app-category.strategy-games",
-                PUBLIC_APP_CATEGORY_STRATEGY_GAMES
+                PUBLIC_APP_CATEGORY_STRATEGY_GAMES,
             ),
             (
                 "public.app-category.sports-games",
-                PUBLIC_APP_CATEGORY_SPORTS_GAMES
+                PUBLIC_APP_CATEGORY_SPORTS_GAMES,
             ),
             (
                 "public.app-category.simulation-games",
-                PUBLIC_APP_CATEGORY_SIMULATION_GAMES
+                PUBLIC_APP_CATEGORY_SIMULATION_GAMES,
             ),
             (
                 "public.app-category.role-playing-games",
-                PUBLIC_APP_CATEGORY_ROLE_PLAYING_GAMES
+                PUBLIC_APP_CATEGORY_ROLE_PLAYING_GAMES,
             ),
             (
                 "public.app-category.racing-games",
-                PUBLIC_APP_CATEGORY_RACING_GAMES
+                PUBLIC_APP_CATEGORY_RACING_GAMES,
             ),
             (
                 "public.app-category.puzzle-games",
-                PUBLIC_APP_CATEGORY_PUZZLE_GAMES
+                PUBLIC_APP_CATEGORY_PUZZLE_GAMES,
             ),
             (
                 "public.app-category.music-games",
-                PUBLIC_APP_CATEGORY_MUSIC_GAMES
+                PUBLIC_APP_CATEGORY_MUSIC_GAMES,
             ),
             (
                 "public.app-category.kids-games",
-                PUBLIC_APP_CATEGORY_KIDS_GAMES
+                PUBLIC_APP_CATEGORY_KIDS_GAMES,
             ),
             (
                 "public.app-category.family-games",
-                PUBLIC_APP_CATEGORY_FAMILY_GAMES
+                PUBLIC_APP_CATEGORY_FAMILY_GAMES,
             ),
             (
                 "public.app-category.educational-games",
-                PUBLIC_APP_CATEGORY_EDUCATIONAL_GAMES
+                PUBLIC_APP_CATEGORY_EDUCATIONAL_GAMES,
             ),
             (
                 "public.app-category.dice-games",
-                PUBLIC_APP_CATEGORY_DICE_GAMES
+                PUBLIC_APP_CATEGORY_DICE_GAMES,
             ),
             (
                 "public.app-category.casino-games",
-                PUBLIC_APP_CATEGORY_CASINO_GAMES
+                PUBLIC_APP_CATEGORY_CASINO_GAMES,
             ),
             (
                 "public.app-category.card-games",
-                PUBLIC_APP_CATEGORY_CARD_GAMES
+                PUBLIC_APP_CATEGORY_CARD_GAMES,
             ),
             (
                 "public.app-category.board-games",
-                PUBLIC_APP_CATEGORY_BOARD_GAMES
+                PUBLIC_APP_CATEGORY_BOARD_GAMES,
             ),
             (
                 "public.app-category.arcade-games",
-                PUBLIC_APP_CATEGORY_ARCADE_GAMES
+                PUBLIC_APP_CATEGORY_ARCADE_GAMES,
             ),
             (
                 "public.app-category.adventure-games",
-                PUBLIC_APP_CATEGORY_ADVENTURE_GAMES
+                PUBLIC_APP_CATEGORY_ADVENTURE_GAMES,
             ),
             (
                 "public.app-category.action-games",
-                PUBLIC_APP_CATEGORY_ACTION_GAMES
+                PUBLIC_APP_CATEGORY_ACTION_GAMES,
             ),
             ("public.app-category.games", PUBLIC_APP_CATEGORY_GAMES),
             ("public.app-category.finance", PUBLIC_APP_CATEGORY_FINANCE),
             (
                 "public.app-category.entertainment",
-                PUBLIC_APP_CATEGORY_ENTERTAINMENT
+                PUBLIC_APP_CATEGORY_ENTERTAINMENT,
             ),
             (
                 "public.app-category.education",
-                PUBLIC_APP_CATEGORY_EDUCATION
+                PUBLIC_APP_CATEGORY_EDUCATION,
             ),
             (
                 "public.app-category.developer-tools",
-                PUBLIC_APP_CATEGORY_DEVELOPER_TOOLS
+                PUBLIC_APP_CATEGORY_DEVELOPER_TOOLS,
             ),
             ("public.app-category.business", PUBLIC_APP_CATEGORY_BUSINESS),
             ("public.app-category", PUBLIC_APP_CATEGORY),
@@ -4234,27 +4233,27 @@ lazy_static! {
             ("com.apple.storage-netboot", COM_APPLE_STORAGE_NETBOOT),
             (
                 "com.apple.generic-time-machine-disk",
-                COM_APPLE_GENERIC_TIME_MACHINE_DISK
+                COM_APPLE_GENERIC_TIME_MACHINE_DISK,
             ),
             ("com.apple.storage-external", COM_APPLE_STORAGE_EXTERNAL),
             ("public.storage", PUBLIC_STORAGE),
             ("com.apple.pro-display-xdr", COM_APPLE_PRO_DISPLAY_XDR),
             (
                 "com.apple.led-cinema-display-27",
-                COM_APPLE_LED_CINEMA_DISPLAY_27
+                COM_APPLE_LED_CINEMA_DISPLAY_27,
             ),
             (
                 "com.apple.led-cinema-display-24",
-                COM_APPLE_LED_CINEMA_DISPLAY_24
+                COM_APPLE_LED_CINEMA_DISPLAY_24,
             ),
             ("com.apple.cinema-display", COM_APPLE_CINEMA_DISPLAY),
             (
                 "com.apple.airport-time-capsule-tower",
-                COM_APPLE_AIRPORT_TIME_CAPSULE_TOWER
+                COM_APPLE_AIRPORT_TIME_CAPSULE_TOWER,
             ),
             (
                 "com.apple.airport-extreme-tower",
-                COM_APPLE_AIRPORT_EXTREME_TOWER
+                COM_APPLE_AIRPORT_EXTREME_TOWER,
             ),
             ("com.apple.time-capsule", COM_APPLE_TIME_CAPSULE),
             ("com.apple.airport", COM_APPLE_AIRPORT),
@@ -4262,11 +4261,11 @@ lazy_static! {
             ("com.apple.watch", COM_APPLE_WATCH),
             (
                 "com.apple.homebuttonless-iphone",
-                COM_APPLE_HOMEBUTTONLESS_IPHONE
+                COM_APPLE_HOMEBUTTONLESS_IPHONE,
             ),
             (
                 "com.apple.homebuttonless-ipad",
-                COM_APPLE_HOMEBUTTONLESS_IPAD
+                COM_APPLE_HOMEBUTTONLESS_IPAD,
             ),
             ("com.apple.ipad", COM_APPLE_IPAD),
             ("com.apple.ipod-touch-4", COM_APPLE_IPOD_TOUCH_4),
@@ -4304,11 +4303,11 @@ lazy_static! {
             ("com.apple.ios-device", COM_APPLE_IOS_DEVICE),
             (
                 "com.apple.developer-transition-kit-2020",
-                COM_APPLE_DEVELOPER_TRANSITION_KIT_2020
+                COM_APPLE_DEVELOPER_TRANSITION_KIT_2020,
             ),
             (
                 "com.apple.developer-transition-kit-2005",
-                COM_APPLE_DEVELOPER_TRANSITION_KIT_2005
+                COM_APPLE_DEVELOPER_TRANSITION_KIT_2005,
             ),
             ("com.apple.imac-2021-orange", COM_APPLE_IMAC_2021_ORANGE),
             ("com.apple.imac-2021-purple", COM_APPLE_IMAC_2021_PURPLE),
@@ -4320,36 +4319,36 @@ lazy_static! {
             ("com.apple.imac-2021", COM_APPLE_IMAC_2021),
             (
                 "com.apple.macbookpro-13-retina-touchid-space-gray-late-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_LATE_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_LATE_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-silver-late-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_LATE_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_LATE_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-late-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_LATE_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_LATE_2020,
             ),
             (
                 "com.apple.macbookair-late-2020-gold",
-                COM_APPLE_MACBOOKAIR_LATE_2020_GOLD
+                COM_APPLE_MACBOOKAIR_LATE_2020_GOLD,
             ),
             (
                 "com.apple.macbookair-late-2020-space-gray",
-                COM_APPLE_MACBOOKAIR_LATE_2020_SPACE_GRAY
+                COM_APPLE_MACBOOKAIR_LATE_2020_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookair-late-2020-silver",
-                COM_APPLE_MACBOOKAIR_LATE_2020_SILVER
+                COM_APPLE_MACBOOKAIR_LATE_2020_SILVER,
             ),
             (
                 "com.apple.macbookair-late-2020",
-                COM_APPLE_MACBOOKAIR_LATE_2020
+                COM_APPLE_MACBOOKAIR_LATE_2020,
             ),
             ("com.apple.macmini-2020", COM_APPLE_MACMINI_2020),
             (
                 "com.apple.macpro-2019-rackmount",
-                COM_APPLE_MACPRO_2019_RACKMOUNT
+                COM_APPLE_MACPRO_2019_RACKMOUNT,
             ),
             ("com.apple.macpro-2019", COM_APPLE_MACPRO_2019),
             ("com.apple.macpro-cylinder", COM_APPLE_MACPRO_CYLINDER),
@@ -4357,160 +4356,160 @@ lazy_static! {
             ("com.apple.macpro", COM_APPLE_MACPRO),
             (
                 "com.apple.macbookair-2020-gold",
-                COM_APPLE_MACBOOKAIR_2020_GOLD
+                COM_APPLE_MACBOOKAIR_2020_GOLD,
             ),
             (
                 "com.apple.macbookair-2020-space-gray",
-                COM_APPLE_MACBOOKAIR_2020_SPACE_GRAY
+                COM_APPLE_MACBOOKAIR_2020_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookair-2020-silver",
-                COM_APPLE_MACBOOKAIR_2020_SILVER
+                COM_APPLE_MACBOOKAIR_2020_SILVER,
             ),
             ("com.apple.macbookair-2020", COM_APPLE_MACBOOKAIR_2020),
             (
                 "com.apple.macbookair-2019-gold",
-                COM_APPLE_MACBOOKAIR_2019_GOLD
+                COM_APPLE_MACBOOKAIR_2019_GOLD,
             ),
             (
                 "com.apple.macbookair-2019-space-gray",
-                COM_APPLE_MACBOOKAIR_2019_SPACE_GRAY
+                COM_APPLE_MACBOOKAIR_2019_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookair-2019-silver",
-                COM_APPLE_MACBOOKAIR_2019_SILVER
+                COM_APPLE_MACBOOKAIR_2019_SILVER,
             ),
             ("com.apple.macbookair-2019", COM_APPLE_MACBOOKAIR_2019),
             (
                 "com.apple.macbookair-2018-gold",
-                COM_APPLE_MACBOOKAIR_2018_GOLD
+                COM_APPLE_MACBOOKAIR_2018_GOLD,
             ),
             (
                 "com.apple.macbookair-2018-space-gray",
-                COM_APPLE_MACBOOKAIR_2018_SPACE_GRAY
+                COM_APPLE_MACBOOKAIR_2018_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookair-2018-silver",
-                COM_APPLE_MACBOOKAIR_2018_SILVER
+                COM_APPLE_MACBOOKAIR_2018_SILVER,
             ),
             ("com.apple.macbookair-2018", COM_APPLE_MACBOOKAIR_2018),
             (
                 "com.apple.macbookair-13-unibody",
-                COM_APPLE_MACBOOKAIR_13_UNIBODY
+                COM_APPLE_MACBOOKAIR_13_UNIBODY,
             ),
             (
                 "com.apple.macbookair-11-unibody",
-                COM_APPLE_MACBOOKAIR_11_UNIBODY
+                COM_APPLE_MACBOOKAIR_11_UNIBODY,
             ),
             ("com.apple.macbookair", COM_APPLE_MACBOOKAIR),
             (
                 "com.apple.macbookpro-16-space-gray-mid-2020",
-                COM_APPLE_MACBOOKPRO_16_SPACE_GRAY_MID_2020
+                COM_APPLE_MACBOOKPRO_16_SPACE_GRAY_MID_2020,
             ),
             (
                 "com.apple.macbookpro-16-silver-mid-2020",
-                COM_APPLE_MACBOOKPRO_16_SILVER_MID_2020
+                COM_APPLE_MACBOOKPRO_16_SILVER_MID_2020,
             ),
             (
                 "com.apple.macbookpro-16-mid-2020",
-                COM_APPLE_MACBOOKPRO_16_MID_2020
+                COM_APPLE_MACBOOKPRO_16_MID_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-space-gray-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-silver-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-four-usb-ports-space-gray-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_FOUR_USB_PORTS_SPACE_GRAY_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_FOUR_USB_PORTS_SPACE_GRAY_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-four-usb-ports-silver-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_FOUR_USB_PORTS_SILVER_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_FOUR_USB_PORTS_SILVER_2020,
             ),
             (
                 "com.apple.macbookpro-13-retina-four-usb-ports-2020",
-                COM_APPLE_MACBOOKPRO_13_RETINA_FOUR_USB_PORTS_2020
+                COM_APPLE_MACBOOKPRO_13_RETINA_FOUR_USB_PORTS_2020,
             ),
             (
                 "com.apple.macbookpro-16-space-gray",
-                COM_APPLE_MACBOOKPRO_16_SPACE_GRAY
+                COM_APPLE_MACBOOKPRO_16_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookpro-16-silver",
-                COM_APPLE_MACBOOKPRO_16_SILVER
+                COM_APPLE_MACBOOKPRO_16_SILVER,
             ),
             ("com.apple.macbookpro-16", COM_APPLE_MACBOOKPRO_16),
             ("com.apple.macbookpro-17", COM_APPLE_MACBOOKPRO_17),
             (
                 "com.apple.macbookpro-17-unibody",
-                COM_APPLE_MACBOOKPRO_17_UNIBODY
+                COM_APPLE_MACBOOKPRO_17_UNIBODY,
             ),
             (
                 "com.apple.macbookpro-15-retina-display",
-                COM_APPLE_MACBOOKPRO_15_RETINA_DISPLAY
+                COM_APPLE_MACBOOKPRO_15_RETINA_DISPLAY,
             ),
             (
                 "com.apple.macbookpro-15-unibody",
-                COM_APPLE_MACBOOKPRO_15_UNIBODY
+                COM_APPLE_MACBOOKPRO_15_UNIBODY,
             ),
             ("com.apple.macbookpro-15", COM_APPLE_MACBOOKPRO_15),
             ("com.apple.macbookpro", COM_APPLE_MACBOOKPRO),
             (
                 "com.apple.macbookpro-13-retina-display",
-                COM_APPLE_MACBOOKPRO_13_RETINA_DISPLAY
+                COM_APPLE_MACBOOKPRO_13_RETINA_DISPLAY,
             ),
             (
                 "com.apple.macbookpro-13-unibody",
-                COM_APPLE_MACBOOKPRO_13_UNIBODY
+                COM_APPLE_MACBOOKPRO_13_UNIBODY,
             ),
             (
                 "com.apple.macbook-retina-gold-2018",
-                COM_APPLE_MACBOOK_RETINA_GOLD_2018
+                COM_APPLE_MACBOOK_RETINA_GOLD_2018,
             ),
             (
                 "com.apple.macbook-retina-rose-gold-2017",
-                COM_APPLE_MACBOOK_RETINA_ROSE_GOLD_2017
+                COM_APPLE_MACBOOK_RETINA_ROSE_GOLD_2017,
             ),
             (
                 "com.apple.macbook-retina-space-gray-2017",
-                COM_APPLE_MACBOOK_RETINA_SPACE_GRAY_2017
+                COM_APPLE_MACBOOK_RETINA_SPACE_GRAY_2017,
             ),
             (
                 "com.apple.macbook-retina-gold-2017",
-                COM_APPLE_MACBOOK_RETINA_GOLD_2017
+                COM_APPLE_MACBOOK_RETINA_GOLD_2017,
             ),
             (
                 "com.apple.macbook-retina-silver-2017",
-                COM_APPLE_MACBOOK_RETINA_SILVER_2017
+                COM_APPLE_MACBOOK_RETINA_SILVER_2017,
             ),
             (
                 "com.apple.macbook-retina-rose-gold",
-                COM_APPLE_MACBOOK_RETINA_ROSE_GOLD
+                COM_APPLE_MACBOOK_RETINA_ROSE_GOLD,
             ),
             (
                 "com.apple.macbook-retina-space-gray",
-                COM_APPLE_MACBOOK_RETINA_SPACE_GRAY
+                COM_APPLE_MACBOOK_RETINA_SPACE_GRAY,
             ),
             (
                 "com.apple.macbook-retina-gold",
-                COM_APPLE_MACBOOK_RETINA_GOLD
+                COM_APPLE_MACBOOK_RETINA_GOLD,
             ),
             (
                 "com.apple.macbook-retina-silver",
-                COM_APPLE_MACBOOK_RETINA_SILVER
+                COM_APPLE_MACBOOK_RETINA_SILVER,
             ),
             ("com.apple.macbook-retina", COM_APPLE_MACBOOK_RETINA),
             (
                 "com.apple.macbook-unibody-plastic",
-                COM_APPLE_MACBOOK_UNIBODY_PLASTIC
+                COM_APPLE_MACBOOK_UNIBODY_PLASTIC,
             ),
             ("com.apple.macbook-unibody", COM_APPLE_MACBOOK_UNIBODY),
             ("com.apple.macbook-black", COM_APPLE_MACBOOK_BLACK),
@@ -4519,40 +4518,40 @@ lazy_static! {
             ("com.apple.imacpro-2017", COM_APPLE_IMACPRO_2017),
             (
                 "com.apple.imac-unibody-27-no-optical-2020",
-                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_2020
+                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_2020,
             ),
             (
                 "com.apple.imac-unibody-27-no-optical-2019",
-                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_2019
+                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_2019,
             ),
             (
                 "com.apple.imac-unibody-21-no-optical-2019",
-                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL_2019
+                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL_2019,
             ),
             (
                 "com.apple.imac-unibody-27-no-optical-2017",
-                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_2017
+                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_2017,
             ),
             (
                 "com.apple.imac-unibody-21-no-optical-2017",
-                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL_2017
+                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL_2017,
             ),
             (
                 "com.apple.imac-unibody-27-no-optical-late-2015",
-                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_LATE_2015
+                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL_LATE_2015,
             ),
             (
                 "com.apple.imac-unibody-21-no-optical.mid-2015",
-                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL_MID_2015
+                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL_MID_2015,
             ),
             ("com.apple.imac-15-1", COM_APPLE_IMAC_15_1),
             (
                 "com.apple.imac-unibody-27-no-optical",
-                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL
+                COM_APPLE_IMAC_UNIBODY_27_NO_OPTICAL,
             ),
             (
                 "com.apple.imac-unibody-21-no-optical",
-                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL
+                COM_APPLE_IMAC_UNIBODY_21_NO_OPTICAL,
             ),
             ("com.apple.imac-unibody", COM_APPLE_IMAC_UNIBODY),
             ("com.apple.imac-unibody-21", COM_APPLE_IMAC_UNIBODY_21),
@@ -4571,7 +4570,7 @@ lazy_static! {
             ("com.apple.macmini-2018", COM_APPLE_MACMINI_2018),
             (
                 "com.apple.macmini-unibody-no-optical",
-                COM_APPLE_MACMINI_UNIBODY_NO_OPTICAL
+                COM_APPLE_MACMINI_UNIBODY_NO_OPTICAL,
             ),
             ("com.apple.macmini-unibody", COM_APPLE_MACMINI_UNIBODY),
             ("com.apple.macmini-core-duo", COM_APPLE_MACMINI_CORE_DUO),
@@ -4584,11 +4583,11 @@ lazy_static! {
             ("com.apple.powermac-g5", COM_APPLE_POWERMAC_G5),
             (
                 "com.apple.powermac-g4-mirrored-drive-doors",
-                COM_APPLE_POWERMAC_G4_MIRRORED_DRIVE_DOORS
+                COM_APPLE_POWERMAC_G4_MIRRORED_DRIVE_DOORS,
             ),
             (
                 "com.apple.powermac-g4-quicksilver",
-                COM_APPLE_POWERMAC_G4_QUICKSILVER
+                COM_APPLE_POWERMAC_G4_QUICKSILVER,
             ),
             ("com.apple.powermac", COM_APPLE_POWERMAC),
             ("com.apple.ibook-g4", COM_APPLE_IBOOK_G4),
@@ -4597,130 +4596,130 @@ lazy_static! {
             ("com.apple.powerbook-g4-12", COM_APPLE_POWERBOOK_G4_12),
             (
                 "com.apple.powerbook-g4-titanium",
-                COM_APPLE_POWERBOOK_G4_TITANIUM
+                COM_APPLE_POWERBOOK_G4_TITANIUM,
             ),
             ("com.apple.powerbook", COM_APPLE_POWERBOOK),
             ("com.apple.mac.rackmount", COM_APPLE_MAC_RACKMOUNT),
             ("com.apple.mac.tower", COM_APPLE_MAC_TOWER),
             (
                 "com.apple.macbookpro-15-space-gray-late-2018",
-                COM_APPLE_MACBOOKPRO_15_SPACE_GRAY_LATE_2018
+                COM_APPLE_MACBOOKPRO_15_SPACE_GRAY_LATE_2018,
             ),
             (
                 "com.apple.macbookpro-15-silver-late-2018",
-                COM_APPLE_MACBOOKPRO_15_SILVER_LATE_2018
+                COM_APPLE_MACBOOKPRO_15_SILVER_LATE_2018,
             ),
             (
                 "com.apple.macbookpro-15-late-2018",
-                COM_APPLE_MACBOOKPRO_15_LATE_2018
+                COM_APPLE_MACBOOKPRO_15_LATE_2018,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-space-gray-2018",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SPACE_GRAY_2018
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SPACE_GRAY_2018,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-silver-2018",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SILVER_2018
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SILVER_2018,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-2018",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_2018
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_2018,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-space-gray-2017",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SPACE_GRAY_2017
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SPACE_GRAY_2017,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-silver-2017",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SILVER_2017
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SILVER_2017,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-2017",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_2017
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_2017,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-space-gray",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SPACE_GRAY
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid-silver",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SILVER
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID_SILVER,
             ),
             (
                 "com.apple.macbookpro-15-retina-touchid",
-                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID
+                COM_APPLE_MACBOOKPRO_15_RETINA_TOUCHID,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-space-gray-2019",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SPACE_GRAY_2019
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SPACE_GRAY_2019,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-silver-2019",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SILVER_2019
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SILVER_2019,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-2019",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_2019
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_2019,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-space-gray-2018",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_2018
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_2018,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-silver-2018",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_2018
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_2018,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-2018",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_2018
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_2018,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-space-gray-2017",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_2017
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY_2017,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-silver-2017",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_2017
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER_2017,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-2017",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_2017
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_2017,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-space-gray",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid-silver",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID_SILVER,
             ),
             (
                 "com.apple.macbookpro-13-retina-touchid",
-                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID
+                COM_APPLE_MACBOOKPRO_13_RETINA_TOUCHID,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-space-gray-2017",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SPACE_GRAY_2017
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SPACE_GRAY_2017,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-silver-2017",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SILVER_2017
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SILVER_2017,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-2017",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_2017
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_2017,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-space-gray",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SPACE_GRAY
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SPACE_GRAY,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc-silver",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SILVER
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC_SILVER,
             ),
             (
                 "com.apple.macbookpro-13-retina-usbc",
-                COM_APPLE_MACBOOKPRO_13_RETINA_USBC
+                COM_APPLE_MACBOOKPRO_13_RETINA_USBC,
             ),
             ("com.apple.mac.laptop", COM_APPLE_MAC_LAPTOP),
             ("com.apple.mac", COM_APPLE_MAC),
@@ -4751,24 +4750,24 @@ lazy_static! {
             ("com.apple.color-file", COM_APPLE_COLOR_FILE),
             (
                 "com.apple.profile-font-and-color",
-                COM_APPLE_PROFILE_FONT_AND_COLOR
+                COM_APPLE_PROFILE_FONT_AND_COLOR,
             ),
             (
                 "com.apple.profile-background-color",
-                COM_APPLE_PROFILE_BACKGROUND_COLOR
+                COM_APPLE_PROFILE_BACKGROUND_COLOR,
             ),
             ("com.apple.colorsync-profile", COM_APPLE_COLORSYNC_PROFILE),
             (
                 "com.apple.txn.text-multimedia-data",
-                COM_APPLE_TXN_TEXT_MULTIMEDIA_DATA
+                COM_APPLE_TXN_TEXT_MULTIMEDIA_DATA,
             ),
             (
                 "org.aafassociation.advanced-authoring-format",
-                ORG_AAFASSOCIATION_ADVANCED_AUTHORING_FORMAT
+                ORG_AAFASSOCIATION_ADVANCED_AUTHORING_FORMAT,
             ),
             (
                 "com.apple.localized-pdf-bundle",
-                COM_APPLE_LOCALIZED_PDF_BUNDLE
+                COM_APPLE_LOCALIZED_PDF_BUNDLE,
             ),
             ("org.idpf.epub-container", ORG_IDPF_EPUB_CONTAINER),
             ("com.apple.webarchive", COM_APPLE_WEBARCHIVE),
@@ -4783,7 +4782,7 @@ lazy_static! {
             ("com.apple.data-container", COM_APPLE_DATA_CONTAINER),
             (
                 "com.apple.file-system-plug-in",
-                COM_APPLE_FILE_SYSTEM_PLUG_IN
+                COM_APPLE_FILE_SYSTEM_PLUG_IN,
             ),
             ("com.apple.ppp-plug-in", COM_APPLE_PPP_PLUG_IN),
             ("com.apple.system-extension", COM_APPLE_SYSTEM_EXTENSION),
@@ -4791,64 +4790,64 @@ lazy_static! {
             ("com.apple.dashboard-widget", COM_APPLE_DASHBOARD_WIDGET),
             (
                 "com.apple.quicklook-generator",
-                COM_APPLE_QUICKLOOK_GENERATOR
+                COM_APPLE_QUICKLOOK_GENERATOR,
             ),
             ("com.apple.metadata-importer", COM_APPLE_METADATA_IMPORTER),
             ("com.apple.webkit-plugin", COM_APPLE_WEBKIT_PLUGIN),
             ("com.apple.pluginkit", COM_APPLE_PLUGINKIT),
             (
                 "com.apple.application-and-system-extension",
-                COM_APPLE_APPLICATION_AND_SYSTEM_EXTENSION
+                COM_APPLE_APPLICATION_AND_SYSTEM_EXTENSION,
             ),
             ("com.apple.kernel-extension", COM_APPLE_KERNEL_EXTENSION),
             ("com.apple.xpc-service", COM_APPLE_XPC_SERVICE),
             ("com.apple.plugin", COM_APPLE_PLUGIN),
             (
                 "com.apple.service-application",
-                COM_APPLE_SERVICE_APPLICATION
+                COM_APPLE_SERVICE_APPLICATION,
             ),
             (
                 "com.apple.application-placeholder",
-                COM_APPLE_APPLICATION_PLACEHOLDER
+                COM_APPLE_APPLICATION_PLACEHOLDER,
             ),
             ("com.apple.rtfd", COM_APPLE_RTFD),
             (
                 "com.apple.intelligentsuggestions.assets",
-                COM_APPLE_INTELLIGENTSUGGESTIONS_ASSETS
+                COM_APPLE_INTELLIGENTSUGGESTIONS_ASSETS,
             ),
             (
                 "com.apple.installer-meta-package",
-                COM_APPLE_INSTALLER_META_PACKAGE
+                COM_APPLE_INSTALLER_META_PACKAGE,
             ),
             (
                 "com.apple.installer-distribution-package",
-                COM_APPLE_INSTALLER_DISTRIBUTION_PACKAGE
+                COM_APPLE_INSTALLER_DISTRIBUTION_PACKAGE,
             ),
             ("com.apple.installer-package", COM_APPLE_INSTALLER_PACKAGE),
             ("com.apple.flat-rtfd", COM_APPLE_FLAT_RTFD),
             (
                 "com.apple.deprecated-application-file",
-                COM_APPLE_DEPRECATED_APPLICATION_FILE
+                COM_APPLE_DEPRECATED_APPLICATION_FILE,
             ),
             ("com.apple.application-file", COM_APPLE_APPLICATION_FILE),
             ("com.apple.application-bundle", COM_APPLE_APPLICATION_BUNDLE),
             ("com.apple.framework", COM_APPLE_FRAMEWORK),
             (
                 "com.apple.localizable-name-bundle",
-                COM_APPLE_LOCALIZABLE_NAME_BUNDLE
+                COM_APPLE_LOCALIZABLE_NAME_BUNDLE,
             ),
             ("com.apple.menu-extra", COM_APPLE_MENU_EXTRA),
             (
                 "com.apple.systempreference.screen-slide-saver",
-                COM_APPLE_SYSTEMPREFERENCE_SCREEN_SLIDE_SAVER
+                COM_APPLE_SYSTEMPREFERENCE_SCREEN_SLIDE_SAVER,
             ),
             (
                 "com.apple.systempreference.screen-saver",
-                COM_APPLE_SYSTEMPREFERENCE_SCREEN_SAVER
+                COM_APPLE_SYSTEMPREFERENCE_SCREEN_SAVER,
             ),
             (
                 "com.apple.systempreference.prefpane",
-                COM_APPLE_SYSTEMPREFERENCE_PREFPANE
+                COM_APPLE_SYSTEMPREFERENCE_PREFPANE,
             ),
             ("com.apple.generic-bundle", COM_APPLE_GENERIC_BUNDLE),
             ("com.apple.bundle", COM_APPLE_BUNDLE),
@@ -4858,7 +4857,7 @@ lazy_static! {
             ("com.apple.dot-mac", COM_APPLE_DOT_MAC),
             (
                 "com.apple.network-neighborhood",
-                COM_APPLE_NETWORK_NEIGHBORHOOD
+                COM_APPLE_NETWORK_NEIGHBORHOOD,
             ),
             ("public.file-sharepoint", PUBLIC_FILE_SHAREPOINT),
             ("public.volume", PUBLIC_VOLUME),
@@ -4880,56 +4879,56 @@ lazy_static! {
             ("com.apple.trash-empty", COM_APPLE_TRASH_EMPTY),
             (
                 "com.apple.document-type.system-folder",
-                COM_APPLE_DOCUMENT_TYPE_SYSTEM_FOLDER
+                COM_APPLE_DOCUMENT_TYPE_SYSTEM_FOLDER,
             ),
             ("com.apple.library-folder", COM_APPLE_LIBRARY_FOLDER),
             (
                 "com.apple.server-applications-folder",
-                COM_APPLE_SERVER_APPLICATIONS_FOLDER
+                COM_APPLE_SERVER_APPLICATIONS_FOLDER,
             ),
             (
                 "com.apple.applications-folder",
-                COM_APPLE_APPLICATIONS_FOLDER
+                COM_APPLE_APPLICATIONS_FOLDER,
             ),
             ("com.apple.drop-folder", COM_APPLE_DROP_FOLDER),
             ("public.folder", PUBLIC_FOLDER),
             (
                 "com.apple.scripting-definition",
-                COM_APPLE_SCRIPTING_DEFINITION
+                COM_APPLE_SCRIPTING_DEFINITION,
             ),
             (
                 "com.apple.applescript.script-bundle",
-                COM_APPLE_APPLESCRIPT_SCRIPT_BUNDLE
+                COM_APPLE_APPLESCRIPT_SCRIPT_BUNDLE,
             ),
             ("com.apple.applescript.script", COM_APPLE_APPLESCRIPT_SCRIPT),
             ("com.apple.applescript.text", COM_APPLE_APPLESCRIPT_TEXT),
             ("com.apple.profile-font-icon", COM_APPLE_PROFILE_FONT_ICON),
             (
                 "com.adobe.postscript-pfa-font",
-                COM_ADOBE_POSTSCRIPT_PFA_FONT
+                COM_ADOBE_POSTSCRIPT_PFA_FONT,
             ),
             (
                 "com.adobe.postscript-pfb-font",
-                COM_ADOBE_POSTSCRIPT_PFB_FONT
+                COM_ADOBE_POSTSCRIPT_PFB_FONT,
             ),
             (
                 "com.adobe.postscript-lwfn-font",
-                COM_ADOBE_POSTSCRIPT_LWFN_FONT
+                COM_ADOBE_POSTSCRIPT_LWFN_FONT,
             ),
             ("com.apple.font-suitcase", COM_APPLE_FONT_SUITCASE),
             (
                 "public.truetype-collection-font",
-                PUBLIC_TRUETYPE_COLLECTION_FONT
+                PUBLIC_TRUETYPE_COLLECTION_FONT,
             ),
             ("public.truetype-ttf-font", PUBLIC_TRUETYPE_TTF_FONT),
             (
                 "public.opentype-collection-font",
-                PUBLIC_OPENTYPE_COLLECTION_FONT
+                PUBLIC_OPENTYPE_COLLECTION_FONT,
             ),
             ("public.opentype-font", PUBLIC_OPENTYPE_FONT),
             (
                 "com.apple.truetype-datafork-suitcase-font",
-                COM_APPLE_TRUETYPE_DATAFORK_SUITCASE_FONT
+                COM_APPLE_TRUETYPE_DATAFORK_SUITCASE_FONT,
             ),
             ("com.adobe.postscript-font", COM_ADOBE_POSTSCRIPT_FONT),
             ("public.truetype-font", PUBLIC_TRUETYPE_FONT),
@@ -4941,7 +4940,7 @@ lazy_static! {
             ("public.aac-audio", PUBLIC_AAC_AUDIO),
             (
                 "org.3gpp.adaptive-multi-rate-audio",
-                ORG_3GPP_ADAPTIVE_MULTI_RATE_AUDIO
+                ORG_3GPP_ADAPTIVE_MULTI_RATE_AUDIO,
             ),
             ("public.enhanced-ac3-audio", PUBLIC_ENHANCED_AC3_AUDIO),
             ("public.ac3-audio", PUBLIC_AC3_AUDIO),
@@ -4955,11 +4954,11 @@ lazy_static! {
             ("public.ulaw-audio", PUBLIC_ULAW_AUDIO),
             (
                 "com.apple.protected-mpeg-4-audio-b",
-                COM_APPLE_PROTECTED_MPEG_4_AUDIO_B
+                COM_APPLE_PROTECTED_MPEG_4_AUDIO_B,
             ),
             (
                 "com.apple.protected-mpeg-4-audio",
-                COM_APPLE_PROTECTED_MPEG_4_AUDIO
+                COM_APPLE_PROTECTED_MPEG_4_AUDIO,
             ),
             ("com.apple.mpeg-4-ringtone", COM_APPLE_MPEG_4_RINGTONE),
             ("com.apple.m4a-audio", COM_APPLE_M4A_AUDIO),
@@ -4973,11 +4972,11 @@ lazy_static! {
             ("public.avchd-collection", PUBLIC_AVCHD_COLLECTION),
             (
                 "public.audiovisual-content-collection",
-                PUBLIC_AUDIOVISUAL_CONTENT_COLLECTION
+                PUBLIC_AUDIOVISUAL_CONTENT_COLLECTION,
             ),
             (
                 "public.mpeg-2-transport-stream",
-                PUBLIC_MPEG_2_TRANSPORT_STREAM
+                PUBLIC_MPEG_2_TRANSPORT_STREAM,
             ),
             ("public.flc-animation", PUBLIC_FLC_ANIMATION),
             ("public.3gpp2", PUBLIC_3GPP2),
@@ -4986,7 +4985,7 @@ lazy_static! {
             ("public.dv-movie", PUBLIC_DV_MOVIE),
             (
                 "com.apple.protected-mpeg-4-video",
-                COM_APPLE_PROTECTED_MPEG_4_VIDEO
+                COM_APPLE_PROTECTED_MPEG_4_VIDEO,
             ),
             ("com.apple.m4v-video", COM_APPLE_M4V_VIDEO),
             ("public.mpeg-4", PUBLIC_MPEG_4),
@@ -5015,7 +5014,7 @@ lazy_static! {
             ("public.fax", PUBLIC_FAX),
             (
                 "com.apple.private.live-photo-bundle",
-                COM_APPLE_PRIVATE_LIVE_PHOTO_BUNDLE
+                COM_APPLE_PRIVATE_LIVE_PHOTO_BUNDLE,
             ),
             ("com.apple.live-photo", COM_APPLE_LIVE_PHOTO),
             ("public.image", PUBLIC_IMAGE),
@@ -5034,7 +5033,7 @@ lazy_static! {
             ("com.apple.xcode.dsym", COM_APPLE_XCODE_DSYM),
             (
                 "com.netscape.javascript-source",
-                COM_NETSCAPE_JAVASCRIPT_SOURCE
+                COM_NETSCAPE_JAVASCRIPT_SOURCE,
             ),
             ("public.dylan-source", PUBLIC_DYLAN_SOURCE),
             ("public.ada-source", PUBLIC_ADA_SOURCE),
@@ -5054,31 +5053,31 @@ lazy_static! {
             ("public.swift-source", PUBLIC_SWIFT_SOURCE),
             (
                 "public.precompiled-c-plus-plus-header",
-                PUBLIC_PRECOMPILED_C_PLUS_PLUS_HEADER
+                PUBLIC_PRECOMPILED_C_PLUS_PLUS_HEADER,
             ),
             (
                 "public.c-plus-plus-inline-header",
-                PUBLIC_C_PLUS_PLUS_INLINE_HEADER
+                PUBLIC_C_PLUS_PLUS_INLINE_HEADER,
             ),
             ("public.c-plus-plus-header", PUBLIC_C_PLUS_PLUS_HEADER),
             ("public.precompiled-c-header", PUBLIC_PRECOMPILED_C_HEADER),
             ("public.c-header", PUBLIC_C_HEADER),
             (
                 "public.objective-c-plus-plus-source.preprocessed",
-                PUBLIC_OBJECTIVE_C_PLUS_PLUS_SOURCE_PREPROCESSED
+                PUBLIC_OBJECTIVE_C_PLUS_PLUS_SOURCE_PREPROCESSED,
             ),
             (
                 "public.objective-c-plus-plus-source",
-                PUBLIC_OBJECTIVE_C_PLUS_PLUS_SOURCE
+                PUBLIC_OBJECTIVE_C_PLUS_PLUS_SOURCE,
             ),
             (
                 "public.c-plus-plus-source.preprocessed",
-                PUBLIC_C_PLUS_PLUS_SOURCE_PREPROCESSED
+                PUBLIC_C_PLUS_PLUS_SOURCE_PREPROCESSED,
             ),
             ("public.c-plus-plus-source", PUBLIC_C_PLUS_PLUS_SOURCE),
             (
                 "public.objective-c-source.preprocessed",
-                PUBLIC_OBJECTIVE_C_SOURCE_PREPROCESSED
+                PUBLIC_OBJECTIVE_C_SOURCE_PREPROCESSED,
             ),
             ("public.objective-c-source", PUBLIC_OBJECTIVE_C_SOURCE),
             ("com.apple.iig-source", COM_APPLE_IIG_SOURCE),
@@ -5086,16 +5085,16 @@ lazy_static! {
             ("public.c-source", PUBLIC_C_SOURCE),
             (
                 "public.source-code.preprocessed",
-                PUBLIC_SOURCE_CODE_PREPROCESSED
+                PUBLIC_SOURCE_CODE_PREPROCESSED,
             ),
             ("public.source-code", PUBLIC_SOURCE_CODE),
             (
                 "com.apple.ascii-property-list",
-                COM_APPLE_ASCII_PROPERTY_LIST
+                COM_APPLE_ASCII_PROPERTY_LIST,
             ),
             (
                 "com.apple.binary-property-list",
-                COM_APPLE_BINARY_PROPERTY_LIST
+                COM_APPLE_BINARY_PROPERTY_LIST,
             ),
             ("com.apple.xml-property-list", COM_APPLE_XML_PROPERTY_LIST),
             ("com.apple.property-list", COM_APPLE_PROPERTY_LIST),
@@ -5115,53 +5114,53 @@ lazy_static! {
             ("public.rtf", PUBLIC_RTF),
             (
                 "public.utf8-tab-separated-values-text",
-                PUBLIC_UTF8_TAB_SEPARATED_VALUES_TEXT
+                PUBLIC_UTF8_TAB_SEPARATED_VALUES_TEXT,
             ),
             (
                 "public.tab-separated-values-text",
-                PUBLIC_TAB_SEPARATED_VALUES_TEXT
+                PUBLIC_TAB_SEPARATED_VALUES_TEXT,
             ),
             (
                 "public.comma-separated-values-text",
-                PUBLIC_COMMA_SEPARATED_VALUES_TEXT
+                PUBLIC_COMMA_SEPARATED_VALUES_TEXT,
             ),
             ("public.delimited-values-text", PUBLIC_DELIMITED_VALUES_TEXT),
             ("com.apple.itunes.store-url", COM_APPLE_ITUNES_STORE_URL),
             (
                 "com.microsoft.internet-shortcut",
-                COM_MICROSOFT_INTERNET_SHORTCUT
+                COM_MICROSOFT_INTERNET_SHORTCUT,
             ),
             (
                 "com.apple.generic-internet-location",
-                COM_APPLE_GENERIC_INTERNET_LOCATION
+                COM_APPLE_GENERIC_INTERNET_LOCATION,
             ),
             (
                 "com.apple.news-internet-location",
-                COM_APPLE_NEWS_INTERNET_LOCATION
+                COM_APPLE_NEWS_INTERNET_LOCATION,
             ),
             (
                 "com.apple.ftp-internet-location",
-                COM_APPLE_FTP_INTERNET_LOCATION
+                COM_APPLE_FTP_INTERNET_LOCATION,
             ),
             (
                 "com.apple.file-internet-location",
-                COM_APPLE_FILE_INTERNET_LOCATION
+                COM_APPLE_FILE_INTERNET_LOCATION,
             ),
             (
                 "com.apple.afp-internet-location",
-                COM_APPLE_AFP_INTERNET_LOCATION
+                COM_APPLE_AFP_INTERNET_LOCATION,
             ),
             (
                 "com.apple.mail-internet-location",
-                COM_APPLE_MAIL_INTERNET_LOCATION
+                COM_APPLE_MAIL_INTERNET_LOCATION,
             ),
             (
                 "com.apple.vnc-internet-location",
-                COM_APPLE_VNC_INTERNET_LOCATION
+                COM_APPLE_VNC_INTERNET_LOCATION,
             ),
             (
                 "com.apple.web-internet-location",
-                COM_APPLE_WEB_INTERNET_LOCATION
+                COM_APPLE_WEB_INTERNET_LOCATION,
             ),
             ("com.apple.internet-location", COM_APPLE_INTERNET_LOCATION),
             ("public.stored-url", PUBLIC_STORED_URL),
@@ -5172,7 +5171,7 @@ lazy_static! {
             ("com.apple.archive", COM_APPLE_ARCHIVE),
             (
                 "com.apple.installer-package-archive",
-                COM_APPLE_INSTALLER_PACKAGE_ARCHIVE
+                COM_APPLE_INSTALLER_PACKAGE_ARCHIVE,
             ),
             ("com.apple.xip-archive", COM_APPLE_XIP_ARCHIVE),
             ("com.apple.xar-archive", COM_APPLE_XAR_ARCHIVE),
@@ -5181,13 +5180,13 @@ lazy_static! {
             ("public.cpio-archive", PUBLIC_CPIO_ARCHIVE),
             (
                 "com.apple.bom-compressed-cpio",
-                COM_APPLE_BOM_COMPRESSED_CPIO
+                COM_APPLE_BOM_COMPRESSED_CPIO,
             ),
             ("public.z-archive", PUBLIC_Z_ARCHIVE),
             ("public.uuencoded-archive", PUBLIC_UUENCODED_ARCHIVE),
             (
                 "com.apple.applesingle-archive",
-                COM_APPLE_APPLESINGLE_ARCHIVE
+                COM_APPLE_APPLESINGLE_ARCHIVE,
             ),
             ("com.apple.macbinary-archive", COM_APPLE_MACBINARY_ARCHIVE),
             ("com.apple.binhex-archive", COM_APPLE_BINHEX_ARCHIVE),
@@ -5201,21 +5200,21 @@ lazy_static! {
             ("com.apple.bom-archive", COM_APPLE_BOM_ARCHIVE),
             (
                 "com.apple.quartz-composer-composition",
-                COM_APPLE_QUARTZ_COMPOSER_COMPOSITION
+                COM_APPLE_QUARTZ_COMPOSER_COMPOSITION,
             ),
             (
                 "com.sun.web-application-archive",
-                COM_SUN_WEB_APPLICATION_ARCHIVE
+                COM_SUN_WEB_APPLICATION_ARCHIVE,
             ),
             ("com.sun.java-archive", COM_SUN_JAVA_ARCHIVE),
             ("com.sun.java-class", COM_SUN_JAVA_CLASS),
             (
                 "com.microsoft.windows-dynamic-link-library",
-                COM_MICROSOFT_WINDOWS_DYNAMIC_LINK_LIBRARY
+                COM_MICROSOFT_WINDOWS_DYNAMIC_LINK_LIBRARY,
             ),
             (
                 "com.microsoft.windows-executable",
-                COM_MICROSOFT_WINDOWS_EXECUTABLE
+                COM_MICROSOFT_WINDOWS_EXECUTABLE,
             ),
             ("public.elf-binary", PUBLIC_ELF_BINARY),
             ("com.apple.pef-binary", COM_APPLE_PEF_BINARY),
@@ -5224,7 +5223,7 @@ lazy_static! {
             ("com.apple.mach-o-core", COM_APPLE_MACH_O_CORE),
             (
                 "com.apple.x11-mach-o-executable",
-                COM_APPLE_X11_MACH_O_EXECUTABLE
+                COM_APPLE_X11_MACH_O_EXECUTABLE,
             ),
             ("com.apple.mach-o-executable", COM_APPLE_MACH_O_EXECUTABLE),
             ("com.apple.mach-o-object", COM_APPLE_MACH_O_OBJECT),
@@ -5232,25 +5231,25 @@ lazy_static! {
             ("public.object-code", PUBLIC_OBJECT_CODE),
             (
                 "com.apple.finder.recent-items",
-                COM_APPLE_FINDER_RECENT_ITEMS
+                COM_APPLE_FINDER_RECENT_ITEMS,
             ),
             (
                 "com.apple.finder.smart-folder",
-                COM_APPLE_FINDER_SMART_FOLDER
+                COM_APPLE_FINDER_SMART_FOLDER,
             ),
             ("com.apple.iconset", COM_APPLE_ICONSET),
             ("com.apple.finder.burn-folder", COM_APPLE_FINDER_BURN_FOLDER),
             (
                 "com.apple.finder.pictclipping",
-                COM_APPLE_FINDER_PICTCLIPPING
+                COM_APPLE_FINDER_PICTCLIPPING,
             ),
             (
                 "com.apple.finder.textclipping",
-                COM_APPLE_FINDER_TEXTCLIPPING
+                COM_APPLE_FINDER_TEXTCLIPPING,
             ),
             (
                 "com.apple.finder.sound-clipping",
-                COM_APPLE_FINDER_SOUND_CLIPPING
+                COM_APPLE_FINDER_SOUND_CLIPPING,
             ),
             ("com.apple.finder.clipping", COM_APPLE_FINDER_CLIPPING),
             ("com.apple.icloud-file-fault", COM_APPLE_ICLOUD_FILE_FAULT),
@@ -5263,35 +5262,35 @@ lazy_static! {
             ("com.apple.mapkit.map-item", COM_APPLE_MAPKIT_MAP_ITEM),
             (
                 "com.apple.cocoa.pasteboard.find-panel-search-options",
-                COM_APPLE_COCOA_PASTEBOARD_FIND_PANEL_SEARCH_OPTIONS
+                COM_APPLE_COCOA_PASTEBOARD_FIND_PANEL_SEARCH_OPTIONS,
             ),
             (
                 "com.apple.cocoa.pasteboard.multiple-text-selection",
-                COM_APPLE_COCOA_PASTEBOARD_MULTIPLE_TEXT_SELECTION
+                COM_APPLE_COCOA_PASTEBOARD_MULTIPLE_TEXT_SELECTION,
             ),
             (
                 "com.apple.cocoa.pasteboard.paragraph-formatting",
-                COM_APPLE_COCOA_PASTEBOARD_PARAGRAPH_FORMATTING
+                COM_APPLE_COCOA_PASTEBOARD_PARAGRAPH_FORMATTING,
             ),
             (
                 "com.apple.cocoa.pasteboard.character-formatting",
-                COM_APPLE_COCOA_PASTEBOARD_CHARACTER_FORMATTING
+                COM_APPLE_COCOA_PASTEBOARD_CHARACTER_FORMATTING,
             ),
             (
                 "com.apple.cocoa.pasteboard.sound",
-                COM_APPLE_COCOA_PASTEBOARD_SOUND
+                COM_APPLE_COCOA_PASTEBOARD_SOUND,
             ),
             (
                 "com.apple.cocoa.pasteboard.color",
-                COM_APPLE_COCOA_PASTEBOARD_COLOR
+                COM_APPLE_COCOA_PASTEBOARD_COLOR,
             ),
             (
                 "com.apple.pasteboard.promised-file-content-type",
-                COM_APPLE_PASTEBOARD_PROMISED_FILE_CONTENT_TYPE
+                COM_APPLE_PASTEBOARD_PROMISED_FILE_CONTENT_TYPE,
             ),
             (
                 "com.apple.pasteboard.promised-file-url",
-                COM_APPLE_PASTEBOARD_PROMISED_FILE_URL
+                COM_APPLE_PASTEBOARD_PROMISED_FILE_URL,
             ),
             ("com.apple.device-model-code", COM_APPLE_DEVICE_MODEL_CODE),
             ("com.apple.nspboard-type", COM_APPLE_NSPBOARD_TYPE),
@@ -5310,12 +5309,12 @@ lazy_static! {
             ("public.case-insensitive-text", PUBLIC_CASE_INSENSITIVE_TEXT),
             (
                 "com.apple.traditional-mac-plain-text",
-                COM_APPLE_TRADITIONAL_MAC_PLAIN_TEXT
+                COM_APPLE_TRADITIONAL_MAC_PLAIN_TEXT,
             ),
             ("public.utf16-plain-text", PUBLIC_UTF16_PLAIN_TEXT),
             (
                 "public.utf16-external-plain-text",
-                PUBLIC_UTF16_EXTERNAL_PLAIN_TEXT
+                PUBLIC_UTF16_EXTERNAL_PLAIN_TEXT,
             ),
             ("public.utf8-plain-text", PUBLIC_UTF8_PLAIN_TEXT),
             ("public.plain-text", PUBLIC_PLAIN_TEXT),
@@ -5335,20 +5334,20 @@ lazy_static! {
             ("com.apple.reality", COM_APPLE_REALITY),
             (
                 "com.pixar.universal-scene-description-mobile",
-                COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION_MOBILE
+                COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION_MOBILE,
             ),
             (
                 "com.pixar.universal-scene-description",
-                COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION
+                COM_PIXAR_UNIVERSAL_SCENE_DESCRIPTION,
             ),
             ("public.polygon-file-format", PUBLIC_POLYGON_FILE_FORMAT),
             (
                 "public.standard-tesselated-geometry-format",
-                PUBLIC_STANDARD_TESSELATED_GEOMETRY_FORMAT
+                PUBLIC_STANDARD_TESSELATED_GEOMETRY_FORMAT,
             ),
             (
                 "public.geometry-definition-format",
-                PUBLIC_GEOMETRY_DEFINITION_FORMAT
+                PUBLIC_GEOMETRY_DEFINITION_FORMAT,
             ),
             ("public.alembic", PUBLIC_ALEMBIC),
             ("public.3d-content", PUBLIC_3D_CONTENT),
@@ -5370,10 +5369,14 @@ lazy_static! {
             ("public.content", PUBLIC_CONTENT),
             ("public.directory", PUBLIC_DIRECTORY),
             ("public.data", PUBLIC_DATA),
-            ("public.item", PUBLIC_ITEM)
-        ])));
-    pub(crate) static ref SYSTEM_FILENAME_EXTENSION_MAP: Arc<RwLock<HashMap<&'static str, &'static str>>> =
-        Arc::new(RwLock::new(HashMap::from([
+            ("public.item", PUBLIC_ITEM),
+        ]);
+        Arc::new(map)
+    });
+
+pub(crate) static SYSTEM_FILENAME_EXTENSION_MAP: Lazy<Arc<HashMap<&'static str, &'static str>>> =
+    Lazy::new(|| {
+        let map = HashMap::from([
             (r#"ipa"#, "com.apple.iphone.package-archive"),
             (r#"apk"#, "vnd.android.package-archive"),
             (r#"rs"#, "public.rust-source"),
@@ -5419,7 +5422,7 @@ lazy_static! {
             (r#"rtfd"#, "com.apple.rtfd"),
             (
                 r#"suggestionsassets"#,
-                "com.apple.intelligentsuggestions.assets"
+                "com.apple.intelligentsuggestions.assets",
             ),
             (r#"mpkg"#, "com.apple.installer-meta-package"),
             (r#"distz"#, "com.apple.installer-distribution-package"),
@@ -5431,7 +5434,7 @@ lazy_static! {
             (r#"menu"#, "com.apple.menu-extra"),
             (
                 r#"slideSaver"#,
-                "com.apple.systempreference.screen-slide-saver"
+                "com.apple.systempreference.screen-slide-saver",
             ),
             (r#"saver"#, "com.apple.systempreference.screen-saver"),
             (r#"prefPane"#, "com.apple.systempreference.prefpane"),
@@ -5724,14 +5727,18 @@ lazy_static! {
             (r#"stl"#, "public.standard-tesselated-geometry-format"),
             (r#"obj"#, "public.geometry-definition-format"),
             (r#"abc"#, "public.alembic"),
-            (r#"csstore"#, "com.apple.csstore")
-        ])));
-    pub(crate) static ref SYSTEM_MIME_MAP: Arc<RwLock<HashMap<&'static str, &'static str>>> =
-        Arc::new(RwLock::new(HashMap::from([
+            (r#"csstore"#, "com.apple.csstore"),
+        ]);
+        Arc::new(map)
+    });
+
+pub(crate) static SYSTEM_MIME_MAP: Lazy<Arc<HashMap<&'static str, &'static str>>> =
+    Lazy::new(|| {
+        let map = HashMap::from([
             (r#"application/octet-stream"#, "public.data"),
             (
                 r#"model/vnd.usdz+zip"#,
-                "com.pixar.universal-scene-description-mobile"
+                "com.pixar.universal-scene-description-mobile",
             ),
             (r#"model/vnd.reality"#, "com.apple.reality"),
             (r#"text/x-vcalendar"#, "com.apple.ical.vcs"),
@@ -5746,16 +5753,16 @@ lazy_static! {
             (r#"text/plain;charset="utf-16""#, "public.utf16-plain-text"),
             (
                 r#"application/x-msdownload"#,
-                "com.microsoft.windows-executable"
+                "com.microsoft.windows-executable",
             ),
             (
                 r#"application/x-msdownload"#,
-                "com.microsoft.windows-dynamic-link-library"
+                "com.microsoft.windows-dynamic-link-library",
             ),
             (r#"application/java-archive"#, "com.sun.java-archive"),
             (
                 r#"application/x-quartzcomposer"#,
-                "com.apple.quartz-composer-composition"
+                "com.apple.quartz-composer-composition",
             ),
             (r#"application/x-gtar"#, "org.gnu.gnu-tar-archive"),
             (r#"application/x-tar"#, "public.tar-archive"),
@@ -5779,11 +5786,11 @@ lazy_static! {
             (r#"text/csv"#, "public.comma-separated-values-text"),
             (
                 r#"text/comma-separated-values"#,
-                "public.comma-separated-values-text"
+                "public.comma-separated-values-text",
             ),
             (
                 r#"text/tab-separated-values"#,
-                "public.tab-separated-values-text"
+                "public.tab-separated-values-text",
             ),
             (r#"text/rtf"#, "public.rtf"),
             (r#"text/html"#, "public.html"),
@@ -5875,19 +5882,21 @@ lazy_static! {
             (r#"application/epub+zip"#, "org.idpf.epub-container"),
             (
                 r#"application/x-apple-aspen-config"#,
-                "com.apple.mobileconfig"
+                "com.apple.mobileconfig",
             ),
             (
                 r#"application/x-apple-aspen-mobileprovision"#,
-                "com.apple.mobileprovision"
+                "com.apple.mobileprovision",
             ),
             (r#"application/vnd.apple.pkpass"#, "com.apple.pkpass"),
             (
                 r#"application/vnd.apple.pkpasses"#,
-                "com.apple.pkpasses-data"
-            )
-        ])));
-}
+                "com.apple.pkpasses-data",
+            ),
+        ]);
+        Arc::new(map)
+    });
+
 pub const COM_ADOBE_PDF: UTType = UTType {
     identifier: "com.adobe.pdf",
     conforms_to: r#"["public.data", "public.composite-content"]"#,
@@ -7125,85 +7134,85 @@ pub const COM_APPLE_LEGACY_MULTIPLE_ITEMS: UTType = UTType {
     description: r#"Multiple Items"#,
 };
 
-lazy_static! {
-    pub(crate) static ref OTHER_TYPES_MAP: Arc<RwLock<HashMap<&'static str, UTType<'static>>>> =
-        Arc::new(RwLock::new(HashMap::from([
+pub(crate) static OTHER_TYPES_MAP: Lazy<Arc<HashMap<&'static str, UTType<'static>>>> =
+    Lazy::new(|| {
+        let map = HashMap::from([
             (
                 "com.apple.legacy.multiple-items",
-                COM_APPLE_LEGACY_MULTIPLE_ITEMS
+                COM_APPLE_LEGACY_MULTIPLE_ITEMS,
             ),
             ("com.apple.legacy.erasing", COM_APPLE_LEGACY_ERASING),
             (
                 "com.apple.legacy.magnifying-glass",
-                COM_APPLE_LEGACY_MAGNIFYING_GLASS
+                COM_APPLE_LEGACY_MAGNIFYING_GLASS,
             ),
             (
                 "com.apple.icon-overlay.unsupported-badge",
-                COM_APPLE_ICON_OVERLAY_UNSUPPORTED_BADGE
+                COM_APPLE_ICON_OVERLAY_UNSUPPORTED_BADGE,
             ),
             (
                 "com.apple.icon-overlay.alert-caution-badge",
-                COM_APPLE_ICON_OVERLAY_ALERT_CAUTION_BADGE
+                COM_APPLE_ICON_OVERLAY_ALERT_CAUTION_BADGE,
             ),
             (
                 "com.apple.icon-overlay.alias-badge",
-                COM_APPLE_ICON_OVERLAY_ALIAS_BADGE
+                COM_APPLE_ICON_OVERLAY_ALIAS_BADGE,
             ),
             (
                 "com.apple.icon-overlay.locked-badge",
-                COM_APPLE_ICON_OVERLAY_LOCKED_BADGE
+                COM_APPLE_ICON_OVERLAY_LOCKED_BADGE,
             ),
             (
                 "com.apple.legacy.forward-arrow",
-                COM_APPLE_LEGACY_FORWARD_ARROW
+                COM_APPLE_LEGACY_FORWARD_ARROW,
             ),
             (
                 "com.apple.legacy.backward-arrow",
-                COM_APPLE_LEGACY_BACKWARD_ARROW
+                COM_APPLE_LEGACY_BACKWARD_ARROW,
             ),
             ("com.apple.legacy.connect-to", COM_APPLE_LEGACY_CONNECT_TO),
             ("com.apple.legacy.grid", COM_APPLE_LEGACY_GRID),
             (
                 "com.apple.legacy.keep-arranged",
-                COM_APPLE_LEGACY_KEEP_ARRANGED
+                COM_APPLE_LEGACY_KEEP_ARRANGED,
             ),
             ("com.apple.legacy.no-write", COM_APPLE_LEGACY_NO_WRITE),
             ("com.apple.legacy.unlocked", COM_APPLE_LEGACY_UNLOCKED),
             ("com.apple.legacy.locked", COM_APPLE_LEGACY_LOCKED),
             (
                 "com.apple.legacy.favorite-items",
-                COM_APPLE_LEGACY_FAVORITE_ITEMS
+                COM_APPLE_LEGACY_FAVORITE_ITEMS,
             ),
             ("com.apple.legacy.open-folder", COM_APPLE_LEGACY_OPEN_FOLDER),
             (
                 "com.apple.icon-overlay.private-folder",
-                COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER
+                COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER,
             ),
             (
                 "com.apple.icon-overlay.private-folder-badge",
-                COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER_BADGE
+                COM_APPLE_ICON_OVERLAY_PRIVATE_FOLDER_BADGE,
             ),
             (
                 "com.apple.icon-overlay.drop-folder-badge",
-                COM_APPLE_ICON_OVERLAY_DROP_FOLDER_BADGE
+                COM_APPLE_ICON_OVERLAY_DROP_FOLDER_BADGE,
             ),
             (
                 "com.apple.legacy.right-container-arrow",
-                COM_APPLE_LEGACY_RIGHT_CONTAINER_ARROW
+                COM_APPLE_LEGACY_RIGHT_CONTAINER_ARROW,
             ),
             (
                 "com.apple.legacy.delete-toolbar",
-                COM_APPLE_LEGACY_DELETE_TOOLBAR
+                COM_APPLE_LEGACY_DELETE_TOOLBAR,
             ),
             (
                 "com.apple.legacy.customize-toolbar",
-                COM_APPLE_LEGACY_CUSTOMIZE_TOOLBAR
+                COM_APPLE_LEGACY_CUSTOMIZE_TOOLBAR,
             ),
             ("com.apple.legacy.burn", COM_APPLE_LEGACY_BURN),
             ("com.apple.legacy.eject-media", COM_APPLE_LEGACY_EJECT_MEDIA),
             (
                 "com.apple.legacy.question-mark",
-                COM_APPLE_LEGACY_QUESTION_MARK
+                COM_APPLE_LEGACY_QUESTION_MARK,
             ),
             ("com.apple.legacy.window", COM_APPLE_LEGACY_WINDOW),
             ("com.apple.not-loaded", COM_APPLE_NOT_LOADED),
@@ -7211,145 +7220,145 @@ lazy_static! {
             ("com.apple.legacy.finder-icon", COM_APPLE_LEGACY_FINDER_ICON),
             (
                 "com.apple.icon-overlay.new-folder-badge",
-                COM_APPLE_ICON_OVERLAY_NEW_FOLDER_BADGE
+                COM_APPLE_ICON_OVERLAY_NEW_FOLDER_BADGE,
             ),
             ("com.apple.legacy.synchronize", COM_APPLE_LEGACY_SYNCHRONIZE),
             ("com.apple.legacy.clock-icon", COM_APPLE_LEGACY_CLOCK_ICON),
             (
                 "com.apple.legacy.toolbar-labels-icon",
-                COM_APPLE_LEGACY_TOOLBAR_LABELS_ICON
+                COM_APPLE_LEGACY_TOOLBAR_LABELS_ICON,
             ),
             (
                 "com.apple.legacy.toolbar-info-icon",
-                COM_APPLE_LEGACY_TOOLBAR_INFO_ICON
+                COM_APPLE_LEGACY_TOOLBAR_INFO_ICON,
             ),
             (
                 "com.apple.legacy.toolbar-advanced-icon",
-                COM_APPLE_LEGACY_TOOLBAR_ADVANCED_ICON
+                COM_APPLE_LEGACY_TOOLBAR_ADVANCED_ICON,
             ),
             (
                 "com.apple.legacy.sidebar-prefs-icon",
-                COM_APPLE_LEGACY_SIDEBAR_PREFS_ICON
+                COM_APPLE_LEGACY_SIDEBAR_PREFS_ICON,
             ),
             (
                 "com.apple.legacy.general-icon",
-                COM_APPLE_LEGACY_GENERAL_ICON
+                COM_APPLE_LEGACY_GENERAL_ICON,
             ),
             ("com.apple.everyone-icon", COM_APPLE_EVERYONE_ICON),
             (
                 "com.apple.legacy.actions-icon",
-                COM_APPLE_LEGACY_ACTIONS_ICON
+                COM_APPLE_LEGACY_ACTIONS_ICON,
             ),
             ("com.apple.accounts-icon", COM_APPLE_ACCOUNTS_ICON),
             (
                 "com.apple.document-type.dictionary",
-                COM_APPLE_DOCUMENT_TYPE_DICTIONARY
+                COM_APPLE_DOCUMENT_TYPE_DICTIONARY,
             ),
             ("com.apple.document-type", COM_APPLE_DOCUMENT_TYPE),
             (
                 "com.apple.icon-decoration.badge.warning",
-                COM_APPLE_ICON_DECORATION_BADGE_WARNING
+                COM_APPLE_ICON_DECORATION_BADGE_WARNING,
             ),
             (
                 "com.apple.icon-decoration.badge.trending",
-                COM_APPLE_ICON_DECORATION_BADGE_TRENDING
+                COM_APPLE_ICON_DECORATION_BADGE_TRENDING,
             ),
             (
                 "com.apple.icon-decoration.badge.syncing",
-                COM_APPLE_ICON_DECORATION_BADGE_SYNCING
+                COM_APPLE_ICON_DECORATION_BADGE_SYNCING,
             ),
             (
                 "com.apple.icon-decoration.badge.private-folder",
-                COM_APPLE_ICON_DECORATION_BADGE_PRIVATE_FOLDER
+                COM_APPLE_ICON_DECORATION_BADGE_PRIVATE_FOLDER,
             ),
             (
                 "com.apple.icon-decoration.badge.pinned",
-                COM_APPLE_ICON_DECORATION_BADGE_PINNED
+                COM_APPLE_ICON_DECORATION_BADGE_PINNED,
             ),
             (
                 "com.apple.icon-decoration.badge.locked-by-user",
-                COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_USER
+                COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_USER,
             ),
             (
                 "com.apple.icon-decoration.badge.locked-by-collaborator",
-                COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_COLLABORATOR
+                COM_APPLE_ICON_DECORATION_BADGE_LOCKED_BY_COLLABORATOR,
             ),
             (
                 "com.apple.icon-decoration.badge.in-review",
-                COM_APPLE_ICON_DECORATION_BADGE_IN_REVIEW
+                COM_APPLE_ICON_DECORATION_BADGE_IN_REVIEW,
             ),
             (
                 "com.apple.icon-decoration.badge.heart",
-                COM_APPLE_ICON_DECORATION_BADGE_HEART
+                COM_APPLE_ICON_DECORATION_BADGE_HEART,
             ),
             (
                 "com.apple.icon-decoration.badge.drop-folder",
-                COM_APPLE_ICON_DECORATION_BADGE_DROP_FOLDER
+                COM_APPLE_ICON_DECORATION_BADGE_DROP_FOLDER,
             ),
             (
                 "com.apple.icon-decoration.badge.comments",
-                COM_APPLE_ICON_DECORATION_BADGE_COMMENTS
+                COM_APPLE_ICON_DECORATION_BADGE_COMMENTS,
             ),
             (
                 "com.apple.icon-decoration.badge.checkmark",
-                COM_APPLE_ICON_DECORATION_BADGE_CHECKMARK
+                COM_APPLE_ICON_DECORATION_BADGE_CHECKMARK,
             ),
             (
                 "com.apple.icon-decoration.badge.locked",
-                COM_APPLE_ICON_DECORATION_BADGE_LOCKED
+                COM_APPLE_ICON_DECORATION_BADGE_LOCKED,
             ),
             (
                 "com.apple.icon-decoration.system.new-folder",
-                COM_APPLE_ICON_DECORATION_SYSTEM_NEW_FOLDER
+                COM_APPLE_ICON_DECORATION_SYSTEM_NEW_FOLDER,
             ),
             (
                 "com.apple.icon-decoration.system.alias",
-                COM_APPLE_ICON_DECORATION_SYSTEM_ALIAS
+                COM_APPLE_ICON_DECORATION_SYSTEM_ALIAS,
             ),
             (
                 "com.apple.icon-decoration.system.caution-alert",
-                COM_APPLE_ICON_DECORATION_SYSTEM_CAUTION_ALERT
+                COM_APPLE_ICON_DECORATION_SYSTEM_CAUTION_ALERT,
             ),
             (
                 "com.apple.icon-decoration.system.unsupported",
-                COM_APPLE_ICON_DECORATION_SYSTEM_UNSUPPORTED
+                COM_APPLE_ICON_DECORATION_SYSTEM_UNSUPPORTED,
             ),
             (
                 "com.apple.icon-decoration.system",
-                COM_APPLE_ICON_DECORATION_SYSTEM
+                COM_APPLE_ICON_DECORATION_SYSTEM,
             ),
             (
                 "com.apple.icon-decoration.emboss",
-                COM_APPLE_ICON_DECORATION_EMBOSS
+                COM_APPLE_ICON_DECORATION_EMBOSS,
             ),
             (
                 "com.apple.icon-decoration.badge",
-                COM_APPLE_ICON_DECORATION_BADGE
+                COM_APPLE_ICON_DECORATION_BADGE,
             ),
             (
                 "com.apple.icon-decoration-position.overlay",
-                COM_APPLE_ICON_DECORATION_POSITION_OVERLAY
+                COM_APPLE_ICON_DECORATION_POSITION_OVERLAY,
             ),
             (
                 "com.apple.icon-decoration-position.trailing-bottom",
-                COM_APPLE_ICON_DECORATION_POSITION_TRAILING_BOTTOM
+                COM_APPLE_ICON_DECORATION_POSITION_TRAILING_BOTTOM,
             ),
             (
                 "com.apple.icon-decoration-position.leading-bottom",
-                COM_APPLE_ICON_DECORATION_POSITION_LEADING_BOTTOM
+                COM_APPLE_ICON_DECORATION_POSITION_LEADING_BOTTOM,
             ),
             (
                 "com.apple.icon-decoration-position.center",
-                COM_APPLE_ICON_DECORATION_POSITION_CENTER
+                COM_APPLE_ICON_DECORATION_POSITION_CENTER,
             ),
             (
                 "com.apple.icon-decoration-position",
-                COM_APPLE_ICON_DECORATION_POSITION
+                COM_APPLE_ICON_DECORATION_POSITION,
             ),
             ("com.apple.icon-decoration", COM_APPLE_ICON_DECORATION),
             (
                 "com.apple.groupactivities.activity",
-                COM_APPLE_GROUPACTIVITIES_ACTIVITY
+                COM_APPLE_GROUPACTIVITIES_ACTIVITY,
             ),
             ("com.apple.coreml.mlpackage", COM_APPLE_COREML_MLPACKAGE),
             ("com.apple.coreml.model", COM_APPLE_COREML_MODEL),
@@ -7363,7 +7372,7 @@ lazy_static! {
             ("com.apple.iMovieLibrary", COM_APPLE_IMOVIELIBRARY),
             (
                 "org.khronos.collada.digital-asset-exchange",
-                ORG_KHRONOS_COLLADA_DIGITAL_ASSET_EXCHANGE
+                ORG_KHRONOS_COLLADA_DIGITAL_ASSET_EXCHANGE,
             ),
             ("com.adobe.flash.video", COM_ADOBE_FLASH_VIDEO),
             ("com.stuffit.archive.sit", COM_STUFFIT_ARCHIVE_SIT),
@@ -7374,7 +7383,7 @@ lazy_static! {
             ("public.mp4a-loas", PUBLIC_MP4A_LOAS),
             (
                 "com.avid.open-media-framework",
-                COM_AVID_OPEN_MEDIA_FRAMEWORK
+                COM_AVID_OPEN_MEDIA_FRAMEWORK,
             ),
             ("org.xiph.flac", ORG_XIPH_FLAC),
             ("com.soundblaster.soundfont", COM_SOUNDBLASTER_SOUNDFONT),
@@ -7384,39 +7393,39 @@ lazy_static! {
             ("com.real.realmedia", COM_REAL_REALMEDIA),
             (
                 "com.microsoft.windows-media-wax",
-                COM_MICROSOFT_WINDOWS_MEDIA_WAX
+                COM_MICROSOFT_WINDOWS_MEDIA_WAX,
             ),
             (
                 "com.microsoft.windows-media-wvx",
-                COM_MICROSOFT_WINDOWS_MEDIA_WVX
+                COM_MICROSOFT_WINDOWS_MEDIA_WVX,
             ),
             (
                 "com.microsoft.windows-media-wmx",
-                COM_MICROSOFT_WINDOWS_MEDIA_WMX
+                COM_MICROSOFT_WINDOWS_MEDIA_WMX,
             ),
             (
                 "com.microsoft.advanced-stream-redirector",
-                COM_MICROSOFT_ADVANCED_STREAM_REDIRECTOR
+                COM_MICROSOFT_ADVANCED_STREAM_REDIRECTOR,
             ),
             (
                 "com.microsoft.windows-media-wma",
-                COM_MICROSOFT_WINDOWS_MEDIA_WMA
+                COM_MICROSOFT_WINDOWS_MEDIA_WMA,
             ),
             (
                 "com.microsoft.windows-media-wmp",
-                COM_MICROSOFT_WINDOWS_MEDIA_WMP
+                COM_MICROSOFT_WINDOWS_MEDIA_WMP,
             ),
             (
                 "com.microsoft.windows-media-wmv",
-                COM_MICROSOFT_WINDOWS_MEDIA_WMV
+                COM_MICROSOFT_WINDOWS_MEDIA_WMV,
             ),
             (
                 "com.microsoft.windows-media-wm",
-                COM_MICROSOFT_WINDOWS_MEDIA_WM
+                COM_MICROSOFT_WINDOWS_MEDIA_WM,
             ),
             (
                 "com.microsoft.advanced-systems-format",
-                COM_MICROSOFT_ADVANCED_SYSTEMS_FORMAT
+                COM_MICROSOFT_ADVANCED_SYSTEMS_FORMAT,
             ),
             ("com.microsoft.waveform-audio", COM_MICROSOFT_WAVEFORM_AUDIO),
             ("com.digidesign.sd2-audio", COM_DIGIDESIGN_SD2_AUDIO),
@@ -7436,63 +7445,63 @@ lazy_static! {
             ("com.truevision.tga-image", COM_TRUEVISION_TGA_IMAGE),
             (
                 "com.adobe.illustrator.ai-image",
-                COM_ADOBE_ILLUSTRATOR_AI_IMAGE
+                COM_ADOBE_ILLUSTRATOR_AI_IMAGE,
             ),
             (
                 "com.adobe.photoshop-large-image",
-                COM_ADOBE_PHOTOSHOP_LARGE_IMAGE
+                COM_ADOBE_PHOTOSHOP_LARGE_IMAGE,
             ),
             ("com.adobe.photoshop-image", COM_ADOBE_PHOTOSHOP_IMAGE),
             ("com.apple.garageband.project", COM_APPLE_GARAGEBAND_PROJECT),
             (
                 "com.apple.iWork.Numbers.sfftemplate",
-                COM_APPLE_IWORK_NUMBERS_SFFTEMPLATE
+                COM_APPLE_IWORK_NUMBERS_SFFTEMPLATE,
             ),
             (
                 "com.apple.iWork.Numbers.template",
-                COM_APPLE_IWORK_NUMBERS_TEMPLATE
+                COM_APPLE_IWORK_NUMBERS_TEMPLATE,
             ),
             (
                 "com.apple.iWork.Numbers.sffnumbers",
-                COM_APPLE_IWORK_NUMBERS_SFFNUMBERS
+                COM_APPLE_IWORK_NUMBERS_SFFNUMBERS,
             ),
             (
                 "com.apple.iWork.Numbers.numbers-tef",
-                COM_APPLE_IWORK_NUMBERS_NUMBERS_TEF
+                COM_APPLE_IWORK_NUMBERS_NUMBERS_TEF,
             ),
             (
                 "com.apple.iWork.Numbers.numbers",
-                COM_APPLE_IWORK_NUMBERS_NUMBERS
+                COM_APPLE_IWORK_NUMBERS_NUMBERS,
             ),
             (
                 "com.apple.iWork.Pages.sfftemplate",
-                COM_APPLE_IWORK_PAGES_SFFTEMPLATE
+                COM_APPLE_IWORK_PAGES_SFFTEMPLATE,
             ),
             (
                 "com.apple.iWork.Pages.template",
-                COM_APPLE_IWORK_PAGES_TEMPLATE
+                COM_APPLE_IWORK_PAGES_TEMPLATE,
             ),
             (
                 "com.apple.iWork.Pages.sffpages",
-                COM_APPLE_IWORK_PAGES_SFFPAGES
+                COM_APPLE_IWORK_PAGES_SFFPAGES,
             ),
             (
                 "com.apple.iWork.Pages.pages-tef",
-                COM_APPLE_IWORK_PAGES_PAGES_TEF
+                COM_APPLE_IWORK_PAGES_PAGES_TEF,
             ),
             ("com.apple.iWork.Pages.pages", COM_APPLE_IWORK_PAGES_PAGES),
             (
                 "com.apple.iWork.Keynote.sffkth",
-                COM_APPLE_IWORK_KEYNOTE_SFFKTH
+                COM_APPLE_IWORK_KEYNOTE_SFFKTH,
             ),
             ("com.apple.iWork.Keynote.kth", COM_APPLE_IWORK_KEYNOTE_KTH),
             (
                 "com.apple.iWork.Keynote.sffkey",
-                COM_APPLE_IWORK_KEYNOTE_SFFKEY
+                COM_APPLE_IWORK_KEYNOTE_SFFKEY,
             ),
             (
                 "com.apple.iWork.Keynote.key-tef",
-                COM_APPLE_IWORK_KEYNOTE_KEY_TEF
+                COM_APPLE_IWORK_KEYNOTE_KEY_TEF,
             ),
             ("com.apple.iWork.Keynote.key", COM_APPLE_IWORK_KEYNOTE_KEY),
             ("com.apple.keynote.kth", COM_APPLE_KEYNOTE_KTH),
@@ -7508,149 +7517,149 @@ lazy_static! {
             ("com.microsoft.word.doc", COM_MICROSOFT_WORD_DOC),
             (
                 "org.openxmlformats.presentationml.template.macroenabled",
-                ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE_MACROENABLED
+                ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE_MACROENABLED,
             ),
             (
                 "org.openxmlformats.presentationml.template",
-                ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE
+                ORG_OPENXMLFORMATS_PRESENTATIONML_TEMPLATE,
             ),
             (
                 "org.openxmlformats.presentationml.slideshow.macroenabled",
-                ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW_MACROENABLED
+                ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW_MACROENABLED,
             ),
             (
                 "org.openxmlformats.presentationml.slideshow",
-                ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW
+                ORG_OPENXMLFORMATS_PRESENTATIONML_SLIDESHOW,
             ),
             (
                 "org.openxmlformats.presentationml.presentation.macroenabled",
-                ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION_MACROENABLED
+                ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION_MACROENABLED,
             ),
             (
                 "org.openxmlformats.presentationml.presentation",
-                ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION
+                ORG_OPENXMLFORMATS_PRESENTATIONML_PRESENTATION,
             ),
             (
                 "org.openxmlformats.spreadsheetml.template.macroenabled",
-                ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE_MACROENABLED
+                ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE_MACROENABLED,
             ),
             (
                 "org.openxmlformats.spreadsheetml.template",
-                ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE
+                ORG_OPENXMLFORMATS_SPREADSHEETML_TEMPLATE,
             ),
             (
                 "com.microsoft.excel.sheet.binary.macroenabled",
-                COM_MICROSOFT_EXCEL_SHEET_BINARY_MACROENABLED
+                COM_MICROSOFT_EXCEL_SHEET_BINARY_MACROENABLED,
             ),
             (
                 "org.openxmlformats.spreadsheetml.sheet.macroenabled",
-                ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET_MACROENABLED
+                ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET_MACROENABLED,
             ),
             (
                 "org.openxmlformats.spreadsheetml.sheet",
-                ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET
+                ORG_OPENXMLFORMATS_SPREADSHEETML_SHEET,
             ),
             (
                 "org.openxmlformats.wordprocessingml.template.macroenabled",
-                ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE_MACROENABLED
+                ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE_MACROENABLED,
             ),
             (
                 "org.openxmlformats.wordprocessingml.template",
-                ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE
+                ORG_OPENXMLFORMATS_WORDPROCESSINGML_TEMPLATE,
             ),
             (
                 "org.openxmlformats.wordprocessingml.document.macroenabled",
-                ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT_MACROENABLED
+                ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT_MACROENABLED,
             ),
             (
                 "org.openxmlformats.wordprocessingml.document",
-                ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT
+                ORG_OPENXMLFORMATS_WORDPROCESSINGML_DOCUMENT,
             ),
             ("com.microsoft.word.wordml", COM_MICROSOFT_WORD_WORDML),
             (
                 "org.oasis-open.opendocument.database",
-                ORG_OASIS_OPEN_OPENDOCUMENT_DATABASE
+                ORG_OASIS_OPEN_OPENDOCUMENT_DATABASE,
             ),
             (
                 "org.oasis-open.opendocument.text-web",
-                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_WEB
+                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_WEB,
             ),
             (
                 "org.oasis-open.opendocument.text-master",
-                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_MASTER
+                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_MASTER,
             ),
             ("org.openoffice.text-master", ORG_OPENOFFICE_TEXT_MASTER),
             (
                 "org.oasis-open.opendocument.formula-template",
-                ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA_TEMPLATE
+                ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA_TEMPLATE,
             ),
             (
                 "org.oasis-open.opendocument.formula",
-                ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA
+                ORG_OASIS_OPEN_OPENDOCUMENT_FORMULA,
             ),
             ("org.openoffice.formula", ORG_OPENOFFICE_FORMULA),
             (
                 "org.oasis-open.opendocument.image-template",
-                ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE_TEMPLATE
+                ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE_TEMPLATE,
             ),
             (
                 "org.oasis-open.opendocument.image",
-                ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE
+                ORG_OASIS_OPEN_OPENDOCUMENT_IMAGE,
             ),
             (
                 "org.oasis-open.opendocument.chart-template",
-                ORG_OASIS_OPEN_OPENDOCUMENT_CHART_TEMPLATE
+                ORG_OASIS_OPEN_OPENDOCUMENT_CHART_TEMPLATE,
             ),
             (
                 "org.oasis-open.opendocument.chart",
-                ORG_OASIS_OPEN_OPENDOCUMENT_CHART
+                ORG_OASIS_OPEN_OPENDOCUMENT_CHART,
             ),
             (
                 "org.oasis-open.opendocument.spreadsheet-template",
-                ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET_TEMPLATE
+                ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET_TEMPLATE,
             ),
             (
                 "org.oasis-open.opendocument.spreadsheet",
-                ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET
+                ORG_OASIS_OPEN_OPENDOCUMENT_SPREADSHEET,
             ),
             (
                 "org.openoffice.spreadsheet-template",
-                ORG_OPENOFFICE_SPREADSHEET_TEMPLATE
+                ORG_OPENOFFICE_SPREADSHEET_TEMPLATE,
             ),
             ("org.openoffice.spreadsheet", ORG_OPENOFFICE_SPREADSHEET),
             (
                 "org.oasis-open.opendocument.presentation-template",
-                ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION_TEMPLATE
+                ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION_TEMPLATE,
             ),
             (
                 "org.oasis-open.opendocument.presentation",
-                ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION
+                ORG_OASIS_OPEN_OPENDOCUMENT_PRESENTATION,
             ),
             (
                 "org.openoffice.presentation-template",
-                ORG_OPENOFFICE_PRESENTATION_TEMPLATE
+                ORG_OPENOFFICE_PRESENTATION_TEMPLATE,
             ),
             ("org.openoffice.presentation", ORG_OPENOFFICE_PRESENTATION),
             (
                 "org.oasis-open.opendocument.graphics-template",
-                ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS_TEMPLATE
+                ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS_TEMPLATE,
             ),
             (
                 "org.oasis-open.opendocument.graphics",
-                ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS
+                ORG_OASIS_OPEN_OPENDOCUMENT_GRAPHICS,
             ),
             (
                 "org.openoffice.graphics-template",
-                ORG_OPENOFFICE_GRAPHICS_TEMPLATE
+                ORG_OPENOFFICE_GRAPHICS_TEMPLATE,
             ),
             ("org.openoffice.graphics", ORG_OPENOFFICE_GRAPHICS),
             (
                 "org.oasis-open.opendocument.text-template",
-                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_TEMPLATE
+                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT_TEMPLATE,
             ),
             (
                 "org.oasis-open.opendocument.text",
-                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT
+                ORG_OASIS_OPEN_OPENDOCUMENT_TEXT,
             ),
             ("org.openoffice.text-template", ORG_OPENOFFICE_TEXT_TEMPLATE),
             ("org.openoffice.text", ORG_OPENOFFICE_TEXT),
@@ -7662,17 +7671,21 @@ lazy_static! {
             ("com.compuserve.gif", COM_COMPUSERVE_GIF),
             (
                 "com.adobe.encapsulated-postscript",
-                COM_ADOBE_ENCAPSULATED_POSTSCRIPT
+                COM_ADOBE_ENCAPSULATED_POSTSCRIPT,
             ),
             ("com.adobe.postscript", COM_ADOBE_POSTSCRIPT),
             ("com.adobe.fdf", COM_ADOBE_FDF),
             ("com.adobe.xfdf", COM_ADOBE_XFDF),
             ("com.adobe.etd", COM_ADOBE_ETD),
             ("com.adobe.edn", COM_ADOBE_EDN),
-            ("com.adobe.pdf", COM_ADOBE_PDF)
-        ])));
-    pub(crate) static ref OTHER_FILENAME_EXTENSION_MAP: Arc<RwLock<HashMap<&'static str, &'static str>>> =
-        Arc::new(RwLock::new(HashMap::from([
+            ("com.adobe.pdf", COM_ADOBE_PDF),
+        ]);
+        Arc::new(map)
+    });
+
+pub(crate) static OTHER_FILENAME_EXTENSION_MAP: Lazy<Arc<HashMap<&'static str, &'static str>>> =
+    Lazy::new(|| {
+        let map = HashMap::from([
             (r#"groupactivity"#, "com.apple.groupactivities.activity"),
             (r#"mlpackage"#, "com.apple.coreml.mlpackage"),
             (r#"mlkitmodel"#, "com.apple.coreml.model"),
@@ -7762,38 +7775,38 @@ lazy_static! {
             (r#"doc"#, "com.microsoft.word.doc"),
             (
                 r#"potm"#,
-                "org.openxmlformats.presentationml.template.macroenabled"
+                "org.openxmlformats.presentationml.template.macroenabled",
             ),
             (r#"potx"#, "org.openxmlformats.presentationml.template"),
             (
                 r#"ppsm"#,
-                "org.openxmlformats.presentationml.slideshow.macroenabled"
+                "org.openxmlformats.presentationml.slideshow.macroenabled",
             ),
             (r#"ppsx"#, "org.openxmlformats.presentationml.slideshow"),
             (
                 r#"pptm"#,
-                "org.openxmlformats.presentationml.presentation.macroenabled"
+                "org.openxmlformats.presentationml.presentation.macroenabled",
             ),
             (r#"pptx"#, "org.openxmlformats.presentationml.presentation"),
             (
                 r#"xltm"#,
-                "org.openxmlformats.spreadsheetml.template.macroenabled"
+                "org.openxmlformats.spreadsheetml.template.macroenabled",
             ),
             (r#"xltx"#, "org.openxmlformats.spreadsheetml.template"),
             (r#"xlsb"#, "com.microsoft.excel.sheet.binary.macroenabled"),
             (
                 r#"xlsm"#,
-                "org.openxmlformats.spreadsheetml.sheet.macroenabled"
+                "org.openxmlformats.spreadsheetml.sheet.macroenabled",
             ),
             (r#"xlsx"#, "org.openxmlformats.spreadsheetml.sheet"),
             (
                 r#"dotm"#,
-                "org.openxmlformats.wordprocessingml.template.macroenabled"
+                "org.openxmlformats.wordprocessingml.template.macroenabled",
             ),
             (r#"dotx"#, "org.openxmlformats.wordprocessingml.template"),
             (
                 r#"docm"#,
-                "org.openxmlformats.wordprocessingml.document.macroenabled"
+                "org.openxmlformats.wordprocessingml.document.macroenabled",
             ),
             (r#"docx"#, "org.openxmlformats.wordprocessingml.document"),
             (r#"xml"#, "com.microsoft.word.wordml"),
@@ -7816,7 +7829,7 @@ lazy_static! {
             (r#"sxc"#, "org.openoffice.spreadsheet"),
             (
                 r#"otp"#,
-                "org.oasis-open.opendocument.presentation-template"
+                "org.oasis-open.opendocument.presentation-template",
             ),
             (r#"odp"#, "org.oasis-open.opendocument.presentation"),
             (r#"sti"#, "org.openoffice.presentation-template"),
@@ -7846,10 +7859,14 @@ lazy_static! {
             (r#"xfdf"#, "com.adobe.xfdf"),
             (r#"etd"#, "com.adobe.etd"),
             (r#"edn"#, "com.adobe.edn"),
-            (r#"pdf"#, "com.adobe.pdf")
-        ])));
-    pub(crate) static ref OTHER_MIME_MAP: Arc<RwLock<HashMap<&'static str, &'static str>>> =
-        Arc::new(RwLock::new(HashMap::from([
+            (r#"pdf"#, "com.adobe.pdf"),
+        ]);
+        Arc::new(map)
+    });
+
+pub(crate) static OTHER_MIME_MAP: Lazy<Arc<HashMap<&'static str, &'static str>>> =
+    Lazy::new(|| {
+        let map = HashMap::from([
             (r#"application/pdf"#, "com.adobe.pdf"),
             (r#"application/postscript"#, "com.adobe.postscript"),
             (r#"image/gif"#, "com.compuserve.gif"),
@@ -7862,185 +7879,185 @@ lazy_static! {
             (r#"application/vnd.sun.xml.writer"#, "org.openoffice.text"),
             (
                 r#"application/vnd.stardivision.writer"#,
-                "org.openoffice.text"
+                "org.openoffice.text",
             ),
             (
                 r#"application/vnd.sun.xml.writer.template"#,
-                "org.openoffice.text-template"
+                "org.openoffice.text-template",
             ),
             (
                 r#"application/vnd.oasis.opendocument.text"#,
-                "org.oasis-open.opendocument.text"
+                "org.oasis-open.opendocument.text",
             ),
             (
                 r#"application/vnd.oasis.opendocument.text-template"#,
-                "org.oasis-open.opendocument.text-template"
+                "org.oasis-open.opendocument.text-template",
             ),
             (r#"application/vnd.sun.xml.draw"#, "org.openoffice.graphics"),
             (
                 r#"application/vnd.stardivision.draw"#,
-                "org.openoffice.graphics"
+                "org.openoffice.graphics",
             ),
             (
                 r#"application/vnd.sun.xml.draw.template"#,
-                "org.openoffice.graphics-template"
+                "org.openoffice.graphics-template",
             ),
             (
                 r#"application/vnd.oasis.opendocument.graphics"#,
-                "org.oasis-open.opendocument.graphics"
+                "org.oasis-open.opendocument.graphics",
             ),
             (
                 r#"application/vnd.oasis.opendocument.graphics-template"#,
-                "org.oasis-open.opendocument.graphics-template"
+                "org.oasis-open.opendocument.graphics-template",
             ),
             (
                 r#"application/vnd.sun.xml.impress"#,
-                "org.openoffice.presentation"
+                "org.openoffice.presentation",
             ),
             (
                 r#"application/vnd.stardivision.impress"#,
-                "org.openoffice.presentation"
+                "org.openoffice.presentation",
             ),
             (
                 r#"application/vnd.stardivision.impress-packed"#,
-                "org.openoffice.presentation"
+                "org.openoffice.presentation",
             ),
             (
                 r#"application/vnd.sun.xml.impress.template"#,
-                "org.openoffice.presentation-template"
+                "org.openoffice.presentation-template",
             ),
             (
                 r#"application/vnd.oasis.opendocument.presentation"#,
-                "org.oasis-open.opendocument.presentation"
+                "org.oasis-open.opendocument.presentation",
             ),
             (
                 r#"application/vnd.oasis.opendocument.presentation-template"#,
-                "org.oasis-open.opendocument.presentation-template"
+                "org.oasis-open.opendocument.presentation-template",
             ),
             (
                 r#"application/vnd.sun.xml.calc"#,
-                "org.openoffice.spreadsheet"
+                "org.openoffice.spreadsheet",
             ),
             (
                 r#"application/vnd.stardivision.calc"#,
-                "org.openoffice.spreadsheet"
+                "org.openoffice.spreadsheet",
             ),
             (
                 r#"application/vnd.sun.xml.calc.template"#,
-                "org.openoffice.spreadsheet-template"
+                "org.openoffice.spreadsheet-template",
             ),
             (
                 r#"application/vnd.oasis.opendocument.spreadsheet"#,
-                "org.oasis-open.opendocument.spreadsheet"
+                "org.oasis-open.opendocument.spreadsheet",
             ),
             (
                 r#"application/vnd.oasis.opendocument.spreadsheet-template"#,
-                "org.oasis-open.opendocument.spreadsheet-template"
+                "org.oasis-open.opendocument.spreadsheet-template",
             ),
             (
                 r#"application/vnd.oasis.opendocument.chart"#,
-                "org.oasis-open.opendocument.chart"
+                "org.oasis-open.opendocument.chart",
             ),
             (
                 r#"application/vnd.oasis.opendocument.chart-template"#,
-                "org.oasis-open.opendocument.chart-template"
+                "org.oasis-open.opendocument.chart-template",
             ),
             (
                 r#"application/vnd.oasis.opendocument.image"#,
-                "org.oasis-open.opendocument.image"
+                "org.oasis-open.opendocument.image",
             ),
             (
                 r#"application/vnd.oasis.opendocument.image-template"#,
-                "org.oasis-open.opendocument.image-template"
+                "org.oasis-open.opendocument.image-template",
             ),
             (r#"application/vnd.sun.xml.math"#, "org.openoffice.formula"),
             (
                 r#"application/vnd.stardivision.math"#,
-                "org.openoffice.formula"
+                "org.openoffice.formula",
             ),
             (
                 r#"application/vnd.oasis.opendocument.formula"#,
-                "org.oasis-open.opendocument.formula"
+                "org.oasis-open.opendocument.formula",
             ),
             (
                 r#"application/vnd.oasis.opendocument.formula-template"#,
-                "org.oasis-open.opendocument.formula-template"
+                "org.oasis-open.opendocument.formula-template",
             ),
             (
                 r#"application/vnd.sun.xml.writer.global"#,
-                "org.openoffice.text-master"
+                "org.openoffice.text-master",
             ),
             (
                 r#"application/vnd.oasis.opendocument.text-master"#,
-                "org.oasis-open.opendocument.text-master"
+                "org.oasis-open.opendocument.text-master",
             ),
             (
                 r#"application/vnd.oasis.opendocument.text-web"#,
-                "org.oasis-open.opendocument.text-web"
+                "org.oasis-open.opendocument.text-web",
             ),
             (
                 r#"application/vnd.oasis.opendocument.database"#,
-                "org.oasis-open.opendocument.database"
+                "org.oasis-open.opendocument.database",
             ),
             (
                 r#"application/vnd.openxmlformats-officedocument.wordprocessingml.document"#,
-                "org.openxmlformats.wordprocessingml.document"
+                "org.openxmlformats.wordprocessingml.document",
             ),
             (
                 r#"application/vnd.ms-word.document.macroEnabled.12"#,
-                "org.openxmlformats.wordprocessingml.document.macroenabled"
+                "org.openxmlformats.wordprocessingml.document.macroenabled",
             ),
             (
                 r#"application/vnd.openxmlformats-officedocument.wordprocessingml.template"#,
-                "org.openxmlformats.wordprocessingml.template"
+                "org.openxmlformats.wordprocessingml.template",
             ),
             (
                 r#"application/vnd.ms-word.template.macroEnabled.12"#,
-                "org.openxmlformats.wordprocessingml.template.macroenabled"
+                "org.openxmlformats.wordprocessingml.template.macroenabled",
             ),
             (
                 r#"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"#,
-                "org.openxmlformats.spreadsheetml.sheet"
+                "org.openxmlformats.spreadsheetml.sheet",
             ),
             (
                 r#"application/vnd.ms-excel.sheet.macroEnabled.12"#,
-                "org.openxmlformats.spreadsheetml.sheet.macroenabled"
+                "org.openxmlformats.spreadsheetml.sheet.macroenabled",
             ),
             (
                 r#"application/vnd.ms-excel.sheet.binary.macroEnabled.12"#,
-                "com.microsoft.excel.sheet.binary.macroenabled"
+                "com.microsoft.excel.sheet.binary.macroenabled",
             ),
             (
                 r#"application/vnd.openxmlformats-officedocument.spreadsheetml.template"#,
-                "org.openxmlformats.spreadsheetml.template"
+                "org.openxmlformats.spreadsheetml.template",
             ),
             (
                 r#"application/vnd.ms-excel.template.macroEnabled.12"#,
-                "org.openxmlformats.spreadsheetml.template.macroenabled"
+                "org.openxmlformats.spreadsheetml.template.macroenabled",
             ),
             (
                 r#"application/vnd.openxmlformats-officedocument.presentationml.presentation"#,
-                "org.openxmlformats.presentationml.presentation"
+                "org.openxmlformats.presentationml.presentation",
             ),
             (
                 r#"application/vnd.ms-powerpoint.presentation.macroEnabled.12"#,
-                "org.openxmlformats.presentationml.presentation.macroenabled"
+                "org.openxmlformats.presentationml.presentation.macroenabled",
             ),
             (
                 r#"application/vnd.openxmlformats-officedocument.presentationml.slideshow"#,
-                "org.openxmlformats.presentationml.slideshow"
+                "org.openxmlformats.presentationml.slideshow",
             ),
             (
                 r#"application/vnd.ms-powerpoint.slideshow.macroEnabled.12"#,
-                "org.openxmlformats.presentationml.slideshow.macroenabled"
+                "org.openxmlformats.presentationml.slideshow.macroenabled",
             ),
             (
                 r#"application/vnd.openxmlformats-officedocument.presentationml.template"#,
-                "org.openxmlformats.presentationml.template"
+                "org.openxmlformats.presentationml.template",
             ),
             (
                 r#"application/vnd.ms-powerpoint.template.macroEnabled.12"#,
-                "org.openxmlformats.presentationml.template.macroenabled"
+                "org.openxmlformats.presentationml.template.macroenabled",
             ),
             (r#"application/msword"#, "com.microsoft.word.doc"),
             (r#"application/msword"#, "com.microsoft.word.dot"),
@@ -8052,51 +8069,51 @@ lazy_static! {
             (r#"application/msexcel"#, "com.microsoft.excel.xlw"),
             (
                 r#"application/vnd.ms-powerpoint"#,
-                "com.microsoft.powerpoint.ppt"
+                "com.microsoft.powerpoint.ppt",
             ),
             (
                 r#"application/mspowerpoint"#,
-                "com.microsoft.powerpoint.ppt"
+                "com.microsoft.powerpoint.ppt",
             ),
             (
                 r#"application/vnd.ms-powerpoint"#,
-                "com.microsoft.powerpoint.pot"
+                "com.microsoft.powerpoint.pot",
             ),
             (
                 r#"application/mspowerpoint"#,
-                "com.microsoft.powerpoint.pot"
+                "com.microsoft.powerpoint.pot",
             ),
             (
                 r#"application/vnd.ms-powerpoint"#,
-                "com.microsoft.powerpoint.pps"
+                "com.microsoft.powerpoint.pps",
             ),
             (
                 r#"application/mspowerpoint"#,
-                "com.microsoft.powerpoint.pps"
+                "com.microsoft.powerpoint.pps",
             ),
             (
                 r#"application/x-iwork-keynote-sffkey"#,
-                "com.apple.iWork.Keynote.sffkey"
+                "com.apple.iWork.Keynote.sffkey",
             ),
             (
                 r#"application/x-iwork-keynote-sffkth"#,
-                "com.apple.iWork.Keynote.sffkth"
+                "com.apple.iWork.Keynote.sffkth",
             ),
             (
                 r#"application/x-iwork-pages-sffpages"#,
-                "com.apple.iWork.Pages.sffpages"
+                "com.apple.iWork.Pages.sffpages",
             ),
             (
                 r#"application/x-iwork-pages-sfftemplate"#,
-                "com.apple.iWork.Pages.sfftemplate"
+                "com.apple.iWork.Pages.sfftemplate",
             ),
             (
                 r#"application/x-iwork-numbers-sffnumbers"#,
-                "com.apple.iWork.Numbers.sffnumbers"
+                "com.apple.iWork.Numbers.sffnumbers",
             ),
             (
                 r#"application/x-iwork-numbers-sfftemplate"#,
-                "com.apple.iWork.Numbers.sfftemplate"
+                "com.apple.iWork.Numbers.sfftemplate",
             ),
             (r#"image/vnd.adobe.photoshop"#, "com.adobe.photoshop-image"),
             (r#"image/photoshop"#, "com.adobe.photoshop-image"),
@@ -8127,7 +8144,7 @@ lazy_static! {
             (r#"video/x-ms-wma"#, "com.microsoft.windows-media-wma"),
             (
                 r#"video/x-ms-asx"#,
-                "com.microsoft.advanced-stream-redirector"
+                "com.microsoft.advanced-stream-redirector",
             ),
             (r#"video/x-ms-wmx"#, "com.microsoft.windows-media-wmx"),
             (r#"video/x-ms-wvx"#, "com.microsoft.windows-media-wvx"),
@@ -8135,7 +8152,7 @@ lazy_static! {
             (r#"application/vnd.rn-realmedia"#, "com.real.realmedia"),
             (
                 r#"application/vnd.rn-realmedia-vbr"#,
-                "com.real.realmedia-vbr"
+                "com.real.realmedia-vbr",
             ),
             (r#"application/mxf"#, "org.smpte.mxf"),
             (r#"audio/vnd.rn-realaudio"#, "com.real.realaudio"),
@@ -8147,16 +8164,18 @@ lazy_static! {
             (r#"application/x-sitx"#, "com.stuffit.archive.sitx"),
             (
                 r#"application/x-stuffitx-index"#,
-                "com.stuffit.archive.sidx"
+                "com.stuffit.archive.sidx",
             ),
             (r#"application/x-sitx-index"#, "com.stuffit.archive.sidx"),
             (r#"application/x-stuffit"#, "com.stuffit.archive.sit"),
             (r#"application/x-sit"#, "com.stuffit.archive.sit"),
             (r#"video/x-flv"#, "com.adobe.flash.video"),
             (r#"application/x-7z-compressed"#, "org.7-zip.7-zip-archive"),
-            (r#"application/x-xz"#, "org.tukaani.xz-archive")
-        ])));
-}
+            (r#"application/x-xz"#, "org.tukaani.xz-archive"),
+        ]);
+        Arc::new(map)
+    });
+
 pub const MIME_TYPE_TO_EXTENSION_VEC: [MIMETypeAndExtension; 89] = [
     MIMETypeAndExtension {
         mime_type: "audio/x-aiff",
